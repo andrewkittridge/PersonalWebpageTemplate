@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,11 +27,12 @@ export default function Navigation() {
           <Link href="/" className="text-xl font-bold">
             AK
           </Link>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            <ThemeToggle />
           </div>
         </div>
       </div>
