@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent } from "@/components/ui/card";
 
 const skills = [
   { name: "Java & Spring Framework", level: 95 },
@@ -25,21 +25,26 @@ export default function Skills() {
         className="container mx-auto"
       >
         <h2 className="text-4xl font-bold text-center mb-12">Skills</h2>
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="space-y-2"
             >
-              <div className="flex justify-between">
-                <span className="font-medium">{skill.name}</span>
-                <span className="text-muted-foreground">{skill.level}%</span>
-              </div>
-              <Progress value={skill.level} className="h-2" />
+              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardContent className="p-6 flex items-center justify-center h-full">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-center"
+                  >
+                    <h3 className="text-lg font-medium">{skill.name}</h3>
+                  </motion.div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
