@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 
 const skills = [
-  { name: "React/Next.js", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "Node.js", level: 85 },
-  { name: "AWS/Cloud Services", level: 80 },
-  { name: "Docker/Kubernetes", level: 75 },
-  { name: "CI/CD", level: 80 },
-  { name: "MongoDB/PostgreSQL", level: 85 },
-  { name: "REST/GraphQL APIs", level: 90 },
-  { name: "TailwindCSS", level: 85 },
-  { name: "Git/Version Control", level: 90 }
+  { name: "Java & Spring Framework", level: 95 },
+  { name: "Enterprise Java (JSP, Spring MVC)", level: 90 },
+  { name: "Web Application Development", level: 90 },
+  { name: "Oracle Database & PL/SQL", level: 85 },
+  { name: "RESTful & SOAP Web Services", level: 85 },
+  { name: "XML & JSON Integration", level: 85 },
+  { name: "JavaScript & jQuery", level: 80 },
+  { name: "Maven & Build Tools", level: 80 },
+  { name: "Agile & Project Leadership", level: 85 },
+  { name: "Security (STIG Compliance)", level: 80 }
 ];
 
 export default function Skills() {
