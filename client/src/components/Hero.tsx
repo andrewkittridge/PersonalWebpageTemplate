@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -29,19 +30,19 @@ export default function Hero() {
         </div>
       </motion.div>
       <motion.div
-        animate={{
-          y: [0, -10, 0],
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: [0, 1, 0],
+          y: [0, 5, 0]
         }}
         transition={{
           duration: 2,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "easeInOut"
         }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-primary rounded-full mt-2"></div>
-        </div>
+        <ChevronDown className="w-8 h-8 text-primary" />
       </motion.div>
     </section>
   );
