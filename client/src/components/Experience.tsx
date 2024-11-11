@@ -22,42 +22,113 @@ const experiences = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+    },
+  },
+};
+
 export default function Experience() {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="container mx-auto px-4"
       >
-        <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
-        <div className="max-w-4xl mx-auto space-y-6">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-center mb-12"
+        >
+          Experience
+        </motion.h2>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto space-y-6"
+        >
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              variants={item}
+              className="tesla-card"
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-xl font-bold">{exp.title}</h3>
-                      <p className="text-muted-foreground">{exp.company}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{exp.description}</p>
-                </CardContent>
+              <Card className="bg-transparent border-none overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <CardHeader>
+                    <CardTitle className="flex justify-between items-start">
+                      <div>
+                        <motion.h3 
+                          className="text-xl font-bold"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {exp.title}
+                        </motion.h3>
+                        <motion.p 
+                          className="text-muted-foreground"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.3 }}
+                        >
+                          {exp.company}
+                        </motion.p>
+                      </div>
+                      <motion.span 
+                        className="text-sm text-muted-foreground"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                      >
+                        {exp.period}
+                      </motion.span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <motion.p 
+                      className="text-muted-foreground"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      {exp.description}
+                    </motion.p>
+                  </CardContent>
+                </motion.div>
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
