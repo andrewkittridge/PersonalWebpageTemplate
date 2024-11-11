@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Link } from "wouter";
 import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
@@ -8,6 +8,12 @@ import { Button } from "@/components/ui/button";
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +25,16 @@ export default function Navigation() {
 
   return (
     <>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
+        style={{ scaleX }}
+      />
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed w-full z-50 transition-all duration-500 ${
+        className={`fixed w-full z-40 transition-all duration-500 ${
           scrolled
-            ? "bg-background/70 backdrop-blur-xl border-b border-border/50"
+            ? "bg-background/70 backdrop-blur-xl border-b border-border/50 shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -46,11 +56,16 @@ export default function Navigation() {
                   <motion.a
                     key={item}
                     href={`#${item}`}
-                    className="text-sm font-medium tracking-wide uppercase hover:text-primary transition-colors duration-300"
+                    className="text-sm font-medium tracking-wide uppercase hover:text-primary transition-colors duration-300 relative group"
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     {item}
+                    <motion.span
+                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"
+                      initial={{ width: "0%" }}
+                      whileHover={{ width: "100%" }}
+                    />
                   </motion.a>
                 ))}
               </div>
@@ -84,7 +99,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg md:hidden"
+            className="fixed inset-0 z-30 bg-background/95 backdrop-blur-lg md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8 pt-20">
               {["about", "experience", "skills", "contact"].map((item, index) => (
