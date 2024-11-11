@@ -1,10 +1,14 @@
+import { Suspense, lazy } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Lazy load components
+const Hero = lazy(() => import("@/components/Hero"));
+const About = lazy(() => import("@/components/About"));
+const Experience = lazy(() => import("@/components/Experience"));
+const Skills = lazy(() => import("@/components/Skills"));
+const Contact = lazy(() => import("@/components/Contact"));
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -12,7 +16,7 @@ export default function Home() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.97]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-hidden" role="main">
       <Navigation />
       <motion.main
         initial={{ opacity: 0 }}
@@ -21,7 +25,9 @@ export default function Home() {
         className="relative"
       >
         <motion.div style={{ opacity, scale }}>
-          <Hero />
+          <Suspense fallback={<LoadingSpinner />}>
+            <Hero />
+          </Suspense>
         </motion.div>
         
         <motion.div
@@ -30,10 +36,18 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="container mx-auto px-4 space-y-20"
         >
-          <About />
-          <Experience />
-          <Skills />
-          <Contact />
+          <Suspense fallback={<LoadingSpinner />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Skills />
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Contact />
+          </Suspense>
         </motion.div>
       </motion.main>
     </div>
