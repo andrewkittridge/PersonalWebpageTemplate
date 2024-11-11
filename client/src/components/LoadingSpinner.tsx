@@ -4,14 +4,18 @@ export default function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center min-h-[200px]">
       <motion.div
-        className="w-16 h-16 border-4 border-primary rounded-full border-t-transparent"
-        animate={{ rotate: 360 }}
+        className="tesla-spinner"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: "linear",
+          duration: 0.3,
+          ease: "easeOut"
         }}
-      />
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </motion.div>
     </div>
   );
 }

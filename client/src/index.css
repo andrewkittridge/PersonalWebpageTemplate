@@ -47,9 +47,17 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9;
   }
-}
 
-@layer base {
+  /* Enhanced focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background transition-shadow duration-200;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     background: radial-gradient(
@@ -100,5 +108,38 @@
 
   .section-transition.visible {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* Skeleton Loading Animation */
+  .skeleton {
+    @apply bg-muted/50 animate-pulse rounded;
+  }
+
+  /* Enhanced Loading Spinner */
+  .tesla-spinner {
+    @apply relative w-16 h-16;
+  }
+
+  .tesla-spinner::before,
+  .tesla-spinner::after {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    border: 2px solid transparent;
+    border-top-color: hsl(var(--primary));
+    animation: spin 1s linear infinite;
+  }
+
+  .tesla-spinner::after {
+    border-top-color: hsl(var(--primary) / 0.3);
+    animation-duration: 1.5s;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
