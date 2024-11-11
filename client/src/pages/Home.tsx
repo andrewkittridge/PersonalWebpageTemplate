@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SkeletonCard from "@/components/SkeletonCard";
-import SkipToMain from "@/components/SkipToMain";
 
 // Lazy load components
 const Hero = lazy(() => import("@/components/Hero"));
@@ -18,43 +17,40 @@ export default function Home() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.97]);
 
   return (
-    <>
-      <SkipToMain />
-      <div id="main-content" className="min-h-screen bg-background text-foreground overflow-hidden" role="main">
-        <Navigation />
-        <motion.main
+    <div id="main-content" className="min-h-screen bg-background text-foreground overflow-hidden" role="main">
+      <Navigation />
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+      >
+        <motion.div style={{ opacity, scale }}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Hero />
+          </Suspense>
+        </motion.div>
+        
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="container mx-auto px-4 space-y-20"
         >
-          <motion.div style={{ opacity, scale }}>
-            <Suspense fallback={<LoadingSpinner />}>
-              <Hero />
-            </Suspense>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="container mx-auto px-4 space-y-20"
-          >
-            <Suspense fallback={<SkeletonCard />}>
-              <About />
-            </Suspense>
-            <Suspense fallback={<SkeletonCard />}>
-              <Experience />
-            </Suspense>
-            <Suspense fallback={<SkeletonCard />}>
-              <Skills />
-            </Suspense>
-            <Suspense fallback={<SkeletonCard />}>
-              <Contact />
-            </Suspense>
-          </motion.div>
-        </motion.main>
-      </div>
-    </>
+          <Suspense fallback={<SkeletonCard />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<SkeletonCard />}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={<SkeletonCard />}>
+            <Skills />
+          </Suspense>
+          <Suspense fallback={<SkeletonCard />}>
+            <Contact />
+          </Suspense>
+        </motion.div>
+      </motion.main>
+    </div>
   );
 }
