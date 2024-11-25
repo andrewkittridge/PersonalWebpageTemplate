@@ -14,7 +14,7 @@ export default function About() {
         <Card className="max-w-4xl mx-auto">
           <CardContent className="p-6">
             <p className="text-lg leading-relaxed">
-              I'm a Web Developer at MetroStar with over 6 years of experience in designing, 
+              I'm a Web Developer at MetroStar with over 7 years of experience in designing, 
               developing, and maintaining applications focused on client success. Armed with a 
               B.S. in Computer Science, I specialize in Java, JavaScript, Spring, and enterprise 
               web applications.
