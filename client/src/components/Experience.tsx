@@ -6,19 +6,19 @@ const experiences = [
     title: "Web Developer",
     company: "MetroStar",
     period: "Nov 2022 - Present",
-    description: "Leading web development initiatives and creating client-focused solutions",
+    description: "Leading web development initiatives and creating client-focused solutions for the Marine Corps TSO",
   },
   {
     title: "Associate Programmer",
     company: "General Dynamics Information Technology",
     period: "Jul 2018 - Nov 2022",
-    description: "Developed and maintained enterprise web applications for the Marine Corps TSO. Led migration to jQuery, improving development time and user experience.",
+    description: "Developed and maintained enterprise web applications for the Marine Corps TSO.",
   },
   {
     title: "Associate Consultant",
     company: "InfoReliance",
     period: "Jul 2017 - Jul 2018",
-    description: "Supported enterprise web applications within the TSO of the Marine Corps. Identified and fixed security vulnerabilities found from Fortify SCA.",
+    description: "Supported enterprise web applications within the TSO of the Marine Corps.",
   },
 ];
 
