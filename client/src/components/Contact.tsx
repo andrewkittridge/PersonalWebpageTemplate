@@ -21,7 +21,12 @@ export default function Contact() {
 
   const onSubmit = (data: ContactForm) => {
     const subject = `Portfolio Contact from ${data.name}`;
-    const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+    const body = `Name: ${data.name}
+Email: ${data.email}
+
+Message:
+${data.message}`;
+
     const mailtoLink = `mailto:andrew.kittridge@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
@@ -73,7 +78,7 @@ export default function Contact() {
           </div>
 
           <Button type="submit" size="lg" className="w-full">
-            Open Email Client
+            Send Email
           </Button>
         </form>
       </motion.div>
