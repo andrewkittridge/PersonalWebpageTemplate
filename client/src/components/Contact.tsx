@@ -5,7 +5,6 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -16,33 +15,15 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 export default function Contact() {
-  const { toast } = useToast();
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
+  const { register, handleSubmit, formState: { errors } } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactForm) => {
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-        });
-        reset();
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    }
+  const onSubmit = (data: ContactForm) => {
+    const subject = `Portfolio Contact from ${data.name}`;
+    const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+    const mailtoLink = `mailto:andrew.kittridge@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -66,7 +47,7 @@ export default function Contact() {
               <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
             )}
           </div>
-          
+
           <div>
             <Input
               placeholder="Email"
@@ -92,7 +73,7 @@ export default function Contact() {
           </div>
 
           <Button type="submit" size="lg" className="w-full">
-            Send Message
+            Open Email Client
           </Button>
         </form>
       </motion.div>
