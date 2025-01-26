@@ -61,49 +61,80 @@
   body {
     @apply bg-background text-foreground;
     background: radial-gradient(
-      circle at center,
+      ellipse at center,
       hsl(var(--background)) 0%,
-      hsl(var(--background) / 0.98) 50%,
-      hsl(var(--background) / 0.95) 100%
+      hsl(var(--background) / 0.97) 50%,
+      hsl(var(--background) / 0.93) 100%
     );
+    background-attachment: fixed;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background) / 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.1);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.2);
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
   }
 }
 
 @layer components {
   .tesla-card {
-    @apply relative overflow-hidden rounded-lg transition-all duration-500;
+    @apply relative overflow-hidden rounded-xl transition-all duration-500;
     background: linear-gradient(
       135deg,
-      hsl(var(--card) / 0.5) 0%,
-      hsl(var(--card) / 0.2) 100%
+      hsl(var(--card) / 0.4) 0%,
+      hsl(var(--card) / 0.1) 100%
     );
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border: 1px solid hsl(var(--border) / 0.1);
+    box-shadow: 0 4px 6px -1px hsl(var(--primary) / 0.05),
+                0 2px 4px -2px hsl(var(--primary) / 0.05);
   }
 
   .tesla-card:hover {
     @apply transform -translate-y-1;
-    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.15);
     border: 1px solid hsl(var(--border) / 0.2);
   }
 
   .tesla-button {
-    @apply relative overflow-hidden transition-all duration-300;
+    @apply relative overflow-hidden rounded-xl transition-all duration-300;
     background: linear-gradient(
-      90deg,
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary) / 0.8) 100%
+    );
+    box-shadow: 0 4px 12px -4px hsl(var(--primary) / 0.3);
+  }
+
+  .tesla-button:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: 0 8px 20px -6px hsl(var(--primary) / 0.4);
+    background: linear-gradient(
+      135deg,
       hsl(var(--primary)) 0%,
       hsl(var(--primary) / 0.9) 100%
     );
   }
 
-  .tesla-button:hover {
-    @apply transform -translate-y-0.5;
-    box-shadow: 0 5px 15px -5px hsl(var(--primary) / 0.3);
-  }
-
   .section-transition {
-    @apply opacity-0 translate-y-4;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply opacity-0 translate-y-6;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .section-transition.visible {
