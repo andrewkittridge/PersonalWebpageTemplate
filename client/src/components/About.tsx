@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 export default function About() {
+  // Track when the About section becomes visible
+  const sectionRef = useSectionAnalytics<HTMLElement>('About');
+
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20" ref={sectionRef}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -1,8 +1,9 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SkeletonCard from "@/components/SkeletonCard";
+import { trackPageView } from "@/lib/analytics";
 
 // Lazy load components
 const Hero = lazy(() => import("@/components/Hero"));
@@ -16,6 +17,11 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.97]);
+
+  // Track page view when component mounts
+  useEffect(() => {
+    trackPageView('Home');
+  }, []);
 
   return (
     <div id="main-content" className="min-h-screen bg-background text-foreground overflow-hidden" role="main">

@@ -5,6 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { trackInteraction } from "@/lib/analytics";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -20,6 +21,9 @@ export default function Contact() {
   });
 
   const onSubmit = (data: ContactForm) => {
+    // Track the contact form submission
+    trackInteraction('ContactForm', 'submit', 'Email Contact');
+
     const subject = `Portfolio Contact from ${data.name}`;
     const body = `Name: ${data.name}
 Email: ${data.email}
@@ -77,7 +81,12 @@ ${data.message}`;
             )}
           </div>
 
-          <Button type="submit" size="lg" className="w-full">
+          <Button 
+            type="submit" 
+            size="lg" 
+            className="w-full"
+            onClick={() => trackInteraction('ContactForm', 'click', 'Send Email Button')}
+          >
             Send Email
           </Button>
         </form>
