@@ -9,6 +9,7 @@ const Hero = lazy(() => import("@/components/Hero"));
 const About = lazy(() => import("@/components/About"));
 const Experience = lazy(() => import("@/components/Experience"));
 const Skills = lazy(() => import("@/components/Skills"));
+const Education = lazy(() => import("@/components/Education"));
 const Contact = lazy(() => import("@/components/Contact"));
 
 export default function Home() {
@@ -45,6 +46,9 @@ export default function Home() {
           </Suspense>
           <Suspense fallback={<SkeletonCard />}>
             <Skills />
+          </Suspense>
+          <Suspense fallback={<SkeletonCard />}>
+            <Education />
           </Suspense>
           <Suspense fallback={<SkeletonCard />}>
             <Contact />

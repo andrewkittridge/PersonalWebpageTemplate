@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -18,8 +19,23 @@ export default function Hero() {
           Full-Stack Web Developer
         </h2>
         <p className="max-w-2xl mx-auto text-muted-foreground">
-          Specializing in Java, Spring, and Enterprise Applications
+          Specializing in Java, Spring, and Enterprise Solutions
         </p>
+        <div className="flex flex-wrap gap-2 justify-center text-sm text-muted-foreground">
+          <a href={`mailto:${SOCIAL_LINKS.email}`} className="inline-flex items-center hover:text-primary">
+            {SOCIAL_LINKS.email}
+          </a>
+          <span className="mx-1">|</span>
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-primary">
+            LinkedIn
+          </a>
+          <span className="mx-1">|</span>
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-primary">
+            GitHub
+          </a>
+          <span className="mx-1">|</span>
+          <span>{SOCIAL_LINKS.phone}</span>
+        </div>
         <div className="flex gap-4 justify-center">
           <Button size="lg" asChild>
             <a href="#contact">Get in Touch</a>

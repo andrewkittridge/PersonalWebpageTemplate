@@ -1,26 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-
-const experiences = [
-  {
-    title: "Web Developer",
-    company: "MetroStar",
-    period: "Nov 2022 - Present",
-    description: "Leading web development initiatives and creating client-focused solutions for the Marine Corps TSO",
-  },
-  {
-    title: "Associate Programmer",
-    company: "General Dynamics Information Technology",
-    period: "Jul 2018 - Nov 2022",
-    description: "Developed and maintained enterprise web applications for the Marine Corps TSO.",
-  },
-  {
-    title: "Associate Consultant",
-    company: "InfoReliance",
-    period: "Jul 2017 - Jul 2018",
-    description: "Supported enterprise web applications within the TSO of the Marine Corps.",
-  },
-];
+import { EXPERIENCE } from "@/lib/constants";
 
 const container = {
   hidden: { opacity: 0 },
@@ -73,7 +53,7 @@ export default function Experience() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-6"
         >
-          {experiences.map((exp, index) => (
+          {EXPERIENCE.map((exp, index) => (
             <motion.div
               key={index}
               variants={item}
@@ -101,7 +81,7 @@ export default function Experience() {
                           whileInView={{ opacity: 1 }}
                           transition={{ delay: 0.3 }}
                         >
-                          {exp.company}
+                          {exp.company} | {exp.location}
                         </motion.p>
                       </div>
                       <motion.span 
@@ -115,14 +95,18 @@ export default function Experience() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <motion.p 
-                      className="text-muted-foreground"
+                    <motion.ul 
+                      className="space-y-2 list-disc pl-5"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      {exp.description}
-                    </motion.p>
+                      {exp.achievements.map((achievement, i) => (
+                        <li key={i} className="text-muted-foreground">
+                          {achievement}
+                        </li>
+                      ))}
+                    </motion.ul>
                   </CardContent>
                 </motion.div>
               </Card>
