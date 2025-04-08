@@ -1,5 +1,8 @@
-import type { Express } from "express";
+import { Express } from 'express';
 
 export function registerRoutes(app: Express) {
-  // Routes can be added here as needed
+  // API routes can be defined here
+  app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok' });
+  });
 }
