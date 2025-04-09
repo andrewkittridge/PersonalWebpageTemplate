@@ -1,8 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Background Circle -->
-  <circle cx="16" cy="16" r="15" fill="currentColor" class="dark:text-gray-900 text-white" stroke="currentColor" class="dark:text-white text-gray-900" stroke-width="2"/>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      #favicon-bg { fill: #4F46E5; }
+      .monogram { fill: white; }
+    }
+    @media (prefers-color-scheme: light) {
+      #favicon-bg { fill: #7C3AED; }
+      .monogram { fill: white; }
+    }
+  </style>
   
-  <!-- "AK" Monogram -->
-  <path d="M11 8L14 16L17 8H19L15 18L19 24H17L14 19L11 24H9L13 18L9 8H11Z" fill="currentColor" class="dark:text-white text-gray-900"/>
-  <path d="M20 8V24H22V17H25V15H22V10H26V8H20Z" fill="currentColor" class="dark:text-white text-gray-900"/>
+  <!-- Modern rounded square background -->
+  <rect id="favicon-bg" x="2" y="2" width="28" height="28" rx="8" />
+  
+  <!-- "AK" Monogram with clean typography -->
+  <path class="monogram" d="M11 8L14 16L17 8H19.5L15 18L19.5 24H17L14 19L11 24H8.5L13 18L8.5 8H11Z" />
+  <path class="monogram" d="M20 8V24H22.5V17H25.5V14.5H22.5V10.5H26V8H20Z" />
 </svg>
