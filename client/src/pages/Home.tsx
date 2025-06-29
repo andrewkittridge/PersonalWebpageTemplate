@@ -12,6 +12,7 @@ const Experience = lazy(() => import("@/components/Experience"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Education = lazy(() => import("@/components/Education"));
 const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -24,14 +25,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div id="main-content" className="min-h-screen bg-background text-foreground overflow-hidden" role="main">
+    <div id="main-content" className="min-h-screen bg-background text-foreground" role="main">
       <Navigation />
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative"
-      >
+      <main className="relative">
         <motion.div style={{ opacity, scale }}>
           <Suspense fallback={<LoadingSpinner />}>
             <Hero />
@@ -39,28 +35,41 @@ export default function Home() {
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="container mx-auto px-4 space-y-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="container mx-auto px-4"
         >
-          <Suspense fallback={<SkeletonCard />}>
-            <About />
-          </Suspense>
-          <Suspense fallback={<SkeletonCard />}>
-            <Experience />
-          </Suspense>
-          <Suspense fallback={<SkeletonCard />}>
-            <Skills />
-          </Suspense>
-          <Suspense fallback={<SkeletonCard />}>
-            <Education />
-          </Suspense>
-          <Suspense fallback={<SkeletonCard />}>
-            <Contact />
-          </Suspense>
+          <section id="about" className="py-20">
+            <Suspense fallback={<SkeletonCard />}>
+              <About />
+            </Suspense>
+          </section>
+          <section id="experience" className="py-20">
+            <Suspense fallback={<SkeletonCard />}>
+              <Experience />
+            </Suspense>
+          </section>
+          <section id="skills" className="py-20">
+            <Suspense fallback={<SkeletonCard />}>
+              <Skills />
+            </Suspense>
+          </section>
+          <section id="education" className="py-20">
+            <Suspense fallback={<SkeletonCard />}>
+              <Education />
+            </Suspense>
+          </section>
+          <section id="contact" className="py-20">
+            <Suspense fallback={<SkeletonCard />}>
+              <Contact />
+            </Suspense>
+          </section>
         </motion.div>
-      </motion.main>
+      </main>
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

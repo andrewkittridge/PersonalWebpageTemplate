@@ -1,43 +1,65 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Briefcase, Code, Database, Users } from "lucide-react";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
+
+const aboutData = {
+  description: [
+    "A results-driven Full-Stack Web Developer with over eight years of experience engineering and delivering secure, high-performance enterprise applications for the U.S. Marine Corps and other government clients. Specializing in Java and the Spring Framework, I have a proven track record of modernizing legacy systems, optimizing database performance, and creating STIG-compliant solutions. Holding an active Secret Security Clearance, I excel in Agile environments and am passionate about leveraging technology to solve mission-critical challenges.",
+  ],
+  stats: [
+    { icon: <Briefcase className="w-8 h-8 text-primary" />, value: "8+", label: "Years of Experience" },
+    { icon: <Code className="w-8 h-8 text-primary" />, value: "15+", label: "Technologies Mastered" },
+    { icon: <Database className="w-8 h-8 text-primary" />, value: "30%", label: "Query Time Reduction" },
+    { icon: <Users className="w-8 h-8 text-primary" />, value: "40%", label: "Faster Onboarding" },
+  ],
+};
 
 export default function About() {
   // Track when the About section becomes visible
-  const sectionRef = useSectionAnalytics<HTMLElement>('About');
+  const sectionRef = useSectionAnalytics<HTMLDivElement>('About');
 
   return (
-    <section id="about" className="py-20" ref={sectionRef}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-        <Card className="max-w-4xl mx-auto">
-          <CardContent className="p-6">
-            <p className="text-lg leading-relaxed">
-              Results-driven Full-Stack Web Developer with over seven years of experience in designing, 
-              developing, and delivering secure, scalable, and high-performance enterprise applications. 
-              I specialize in leveraging Java, Spring Framework, JavaScript, and Oracle SQL to create 
-              robust solutions that meet stringent operational requirements.
-            </p>
-            <p className="text-lg leading-relaxed mt-4">
-              My career highlights include modernizing legacy systems—such as transitioning Struts-based 
-              applications to Spring—optimizing database performance, and enhancing user interfaces to 
-              improve both functionality and user satisfaction.
-            </p>
-            <p className="text-lg leading-relaxed mt-4">
-              Holding an active Secret Security Clearance, I thrive in Agile environments and have a 
-              proven track record of delivering STIG-compliant, mission-critical software for government 
-              and enterprise clients. Beyond my professional work, I am passionate about mentoring junior 
-              developers and exploring innovative technologies, as demonstrated by personal projects 
-              integrating React and Large Language Model (LLM) APIs.
-            </p>
-          </CardContent>
-        </Card>
-      </motion.div>
-    </section>
+    <div ref={sectionRef}>
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          About Me
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          A brief introduction to my professional journey and skills.
+        </p>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
+        <motion.div
+          className="lg:col-span-2 space-y-6 text-lg text-muted-foreground"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {aboutData.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className="grid grid-cols-2 gap-8">
+            {aboutData.stats.map((stat, index) => (
+              <div key={index} className="text-center p-4 rounded-lg bg-primary/5">
+                {stat.icon}
+                <p className="mt-2 text-3xl font-bold">{stat.value}</p>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
   );
 }

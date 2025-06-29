@@ -1,64 +1,76 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="h-screen flex items-center justify-center relative">
+    <section className="relative flex h-screen items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-grid-slate-700/[0.04] bg-[length:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]" />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center space-y-6"
+        className="relative z-10 text-center space-y-8"
       >
-        <h1 className="text-6xl md:text-8xl font-bold">
+        <div className="flex justify-center items-center mb-4">
+          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+            <span className="text-4xl font-bold text-primary">AK</span>
+          </div>
+        </div>
+        
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
           Andrew Kittridge
         </h1>
-        <h2 className="text-xl md:text-2xl text-muted-foreground">
-          Full-Stack Web Developer
-        </h2>
-        <p className="max-w-2xl mx-auto text-muted-foreground">
-          Specializing in Java, Spring, and Enterprise Solutions
+        <p className="max-w-3xl mx-auto text-xl text-muted-foreground">
+          Full-Stack Web Developer | Java, Spring & Enterprise Modernization
         </p>
-        <div className="flex flex-wrap gap-2 justify-center text-sm text-muted-foreground">
-          <a href={`mailto:${SOCIAL_LINKS.email}`} className="inline-flex items-center hover:text-primary">
+
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a href={`mailto:${SOCIAL_LINKS.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Mail className="w-4 h-4" />
             {SOCIAL_LINKS.email}
           </a>
-          <span className="mx-1">|</span>
-          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-primary">
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Linkedin className="w-4 h-4" />
             LinkedIn
           </a>
-          <span className="mx-1">|</span>
-          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-primary">
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Github className="w-4 h-4" />
             GitHub
           </a>
-          <span className="mx-1">|</span>
-          <span>{SOCIAL_LINKS.phone}</span>
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            <span>{SOCIAL_LINKS.phone}</span>
+          </div>
         </div>
-        <div className="flex gap-4 justify-center">
+
+        <div className="flex gap-4 justify-center pt-4">
           <Button size="lg" asChild>
             <a href="#contact">Get in Touch</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="#experience">View Work</a>
+            <a href="#experience">View My Work</a>
           </Button>
         </div>
       </motion.div>
+
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: [0, 1, 0],
-          y: [0, 5, 0]
-        }}
+        animate={{ y: [0, 8, 0] }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-10"
       >
-        <ChevronDown className="w-8 h-8 text-primary" />
+        <a href="#about" aria-label="Scroll to about section">
+          <ArrowDown className="w-6 h-6 text-muted-foreground" />
+        </a>
       </motion.div>
     </section>
   );

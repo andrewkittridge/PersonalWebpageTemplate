@@ -9,11 +9,11 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  languages: ["Java (expert-level)", "JavaScript (advanced)"],
-  webTechnologies: ["Spring Framework", "Spring Boot", "Spring MVC", "Struts", "jQuery", "HTML5", "CSS3", "RESTful APIs", "SOAP Web Services", "Maven"],
-  database: ["Oracle SQL", "PL/SQL", "Query Optimization", "Stored Procedures", "Triggers", "Functions"],
-  tools: ["Agile (Scrum, Kanban)", "Git", "STIG Compliance", "Secret Security Clearance"],
-  personal: ["React", "Large Language Model (LLM) APIs"]
+  languages: ["Java", "JavaScript"],
+  webTechnologies: ["Spring Framework (Boot, MVC)", "Struts", "jQuery", "RESTful APIs", "SOAP", "HTML5", "CSS3"],
+  database: ["Oracle SQL", "PL/SQL"],
+  tools: ["Maven", "Git", "Agile (Scrum, Kanban)", "STIG Compliance", "Secret Security Clearance"],
+  personal: ["React", "Large Language Model (LLM) API Integration"]
 };
 
 export const EXPERIENCE = [
@@ -21,33 +21,36 @@ export const EXPERIENCE = [
     title: "Web Developer",
     company: "MetroStar",
     location: "Reston, VA",
-    period: "November 2022 - Present",
+    period: "November 2022 – Present",
     achievements: [
-      "Spearheaded the migration of legacy Struts-based applications to the Spring Framework, resulting in a 20% increase in maintainability",
-      "Optimized complex Oracle SQL queries, reducing execution times by 30%",
-      "Revamped UI/UX of mission-critical enterprise applications, improving user satisfaction by 15%",
-      "Developed secure, STIG-compliant solutions, achieving 25% gains in operational efficiency",
-      "Mentored and trained new developers, shortening onboarding time by 40%"
+      "Develop and enhance mission-critical U.S. Marine Corps systems, including the Marine Resource Orders Writing Service (MROWS) (personnel order processing) and Marine Corps Permanent Duty Travel (MCPDT) (travel entitlement management).",
+      "Engineered a comprehensive UI/UX overhaul for the MCPDT system using modern JavaScript and CSS, leading to a 15% increase in user satisfaction scores.",
+      "Developed secure, STIG-compliant Java and Spring solutions for MROWS that streamlined operational workflows, achieving a 25% gain in efficiency.",
+      "Reduced Oracle SQL query execution times by 30% through strategic code refactoring and table re-indexing, significantly improving application responsiveness.",
+      "Spearheaded the seamless migration of a legacy Struts application to the Spring Framework, enhancing system maintainability by 20%.",
+      "Mentor new developers in Spring and Agile best practices, decreasing their onboarding time by 40% and fostering a high-performing team culture."
     ]
   },
   {
     title: "Associate Programmer",
     company: "General Dynamics Information Technology",
     location: "Fairfax, VA",
-    period: "July 2018 - November 2022",
+    period: "July 2018 – November 2022",
     achievements: [
-      "Improved front-end functionality using jQuery and HTML5, reducing user error rates by 10%",
-      "Designed and implemented STIG-compliant Java and Spring applications for cleared environments"
+      "Performed feature development and maintenance for the U.S. Marine Corps' Document Tracking and Management System (DTMS) (official document and training records management).",
+      "Enhanced the front-end functionality of the DTMS application using jQuery and HTML5, delivering a more intuitive UI/UX that decreased user error rates by 10%.",
+      "Designed and implemented STIG-compliant Java and Spring applications tailored for cleared environments, ensuring 100% compliance with federal security standards.",
+      "Collaborated in an Agile team to troubleshoot and resolve complex software bugs, ensuring high availability for critical USMC systems."
     ]
   },
   {
     title: "Associate Consultant",
     company: "InfoReliance",
     location: "Arlington, VA",
-    period: "July 2017 - July 2018",
+    period: "July 2017 – July 2018",
     achievements: [
-      "Provided hands-on support for Struts-to-Spring migrations",
-      "Offered technical support for secure enterprise applications"
+      "Played a pivotal role in a large-scale Struts-to-Spring migration project, collaborating with senior developers to improve system scalability and performance.",
+      "Provided essential technical support for secure enterprise applications—including the Document Tracking and Management System (DTMS) and the Unit Deployment Management Information Processing System (UDMIPS) (deployment logistics)—to ensure uptime in high-stakes environments."
     ]
   }
 ];
@@ -57,18 +60,19 @@ export const EDUCATION = {
   institution: "University of Indianapolis",
   location: "Indianapolis, IN",
   graduationDate: "May 2017",
-  description: "Completed a rigorous curriculum focused on software development, database systems, and web technologies, building a strong foundation in Java, algorithms, and system design. Participated in team-based capstone projects, developing full-stack applications under simulated Agile conditions to prepare for real-world development challenges."
+  description: ""
 };
 
 export const PERSONAL_PROJECTS = [
   {
-    title: "AI-Enhanced Web Application",
-    status: "Ongoing",
-    description: "Designed and developed a dynamic, AI-driven web application using React for a responsive frontend and Large Language Model (LLM) APIs for real-time content generation and user interaction.",
+    title: "Lumin Faith",
+    status: "Personal Project",
+    url: "https://lumin.faith",
+    description: "Lumin was created from a personal desire to make Bible study more accessible and engaging through technology. As a fellow Christian, I'm passionate about crafting tools that help believers connect more deeply with Scripture.",
     highlights: [
-      "Implemented a modular, component-based architecture with React, ensuring scalability and maintainability",
-      "Integrated LLM APIs to enable natural language processing features, such as automated text generation and conversational interfaces",
-      "Focused on responsive design principles using CSS3 and JavaScript, delivering a seamless user experience across desktop and mobile devices"
+      "Explore: Delve into the historical and cultural contexts of the Bible.",
+      "Learn: Gain deeper understanding with AI-powered insights and explanations.",
+      "Grow: Discover thematic connections and foster spiritual growth."
     ]
   }
 ];
