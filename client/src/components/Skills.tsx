@@ -31,7 +31,7 @@ export default function Skills() {
           Technical Skills
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          A collection of technologies and tools I am proficient with.
+          My arsenal of cutting-edge technologies and methodologies.
         </p>
       </div>
 

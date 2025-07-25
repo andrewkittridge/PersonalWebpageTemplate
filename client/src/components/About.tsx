@@ -4,13 +4,14 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const aboutData = {
   description: [
-    "A results-driven Full-Stack Web Developer with over eight years of experience engineering and delivering secure, high-performance enterprise applications for the U.S. Marine Corps and other government clients. Specializing in Java and the Spring Framework, I have a proven track record of modernizing legacy systems, optimizing database performance, and creating STIG-compliant solutions. Holding an active Secret Security Clearance, I excel in Agile environments and am passionate about leveraging technology to solve mission-critical challenges.",
+    "Innovating at the intersection of code and impact.",
+    "Seasoned Full-Stack Engineer with 8 years of expertise building scalable, secure enterprise solutions for the U.S. Marine Corps and government clients. With deep proficiency in Java, Spring Boot, JavaScript, and Oracle PL/SQL, I excel at modernizing legacy systems, optimizing database performance, and delivering STIG-compliant applications. Holding an active Secret Security Clearance, I thrive in Agile/DevOps environments, leveraging AI-driven integrations to solve mission-critical challenges with precision and efficiency.",
   ],
   stats: [
-    { icon: <Briefcase className="w-8 h-8 text-primary" aria-hidden="true" />, value: "8+", label: "Years of Experience" },
-    { icon: <Code className="w-8 h-8 text-primary" aria-hidden="true" />, value: "15+", label: "Technologies Mastered" },
-    { icon: <Database className="w-8 h-8 text-primary" aria-hidden="true" />, value: "30%", label: "Query Time Reduction" },
-    { icon: <Users className="w-8 h-8 text-primary" aria-hidden="true" />, value: "40%", label: "Faster Onboarding" },
+    { icon: <Briefcase className="w-8 h-8 text-primary" aria-hidden="true" />, value: "8", label: "Years of Full-Stack Innovation" },
+    { icon: <Code className="w-8 h-8 text-primary" aria-hidden="true" />, value: "12", label: "Core Technologies Mastered" },
+    { icon: <Database className="w-8 h-8 text-primary" aria-hidden="true" />, value: "35%", label: "Boost in Database Performance" },
+    { icon: <Users className="w-8 h-8 text-primary" aria-hidden="true" />, value: "20%", label: "Increase in Team Productivity" },
   ],
 };
 

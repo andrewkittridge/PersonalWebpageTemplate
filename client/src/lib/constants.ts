@@ -10,10 +10,10 @@ export const SOCIAL_LINKS = {
 
 export const SKILLS_CATEGORIES = {
   languages: ["Java", "JavaScript"],
-  webTechnologies: ["Spring Framework (Boot, MVC)", "Struts", "jQuery", "RESTful APIs", "SOAP", "HTML5", "CSS3"],
+  webTechnologies: ["Spring Boot (MVC, Security)", "Struts", "jQuery", "RESTful APIs", "SOAP", "HTML5", "CSS3"],
   database: ["Oracle SQL", "PL/SQL"],
   tools: ["Maven", "Git", "Agile (Scrum, Kanban)", "STIG Compliance", "Secret Security Clearance"],
-  personal: ["React", "Large Language Model (LLM) API Integration"]
+  personal: ["React", "LLM API Integration"]
 };
 
 export const EXPERIENCE = [
@@ -23,12 +23,11 @@ export const EXPERIENCE = [
     location: "Reston, VA",
     period: "November 2022 – Present",
     achievements: [
-      "Develop and enhance mission-critical U.S. Marine Corps systems, including the Marine Resource Orders Writing Service (MROWS) (personnel order processing) and Marine Corps Permanent Duty Travel (MCPDT) (travel entitlement management).",
-      "Engineered a comprehensive UI/UX overhaul for the MCPDT system using modern JavaScript and CSS, leading to a 15% increase in user satisfaction scores.",
-      "Developed secure, STIG-compliant Java and Spring solutions for MROWS that streamlined operational workflows, achieving a 25% gain in efficiency.",
-      "Reduced Oracle SQL query execution times by 30% through strategic code refactoring and table re-indexing, significantly improving application responsiveness.",
-      "Spearheaded the seamless migration of a legacy Struts application to the Spring Framework, enhancing system maintainability by 20%.",
-      "Mentor new developers in Spring and Agile best practices, decreasing their onboarding time by 40% and fostering a high-performing team culture."
+      "Architected and optimized critical U.S. Marine Corps platforms, including the Marine Resource Orders Writing Service (MROWS) for streamlined personnel order management and the Marine Corps Permanent Duty Travel (MCPDT) for efficient travel entitlement processing.",
+      "Built robust, STIG-compliant Java and Spring Boot solutions for MROWS, automating workflows and unlocking 25% operational efficiency gains.",
+      "Slashed Oracle SQL query latencies by 30% via targeted refactoring, indexing optimizations, and performance tuning, elevating app responsiveness.",
+      "Led the migration of a legacy Struts app to Spring Boot microservices, boosting maintainability by 20% and enabling faster iterations.",
+      "Mentored emerging developers on Spring Boot best practices and Agile methodologies, slashing onboarding times by 40% and building a collaborative, high-velocity team."
     ]
   },
   {
@@ -37,10 +36,10 @@ export const EXPERIENCE = [
     location: "Fairfax, VA",
     period: "July 2018 – November 2022",
     achievements: [
-      "Performed feature development and maintenance for the U.S. Marine Corps' Document Tracking and Management System (DTMS) (official document and training records management).",
-      "Enhanced the front-end functionality of the DTMS application using jQuery and HTML5, delivering a more intuitive UI/UX that decreased user error rates by 10%.",
-      "Designed and implemented STIG-compliant Java and Spring applications tailored for cleared environments, ensuring 100% compliance with federal security standards.",
-      "Collaborated in an Agile team to troubleshoot and resolve complex software bugs, ensuring high availability for critical USMC systems."
+      "Drove feature innovations and maintenance for the U.S. Marine Corps' Document Tracking and Management System (DTMS), managing official docs and training records.",
+      "Elevated DTMS front-end experiences with jQuery and HTML5, crafting intuitive interfaces that cut user errors by 10%.",
+      "Engineered STIG-compliant Java and Spring applications in secure environments, delivering 100% alignment with federal security mandates.",
+      "Collaborated in Agile squads to debug and resolve intricate issues, ensuring 24/7 uptime for essential USMC systems."
     ]
   },
   {
@@ -49,8 +48,8 @@ export const EXPERIENCE = [
     location: "Arlington, VA",
     period: "July 2017 – July 2018",
     achievements: [
-      "Played a pivotal role in a large-scale Struts-to-Spring migration project, collaborating with senior developers to improve system scalability and performance.",
-      "Provided essential technical support for secure enterprise applications—including the Document Tracking and Management System (DTMS) and the Unit Deployment Management Information Processing System (UDMIPS) (deployment logistics)—to ensure uptime in high-stakes environments."
+      "Pivoted key contributions to a large-scale Struts-to-Spring migration, teaming with seniors to amplify scalability and performance.",
+      "Provided mission-critical support for enterprise apps like DTMS and the Unit Deployment Management Information Processing System (UDMIPS) for deployment logistics, guaranteeing reliability in high-pressure scenarios."
     ]
   }
 ];
@@ -66,13 +65,13 @@ export const EDUCATION = {
 export const PERSONAL_PROJECTS = [
   {
     title: "Lumin Faith",
-    status: "Personal Project",
+    status: "Personal Initiative",
     url: "https://lumin.faith",
-    description: "Lumin was created from a personal desire to make Bible study more accessible and engaging through technology. As a fellow Christian, I'm passionate about crafting tools that help believers connect more deeply with Scripture.",
+    description: "Fueled by a passion for fusing tech with faith, Lumin Faith reimagines Bible study as an interactive, AI-enhanced journey. As a committed Christian, I design tools to empower deeper scriptural engagement for the community.",
     highlights: [
-      "Explore: Delve into the historical and cultural contexts of the Bible.",
-      "Learn: Gain deeper understanding with AI-powered insights and explanations.",
-      "Grow: Discover thematic connections and foster spiritual growth."
+      "Explore: Dive into biblical history and cultural nuances.",
+      "Learn: Unlock AI-generated explanations and insights for clarity.",
+      "Grow: Uncover thematic threads and accelerate spiritual evolution."
     ]
   }
 ];

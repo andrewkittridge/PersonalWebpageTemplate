@@ -15,7 +15,7 @@ export default function Education() {
           Education & Projects
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          My academic background and personal endeavors.
+          My foundational education and passion projects.
         </p>
       </div>
 

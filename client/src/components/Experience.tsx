@@ -14,7 +14,7 @@ export default function Experience() {
           Work Experience
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          My professional journey and key accomplishments.
+          My career highlights and impactful contributions.
         </p>
       </div>
 
