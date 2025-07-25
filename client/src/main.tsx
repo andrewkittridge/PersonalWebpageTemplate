@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <SWRConfig value={{ fetcher }}>
         <Switch>
           <Route path="/" component={Home} />

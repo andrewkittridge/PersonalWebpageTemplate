@@ -26,6 +26,23 @@ export default function Home() {
 
   return (
     <div id="main-content" className="min-h-screen bg-background text-foreground" role="main">
+      {/* Animated gradient background */}
+      <div className="animated-gradient-bg" />
+      
+      {/* Floating particles */}
+      <div className="particles">
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+      </div>
+
       <Navigation />
       <main className="relative">
         <motion.div style={{ opacity, scale }}>

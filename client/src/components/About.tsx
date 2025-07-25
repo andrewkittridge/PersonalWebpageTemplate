@@ -21,7 +21,7 @@ export default function About() {
   return (
     <div ref={sectionRef}>
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           About Me
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
@@ -31,7 +31,7 @@ export default function About() {
 
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
         <motion.div
-          className="lg:col-span-2 space-y-6 text-lg text-muted-foreground"
+          className="lg:col-span-2 space-y-6 text-lg text-muted-foreground tesla-card p-6"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -51,9 +51,9 @@ export default function About() {
         >
           <div className="grid grid-cols-2 gap-8">
             {aboutData.stats.map((stat, index) => (
-              <div key={index} className="text-center p-4 rounded-lg bg-primary/5">
+              <div key={index} className="text-center p-4 rounded-lg tesla-card glow-effect">
                 {stat.icon}
-                <p className="mt-2 text-3xl font-bold">{stat.value}</p>
+                <p className="mt-2 text-3xl font-bold text-primary">{stat.value}</p>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}

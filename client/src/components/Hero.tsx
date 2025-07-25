@@ -18,12 +18,12 @@ export default function Hero() {
         className="relative z-10 text-center space-y-8"
       >
         <div className="flex justify-center items-center mb-4">
-          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center glow-effect">
             <span className="text-4xl font-bold text-primary">AK</span>
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           Andrew Kittridge
         </h1>
         <p className="max-w-3xl mx-auto text-xl text-muted-foreground">
@@ -31,29 +31,29 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a href={`mailto:${SOCIAL_LINKS.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href={`mailto:${SOCIAL_LINKS.email}`} className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
             <Mail className="w-4 h-4" aria-hidden="true" />
             {SOCIAL_LINKS.email}
           </a>
-          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
             <Linkedin className="w-4 h-4" aria-hidden="true" />
             LinkedIn
           </a>
-          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
             <Github className="w-4 h-4" aria-hidden="true" />
             GitHub
           </a>
-          <a href={`tel:${SOCIAL_LINKS.phone}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href={`tel:${SOCIAL_LINKS.phone}`} className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
             <Phone className="w-4 h-4" aria-hidden="true" />
             {SOCIAL_LINKS.phone}
           </a>
         </div>
 
         <div className="flex gap-4 justify-center pt-4">
-          <Button size="lg" asChild>
+          <Button size="lg" asChild className="tesla-button glow-effect">
             <a href="#contact">Get in Touch</a>
           </Button>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" variant="outline" asChild className="glass-effect glow-effect">
             <a href="#experience">View My Work</a>
           </Button>
         </div>
@@ -68,8 +68,8 @@ export default function Hero() {
         }}
         className="absolute bottom-10"
       >
-        <a href="#about" aria-label="Scroll to about section">
-          <ArrowDown className="w-6 h-6 text-muted-foreground" aria-hidden="true" />
+        <a href="#about" aria-label="Scroll to about section" className="glow-effect">
+          <ArrowDown className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" aria-hidden="true" />
         </a>
       </motion.div>
     </section>
