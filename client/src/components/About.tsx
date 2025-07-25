@@ -7,10 +7,10 @@ const aboutData = {
     "A results-driven Full-Stack Web Developer with over eight years of experience engineering and delivering secure, high-performance enterprise applications for the U.S. Marine Corps and other government clients. Specializing in Java and the Spring Framework, I have a proven track record of modernizing legacy systems, optimizing database performance, and creating STIG-compliant solutions. Holding an active Secret Security Clearance, I excel in Agile environments and am passionate about leveraging technology to solve mission-critical challenges.",
   ],
   stats: [
-    { icon: <Briefcase className="w-8 h-8 text-primary" />, value: "8+", label: "Years of Experience" },
-    { icon: <Code className="w-8 h-8 text-primary" />, value: "15+", label: "Technologies Mastered" },
-    { icon: <Database className="w-8 h-8 text-primary" />, value: "30%", label: "Query Time Reduction" },
-    { icon: <Users className="w-8 h-8 text-primary" />, value: "40%", label: "Faster Onboarding" },
+    { icon: <Briefcase className="w-8 h-8 text-primary" aria-hidden="true" />, value: "8+", label: "Years of Experience" },
+    { icon: <Code className="w-8 h-8 text-primary" aria-hidden="true" />, value: "15+", label: "Technologies Mastered" },
+    { icon: <Database className="w-8 h-8 text-primary" aria-hidden="true" />, value: "30%", label: "Query Time Reduction" },
+    { icon: <Users className="w-8 h-8 text-primary" aria-hidden="true" />, value: "40%", label: "Faster Onboarding" },
   ],
 };
 

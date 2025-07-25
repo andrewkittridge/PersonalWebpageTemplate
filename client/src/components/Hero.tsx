@@ -32,21 +32,21 @@ export default function Hero() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
           <a href={`mailto:${SOCIAL_LINKS.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4" aria-hidden="true" />
             {SOCIAL_LINKS.email}
           </a>
           <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Linkedin className="w-4 h-4" />
+            <Linkedin className="w-4 h-4" aria-hidden="true" />
             LinkedIn
           </a>
           <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Github className="w-4 h-4" />
+            <Github className="w-4 h-4" aria-hidden="true" />
             GitHub
           </a>
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span>{SOCIAL_LINKS.phone}</span>
-          </div>
+          <a href={`tel:${SOCIAL_LINKS.phone}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Phone className="w-4 h-4" aria-hidden="true" />
+            {SOCIAL_LINKS.phone}
+          </a>
         </div>
 
         <div className="flex gap-4 justify-center pt-4">
@@ -69,7 +69,7 @@ export default function Hero() {
         className="absolute bottom-10"
       >
         <a href="#about" aria-label="Scroll to about section">
-          <ArrowDown className="w-6 h-6 text-muted-foreground" />
+          <ArrowDown className="w-6 h-6 text-muted-foreground" aria-hidden="true" />
         </a>
       </motion.div>
     </section>
