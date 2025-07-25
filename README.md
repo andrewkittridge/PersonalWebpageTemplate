@@ -2,6 +2,8 @@
 
 A modern, animated portfolio website showcasing my expertise in Java, Spring Framework, and enterprise application development. Built with React, TypeScript, and enhanced with sophisticated animations and a clean white/grey theme.
 
+**🌟 Open Source Portfolio Template** - Feel free to fork and customize for your own portfolio!
+
 ## ✨ Features
 
 ### 🎨 **Modern Design**
@@ -66,8 +68,8 @@ A modern, animated portfolio website showcasing my expertise in Java, Spring Fra
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd AndrewKittridge
+git clone https://github.com/andrewkittridge/portfolio.git
+cd portfolio
 
 # Install dependencies
 npm install
@@ -109,6 +111,12 @@ npm run preview
 
 ## 🔧 **Customization**
 
+### Personal Information
+Update your information in these files:
+- `client/src/lib/constants.ts` - Social links and contact info
+- `client/src/components/` - Update content in each component
+- `client/src/pages/Home.tsx` - Modify sections as needed
+
 ### Theme Colors
 The theme uses CSS custom properties for easy customization:
 
@@ -149,11 +157,29 @@ The portfolio is deployed on Vercel with:
 
 ## 🤝 **Contributing**
 
-This is a personal portfolio project, but suggestions and feedback are welcome!
+This is an open source project! Contributions are welcome:
+
+- 🐛 **Bug Reports**: Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.md)
+- 💡 **Feature Requests**: Use the [feature request template](.github/ISSUE_TEMPLATE/feature_request.md)
+- 🔧 **Code Contributions**: See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
+
+### Quick Start for Contributors
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## 📄 **License**
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 **Acknowledgments**
+
+- [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Vercel](https://vercel.com/) for hosting and analytics
 
 ---
 
@@ -162,4 +188,8 @@ This project is open source and available under the [MIT License](LICENSE).
 - [GitHub](https://github.com/andrewkittridge)
 - [Email](mailto:andrew@kittridge.dev)
 
-*Built with ❤️ using React, TypeScript, and modern web technologies.* 
+*Built with ❤️ using React, TypeScript, and modern web technologies.*
+
+---
+
+**⭐ Star this repo if you found it helpful!** 
