@@ -9,19 +9,19 @@ export default function Education() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('Education');
 
   return (
-    <div ref={sectionRef}>
+    <section id="education" ref={sectionRef}>
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Education & Projects
+          Andrew Kittridge's Education & Projects
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          My foundational education and passion projects.
+          Educational background and personal projects showcasing Java and web development expertise.
         </p>
       </div>
 
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Education Column */}
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -46,10 +46,10 @@ export default function Education() {
               <p className="text-sm text-muted-foreground">{EDUCATION.description}</p>
             </CardContent>
           </Card>
-        </motion.div>
+        </motion.article>
 
         {/* Personal Projects Column */}
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -91,8 +91,8 @@ export default function Education() {
               ))}
             </CardContent>
           </Card>
-        </motion.div>
+        </motion.article>
       </div>
-    </div>
+    </section>
   );
 } 

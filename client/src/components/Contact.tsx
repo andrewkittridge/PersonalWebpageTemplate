@@ -37,16 +37,16 @@ export default function Contact() {
   };
 
   return (
-    <div ref={sectionRef}>
+    <section id="contact" ref={sectionRef}>
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Get in Touch</h2>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Contact Andrew Kittridge</h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          I'm open to new opportunities and collaborations.
+          Get in touch for Java development opportunities, Spring Boot projects, and enterprise application consulting.
         </p>
       </div>
 
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <motion.div
+        <motion.aside
           className="space-y-8"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -56,10 +56,10 @@ export default function Contact() {
           <div className="space-y-4">
             <h3 className="text-2xl font-semibold">Contact Information</h3>
             <p className="text-muted-foreground">
-              Feel free to reach out to me via email, phone, or social media.
+              Feel free to reach out to Andrew Kittridge via email, phone, or social media for Java development and enterprise application opportunities.
             </p>
           </div>
-          <div className="space-y-4 text-muted-foreground">
+          <address className="not-italic space-y-4 text-muted-foreground">
             <div className="flex items-center gap-4">
               <MapPin className="w-5 h-5 text-primary" />
               <span>Greenwood, IN 46142</span>
@@ -68,10 +68,10 @@ export default function Contact() {
               <Mail className="w-5 h-5 text-primary" />
               <span>{SOCIAL_LINKS.email}</span>
             </a>
-            <div className="flex items-center gap-4">
+            <a href={`tel:${SOCIAL_LINKS.phone}`} className="flex items-center gap-4 hover:text-primary transition-colors">
               <Phone className="w-5 h-5 text-primary" />
               <span>{SOCIAL_LINKS.phone}</span>
-            </div>
+            </a>
             <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors">
               <Linkedin className="w-5 h-5 text-primary" />
               <span>LinkedIn</span>
@@ -80,10 +80,10 @@ export default function Contact() {
               <Github className="w-5 h-5 text-primary" />
               <span>GitHub</span>
             </a>
-          </div>
-        </motion.div>
+          </address>
+        </motion.aside>
 
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -91,7 +91,7 @@ export default function Contact() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Send me a message</CardTitle>
+              <CardTitle>Send Andrew Kittridge a message</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -142,8 +142,8 @@ export default function Contact() {
               </Form>
             </CardContent>
           </Card>
-        </motion.div>
+        </motion.article>
       </div>
-    </div>
+    </section>
   );
 }

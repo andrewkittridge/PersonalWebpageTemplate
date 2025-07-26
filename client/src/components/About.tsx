@@ -4,8 +4,10 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const aboutData = {
   description: [
-    "Innovating at the intersection of code and impact.",
-    "Seasoned Full-Stack Engineer with 8 years of expertise building scalable, secure enterprise solutions for the U.S. Marine Corps and government clients. With deep proficiency in Java, Spring Boot, JavaScript, and Oracle PL/SQL, I excel at modernizing legacy systems, optimizing database performance, and delivering STIG-compliant applications. Holding an active Secret Security Clearance, I thrive in Agile/DevOps environments, leveraging AI-driven integrations to solve mission-critical challenges with precision and efficiency.",
+    "Andrew Kittridge is a seasoned Full-Stack Engineer with 8 years of expertise building scalable, secure enterprise solutions for the U.S. Marine Corps and government clients.",
+    "With deep proficiency in Java, Spring Boot, JavaScript, and Oracle PL/SQL, I excel at modernizing legacy systems, optimizing database performance, and delivering STIG-compliant applications.",
+    "Holding an active Secret Security Clearance, I thrive in Agile/DevOps environments, leveraging AI-driven integrations to solve mission-critical challenges with precision and efficiency.",
+    "Currently working at MetroStar in Reston, Virginia, I specialize in U.S. Marine Corps platforms including MROWS (Marine Resource Orders Writing Service) and MCPDT (Marine Corps Permanent Duty Travel) systems.",
   ],
   stats: [
     { icon: <Briefcase className="w-8 h-8 text-primary" aria-hidden="true" />, value: "8", label: "Years of Full-Stack Innovation" },
@@ -20,18 +22,18 @@ export default function About() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('About');
 
   return (
-    <div ref={sectionRef}>
+    <section id="about" ref={sectionRef}>
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-          About Me
+          About Andrew Kittridge
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          A brief introduction to my professional journey and skills.
+          Full-Stack Web Developer specializing in Java, Spring Boot, and Enterprise Applications
         </p>
       </div>
 
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-        <motion.div
+        <motion.article
           className="lg:col-span-2 space-y-6 text-lg text-muted-foreground tesla-card p-6"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -41,9 +43,9 @@ export default function About() {
           {aboutData.description.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
-        </motion.div>
+        </motion.article>
 
-        <motion.div
+        <motion.aside
           className="space-y-8"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -59,8 +61,8 @@ export default function About() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.aside>
       </div>
-    </div>
+    </section>
   );
 }

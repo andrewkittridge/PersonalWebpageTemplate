@@ -1,0 +1,24 @@
+{
+  "name": "Andrew Kittridge - Full Stack Web Developer",
+  "short_name": "Andrew Kittridge",
+  "description": "Andrew Kittridge is a Full Stack Web Developer specializing in Java, Spring Boot, and Enterprise Applications. Expert in U.S. Marine Corps platforms, STIG compliance, and modern web development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/fav.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+} 

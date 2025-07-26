@@ -25,19 +25,19 @@ export default function Skills() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('Skills');
   
   return (
-    <div ref={sectionRef}>
+    <section id="skills" ref={sectionRef}>
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Technical Skills
+          Andrew Kittridge's Technical Skills
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          My arsenal of cutting-edge technologies and methodologies.
+          Comprehensive expertise in Java, Spring Boot, enterprise applications, and modern web development technologies.
         </p>
       </div>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
-          <motion.div
+          <motion.article
             key={category}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,9 +62,9 @@ export default function Skills() {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -8,13 +8,13 @@ export default function Experience() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('Experience');
 
   return (
-    <div ref={sectionRef}>
+    <section id="experience" ref={sectionRef}>
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Work Experience
+          Andrew Kittridge's Work Experience
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          My career highlights and impactful contributions.
+          Professional career highlights and impactful contributions in Java development and enterprise applications.
         </p>
       </div>
 
@@ -22,7 +22,7 @@ export default function Experience() {
         <div className="absolute left-1/2 -ml-px h-full w-px bg-border hidden md:block"></div>
 
         {EXPERIENCE.map((exp, index) => (
-          <motion.div
+          <motion.article
             key={index}
             className={`group relative mb-8 flex md:items-center ${
               index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
@@ -39,10 +39,10 @@ export default function Experience() {
             <div className="w-full md:w-1/2 p-2">
               <ExperienceCard exp={exp} align={index % 2 === 0 ? 'md:text-left' : 'md:text-right'} />
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
