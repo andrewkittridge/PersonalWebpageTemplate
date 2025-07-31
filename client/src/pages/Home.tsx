@@ -26,25 +26,9 @@ export default function Home() {
 
   return (
     <div id="main-content" className="min-h-screen bg-background text-foreground" role="main">
-      {/* Animated gradient background */}
-      <div className="animated-gradient-bg" />
-      
-      {/* Floating particles */}
-      <div className="particles">
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-      </div>
-
       <Navigation />
-      <main className="relative">
+      
+      <main>
         <motion.div style={{ opacity, scale }}>
           <Suspense fallback={<LoadingSpinner />}>
             <Hero />
@@ -55,35 +39,40 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="container mx-auto px-4"
+          className="container mx-auto px-4 max-w-6xl"
         >
-          <section id="about" className="py-20">
+          <section id="about" className="section-spacing">
             <Suspense fallback={<SkeletonCard />}>
               <About />
             </Suspense>
           </section>
-          <section id="experience" className="py-20">
+          
+          <section id="experience" className="section-spacing">
             <Suspense fallback={<SkeletonCard />}>
               <Experience />
             </Suspense>
           </section>
-          <section id="skills" className="py-20">
+          
+          <section id="skills" className="section-spacing">
             <Suspense fallback={<SkeletonCard />}>
               <Skills />
             </Suspense>
           </section>
-          <section id="education" className="py-20">
+          
+          <section id="education" className="section-spacing">
             <Suspense fallback={<SkeletonCard />}>
               <Education />
             </Suspense>
           </section>
-          <section id="contact" className="py-20">
+          
+          <section id="contact" className="section-spacing">
             <Suspense fallback={<SkeletonCard />}>
               <Contact />
             </Suspense>
           </section>
         </motion.div>
       </main>
+      
       <Suspense fallback={null}>
         <Footer />
       </Suspense>

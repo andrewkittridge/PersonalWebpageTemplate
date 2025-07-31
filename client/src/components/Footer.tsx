@@ -1,39 +1,40 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "wouter";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border/50">
-      <div className="container mx-auto px-4 py-8">
+    <footer className="border-t border-border/30 py-12">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <Link href="/" className="text-lg font-bold tracking-tighter">
-              KITTRIDGE
+            <Link href="/" className="text-lg font-light tracking-wide">
+              Andrew Kittridge
             </Link>
-            <p className="text-sm text-muted-foreground mt-1">
-              &copy; {currentYear} Andrew Kittridge. All Rights Reserved.
+            <p className="text-sm text-muted-foreground mt-2">
+              &copy; {currentYear} All Rights Reserved.
             </p>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <a
-              href="https://github.com/your-github"
+              href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               aria-label="GitHub Profile"
             >
-              <FaGithub className="h-6 w-6" />
+              <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/your-linkedin"
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               aria-label="LinkedIn Profile"
             >
-              <FaLinkedin className="h-6 w-6" />
+              <FaLinkedin className="h-5 w-5" />
             </a>
           </div>
         </div>

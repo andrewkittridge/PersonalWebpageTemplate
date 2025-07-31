@@ -5,80 +5,95 @@ import { SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-screen items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-grid-slate-700/[0.04] bg-[length:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]" />
+    <section className="min-h-screen flex items-center justify-center px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="content-spacing"
+        >
+          {/* Typography-focused header */}
+          <header className="text-spacing">
+            <h1 className="text-5xl md:text-7xl font-light tracking-tight text-foreground">
+              Andrew Kittridge
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground font-normal max-w-3xl mx-auto">
+              Full-Stack Web Developer
+            </p>
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
+              Specializing in Java, Spring & Enterprise Modernization
+            </p>
+          </header>
+
+          {/* Contact information with minimal styling */}
+          <address className="not-italic">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+              <a 
+                href={`mailto:${SOCIAL_LINKS.email}`} 
+                className="flex items-center gap-2 hover:text-foreground transition-colors duration-200"
+              >
+                <Mail className="w-4 h-4" aria-hidden="true" />
+                {SOCIAL_LINKS.email}
+              </a>
+              <a 
+                href={SOCIAL_LINKS.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 hover:text-foreground transition-colors duration-200"
+              >
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
+                LinkedIn
+              </a>
+              <a 
+                href={SOCIAL_LINKS.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 hover:text-foreground transition-colors duration-200"
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
+                GitHub
+              </a>
+              <a 
+                href={`tel:${SOCIAL_LINKS.phone}`} 
+                className="flex items-center gap-2 hover:text-foreground transition-colors duration-200"
+              >
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                {SOCIAL_LINKS.phone}
+              </a>
+            </div>
+          </address>
+
+          {/* Minimal action buttons */}
+          <nav className="flex gap-4 justify-center pt-8">
+            <Button size="lg" asChild className="minimal-button minimal-button-primary">
+              <a href="#contact">Get in Touch</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="minimal-button minimal-button-ghost">
+              <a href="#experience">View My Work</a>
+            </Button>
+          </nav>
+        </motion.div>
+
+        {/* Subtle scroll indicator */}
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <a 
+            href="#about" 
+            aria-label="Scroll to about section" 
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            <ArrowDown className="w-5 h-5" aria-hidden="true" />
+          </a>
+        </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center space-y-8"
-      >
-        <div className="flex justify-center items-center mb-4">
-          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center glow-effect">
-            <span className="text-4xl font-bold text-primary">AK</span>
-          </div>
-        </div>
-        
-        <header>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Andrew Kittridge
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl text-muted-foreground mt-4">
-            Full-Stack Web Developer | Java, Spring & Enterprise Modernization
-          </p>
-          <p className="max-w-2xl mx-auto text-lg text-muted-foreground mt-2">
-            Specializing in U.S. Marine Corps platforms, STIG compliance, and modern enterprise applications
-          </p>
-        </header>
-
-        <address className="not-italic">
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <a href={`mailto:${SOCIAL_LINKS.email}`} className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
-              <Mail className="w-4 h-4" aria-hidden="true" />
-              {SOCIAL_LINKS.email}
-            </a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
-              <Linkedin className="w-4 h-4" aria-hidden="true" />
-              LinkedIn
-            </a>
-            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
-              <Github className="w-4 h-4" aria-hidden="true" />
-              GitHub
-            </a>
-            <a href={`tel:${SOCIAL_LINKS.phone}`} className="flex items-center gap-2 hover:text-primary transition-colors glow-effect">
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              {SOCIAL_LINKS.phone}
-            </a>
-          </div>
-        </address>
-
-        <nav className="flex gap-4 justify-center pt-4">
-          <Button size="lg" asChild className="tesla-button glow-effect">
-            <a href="#contact">Get in Touch</a>
-          </Button>
-          <Button size="lg" variant="outline" asChild className="glass-effect glow-effect">
-            <a href="#experience">View My Work</a>
-          </Button>
-        </nav>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute bottom-10"
-      >
-        <a href="#about" aria-label="Scroll to about section" className="glow-effect">
-          <ArrowDown className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" aria-hidden="true" />
-        </a>
-      </motion.div>
     </section>
   );
 }

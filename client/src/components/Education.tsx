@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { GraduationCap, FolderGit2, Link } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { EDUCATION, PERSONAL_PROJECTS } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
@@ -9,88 +7,91 @@ export default function Education() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('Education');
 
   return (
-    <section id="education" ref={sectionRef}>
-      <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Andrew Kittridge's Education & Projects
+    <section ref={sectionRef}>
+      {/* Typography-focused header */}
+      <div className="text-center content-spacing">
+        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
+          Education & Projects
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Educational background and personal projects showcasing Java and web development expertise.
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Education Column */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {/* Education Section */}
         <motion.article
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="minimal-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Card className="h-full">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <div className="p-2 rounded-full bg-primary/10 text-primary">
-                  <GraduationCap className="w-6 h-6" />
-                </div>
-                <CardTitle>Education</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <GraduationCap className="w-5 h-5 text-muted-foreground" />
+              <h3 className="text-lg font-medium text-foreground">Education</h3>
+            </div>
+            
+            <div className="space-y-3">
               <div>
-                <h3 className="text-lg font-semibold">{EDUCATION.degree}</h3>
-                <CardDescription>
-                  {EDUCATION.institution}, {EDUCATION.location} ({EDUCATION.graduationDate})
-                </CardDescription>
+                <h4 className="text-lg font-medium text-foreground">{EDUCATION.degree}</h4>
+                <p className="text-muted-foreground">
+                  {EDUCATION.institution}, {EDUCATION.location}
+                </p>
+                <p className="text-sm text-muted-foreground/70">{EDUCATION.graduationDate}</p>
               </div>
-              <p className="text-sm text-muted-foreground">{EDUCATION.description}</p>
-            </CardContent>
-          </Card>
+              <p className="text-muted-foreground leading-relaxed">{EDUCATION.description}</p>
+            </div>
+          </div>
         </motion.article>
 
-        {/* Personal Projects Column */}
+        {/* Personal Projects Section */}
         <motion.article
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="minimal-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          <Card className="h-full">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <div className="p-2 rounded-full bg-primary/10 text-primary">
-                  <FolderGit2 className="w-6 h-6" />
-                </div>
-                <CardTitle>Personal Projects</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <FolderGit2 className="w-5 h-5 text-muted-foreground" />
+              <h3 className="text-lg font-medium text-foreground">Personal Projects</h3>
+            </div>
+            
+            <div className="space-y-6">
               {PERSONAL_PROJECTS.map((project, index) => (
-                <div key={index}>
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-lg font-semibold">
+                <div key={index} className="space-y-3">
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-medium text-foreground">
                       <a 
                         href={project.url} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="group inline-flex items-center gap-2 hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-2 hover:text-muted-foreground transition-colors duration-200"
                       >
                         <span>{project.title}</span>
                         <Link className="w-4 h-4" />
                       </a>
-                    </h3>
-                    <Badge variant="outline">{project.status}</Badge>
+                    </h4>
+                    <p className="text-sm text-muted-foreground/70">{project.status}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
-                  <ul className="mt-3 list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                  
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                  
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                     {project.highlights.map((highlight, i) => (
-                      <li key={i}>{highlight}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-muted-foreground/50 mt-1">•</span>
+                        <span>{highlight}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
               ))}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </motion.article>
       </div>
     </section>

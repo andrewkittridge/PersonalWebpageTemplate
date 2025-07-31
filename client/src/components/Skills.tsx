@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
-import { Code, Globe, Database, Wrench, User, Star } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Code, Globe, Database, Wrench, User } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const categoryIcons: { [key: string]: JSX.Element } = {
-  languages: <Code className="w-6 h-6" />,
-  webTechnologies: <Globe className="w-6 h-6" />,
-  database: <Database className="w-6 h-6" />,
-  tools: <Wrench className="w-6 h-6" />,
-  personal: <User className="w-6 h-6" />,
+  languages: <Code className="w-5 h-5 text-muted-foreground" />,
+  webTechnologies: <Globe className="w-5 h-5 text-muted-foreground" />,
+  database: <Database className="w-5 h-5 text-muted-foreground" />,
+  tools: <Wrench className="w-5 h-5 text-muted-foreground" />,
+  personal: <User className="w-5 h-5 text-muted-foreground" />,
 };
 
 const categoryTitles: { [key: string]: string } = {
@@ -25,43 +23,46 @@ export default function Skills() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('Skills');
   
   return (
-    <section id="skills" ref={sectionRef}>
-      <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Andrew Kittridge's Technical Skills
+    <section ref={sectionRef}>
+      {/* Typography-focused header */}
+      <div className="text-center content-spacing">
+        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
+          Skills
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Comprehensive expertise in Java, Spring Boot, enterprise applications, and modern web development technologies.
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Simplified skills grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
           <motion.article
             key={category}
-            initial={{ opacity: 0, y: 50 }}
+            className="minimal-card"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
           >
-            <Card className="h-full transform transition-transform duration-300 hover:scale-105">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <div className="p-2 rounded-full bg-primary/10 text-primary">
-                  {categoryIcons[category]}
-                </div>
-                <CardTitle>{categoryTitles[category] || category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary">
-                      {skill.includes("(expert-level)") ? <Star className="w-3 h-3 mr-1 text-amber-400" /> : null}
-                      {skill.replace(" (expert-level)", "").replace(" (advanced)", "")}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div className="space-y-4">
+              {/* Category header */}
+              <div className="flex items-center gap-3">
+                {categoryIcons[category]}
+                <h3 className="text-lg font-medium text-foreground">
+                  {categoryTitles[category] || category}
+                </h3>
+              </div>
+
+              {/* Skills list */}
+              <div className="space-y-2">
+                {skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className="text-sm text-muted-foreground">
+                    {skill.replace(" (expert-level)", "").replace(" (advanced)", "")}
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.article>
         ))}
       </div>
