@@ -9,11 +9,42 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  languages: ["Java", "JavaScript"],
-  webTechnologies: ["Spring Boot (MVC, Security)", "Struts", "jQuery", "RESTful APIs", "SOAP", "HTML5", "CSS3"],
-  database: ["Oracle SQL", "PL/SQL"],
-  tools: ["Maven", "Git", "Agile (Scrum, Kanban)", "STIG Compliance", "Secret Security Clearance"],
-  personal: ["React", "LLM API Integration"]
+  languages: ["Java", "JavaScript", "TypeScript"],
+  webTechnologies: [
+    "Spring Boot (MVC, Security, Data)", 
+    "Spring MVC", 
+    "Spring Security", 
+    "Spring Data JPA",
+    "Struts", 
+    "jQuery", 
+    "RESTful APIs", 
+    "SOAP", 
+    "HTML5", 
+    "CSS3",
+    "Thymeleaf",
+    "JSP"
+  ],
+  database: [
+    "Oracle SQL", 
+    "PL/SQL", 
+    "Oracle Database Administration",
+    "SQL Performance Tuning",
+    "Database Design & Optimization",
+    "Oracle Forms & Reports"
+  ],
+  tools: [
+    "Maven", 
+    "Git", 
+    "Agile (Scrum, Kanban)", 
+    "STIG Compliance", 
+    "Secret Security Clearance",
+    "Oracle SQL Developer",
+    "Oracle Enterprise Manager",
+    "Jenkins CI/CD",
+    "Docker",
+    "Microservices Architecture"
+  ],
+  personal: ["React", "LLM API Integration", "Node.js", "Express.js"]
 };
 
 export const EXPERIENCE = [
