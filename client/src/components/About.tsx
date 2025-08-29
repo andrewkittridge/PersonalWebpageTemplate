@@ -22,45 +22,68 @@ export default function About() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>('About');
 
   return (
-    <section ref={sectionRef}>
-      {/* Typography-focused header */}
-      <div className="text-center content-spacing">
-        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
+    <section
+      ref={sectionRef}
+      id="about"
+      aria-labelledby="about-heading"
+      className="scroll-mt-16"
+    >
+      {/* Enhanced typography-focused header */}
+      <header className="text-center space-y-fluid">
+        <h2
+          id="about-heading"
+          className="text-heading-1 text-foreground"
+        >
           About
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-body-large text-muted-foreground max-w-3xl mx-auto">
           Full-Stack Web Developer specializing in Java, Spring Boot, and Enterprise Applications
         </p>
-      </div>
+      </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
-        {/* Main content with generous spacing */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
+        {/* Enhanced main content */}
         <motion.article
-          className="lg:col-span-2 space-y-6 text-lg text-muted-foreground leading-relaxed"
+          className="lg:col-span-2 space-y-fluid text-body text-muted-foreground"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {aboutData.description.map((paragraph, index) => (
-            <p key={index} className="text-spacing">{paragraph}</p>
+            <p key={index} className="leading-relaxed">{paragraph}</p>
           ))}
         </motion.article>
 
-        {/* Minimal stats section */}
+        {/* Enhanced stats section */}
         <motion.aside
-          className="space-y-6"
+          className="space-y-fluid"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          aria-label="Key achievements and statistics"
         >
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             {aboutData.stats.map((stat, index) => (
-              <div key={index} className="text-center p-4 minimal-card">
-                {stat.icon}
-                <p className="mt-3 text-2xl font-light text-foreground">{stat.value}</p>
-                <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+              <div
+                key={index}
+                className="elevated-card text-center p-6 group"
+                role="region"
+                aria-labelledby={`stat-${index}-value`}
+              >
+                <div className="flex justify-center mb-4" aria-hidden="true">
+                  {stat.icon}
+                </div>
+                <p
+                  id={`stat-${index}-value`}
+                  className="text-heading-3 font-light text-foreground mb-2"
+                >
+                  {stat.value}
+                </p>
+                <p className="text-body-small text-muted-foreground leading-snug">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
