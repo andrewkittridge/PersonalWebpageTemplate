@@ -101,8 +101,8 @@ export function PageSkeleton() {
 
       {/* Content skeletons */}
       {[1, 2, 3].map((i) => (
-        <section key={i} className="section-spacing">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section key={i} className="py-16">
+          <div className="page-shell">
             <div className="text-center space-y-4 mb-12">
               <SkeletonLoader className="h-12 w-48 mx-auto" />
               <SkeletonLoader className="h-6 w-96 mx-auto" />

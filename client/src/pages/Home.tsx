@@ -16,63 +16,59 @@ const Footer = lazy(() => import("@/components/Footer"));
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.97]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.9]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.96]);
 
-  // Track page view when component mounts
   useEffect(() => {
-    trackPageView('Home');
+    trackPageView("Home");
   }, []);
 
   return (
-    <div id="main-content" className="min-h-screen bg-background text-foreground" role="main">
+    <div
+      id="main-content"
+      className="relative min-h-screen bg-background text-foreground"
+      role="main"
+    >
+      <div className="grid-line" aria-hidden />
+      <div className="beam beam--cool" aria-hidden />
+
       <Navigation />
-      
-      <main>
-        <motion.div style={{ opacity, scale }}>
+
+      <main className="relative isolate overflow-hidden pb-20">
+        <motion.div style={{ opacity: heroOpacity, scale: heroScale }}>
           <Suspense fallback={<LoadingSpinner />}>
             <Hero />
           </Suspense>
         </motion.div>
-        
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="container mx-auto px-4 max-w-6xl"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-col"
         >
-          <section id="about" className="section-spacing">
-            <Suspense fallback={<SkeletonCard />}>
-              <About />
-            </Suspense>
-          </section>
-          
-          <section id="experience" className="section-spacing">
-            <Suspense fallback={<SkeletonCard />}>
-              <Experience />
-            </Suspense>
-          </section>
-          
-          <section id="skills" className="section-spacing">
-            <Suspense fallback={<SkeletonCard />}>
-              <Skills />
-            </Suspense>
-          </section>
-          
-          <section id="education" className="section-spacing">
-            <Suspense fallback={<SkeletonCard />}>
-              <Education />
-            </Suspense>
-          </section>
-          
-          <section id="contact" className="section-spacing">
-            <Suspense fallback={<SkeletonCard />}>
-              <Contact />
-            </Suspense>
-          </section>
+          <Suspense fallback={<SkeletonCard />}>
+            <About />
+          </Suspense>
+
+          <Suspense fallback={<SkeletonCard />}>
+            <Experience />
+          </Suspense>
+
+          <Suspense fallback={<SkeletonCard />}>
+            <Skills />
+          </Suspense>
+
+          <Suspense fallback={<SkeletonCard />}>
+            <Education />
+          </Suspense>
+
+          <Suspense fallback={<SkeletonCard />}>
+            <Contact />
+          </Suspense>
         </motion.div>
       </main>
-      
+
       <Suspense fallback={null}>
         <Footer />
       </Suspense>

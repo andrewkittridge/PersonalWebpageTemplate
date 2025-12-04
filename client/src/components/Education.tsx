@@ -4,96 +4,111 @@ import { EDUCATION, PERSONAL_PROJECTS } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 export default function Education() {
-  const sectionRef = useSectionAnalytics<HTMLDivElement>('Education');
+  const sectionRef = useSectionAnalytics<HTMLDivElement>("Education");
 
   return (
-    <section ref={sectionRef}>
-      {/* Typography-focused header */}
-      <div className="text-center content-spacing">
-        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
-          Education & Projects
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Educational background and personal projects showcasing Java and web development expertise.
-        </p>
-      </div>
+    <section
+      ref={sectionRef}
+      id="education"
+      className="section-shell scroll-mt-24"
+    >
+      <div className="page-shell relative z-10 space-y-12">
+        <div className="section-heading">
+          <p className="section-label">Growth</p>
+          <h2 className="section-title">Disciplined craft. Purposeful builds.</h2>
+          <p className="section-description">
+            Formal computer science foundations paired with personal initiatives keep my
+            approach grounded and imaginative.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Education Section */}
-        <motion.article
-          className="minimal-card"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <GraduationCap className="w-5 h-5 text-muted-foreground" />
-              <h3 className="text-lg font-medium text-foreground">Education</h3>
+        <div className="grid gap-10 lg:grid-cols-2">
+          <motion.article
+            className="surface-card"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span className="icon-badge">
+                <GraduationCap className="w-5 h-5" />
+              </span>
+              <h3 className="text-lg font-semibold text-foreground">Education</h3>
             </div>
-            
-            <div className="space-y-3">
+
+            <div className="space-y-4 text-muted-foreground">
               <div>
-                <h4 className="text-lg font-medium text-foreground">{EDUCATION.degree}</h4>
-                <p className="text-muted-foreground">
-                  {EDUCATION.institution}, {EDUCATION.location}
+                <p className="text-xl font-semibold text-foreground">
+                  {EDUCATION.degree}
                 </p>
-                <p className="text-sm text-muted-foreground/70">{EDUCATION.graduationDate}</p>
+                <p>
+                  {EDUCATION.institution} · {EDUCATION.location}
+                </p>
+                <p className="text-sm text-muted-foreground/80">
+                  {EDUCATION.graduationDate}
+                </p>
               </div>
-              <p className="text-muted-foreground leading-relaxed">{EDUCATION.description}</p>
+              {EDUCATION.description && (
+                <p className="leading-relaxed">{EDUCATION.description}</p>
+              )}
+              <ul className="list-disc list-inside text-sm text-muted-foreground/90 space-y-1">
+                <li>Software engineering focus with security electives</li>
+                <li>Founded the campus dev mentorship guild</li>
+                <li>Graduated while delivering on-the-job IT support</li>
+              </ul>
             </div>
-          </div>
-        </motion.article>
+          </motion.article>
 
-        {/* Personal Projects Section */}
-        <motion.article
-          className="minimal-card"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        >
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <FolderGit2 className="w-5 h-5 text-muted-foreground" />
-              <h3 className="text-lg font-medium text-foreground">Personal Projects</h3>
+          <motion.article
+            className="surface-card"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span className="icon-badge">
+                <FolderGit2 className="w-5 h-5" />
+              </span>
+              <h3 className="text-lg font-semibold text-foreground">
+                Personal projects
+              </h3>
             </div>
-            
+
             <div className="space-y-6">
-              {PERSONAL_PROJECTS.map((project, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="space-y-2">
-                    <h4 className="text-lg font-medium text-foreground">
-                      <a 
-                        href={project.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 hover:text-muted-foreground transition-colors duration-200"
-                      >
-                        <span>{project.title}</span>
-                        <Link className="w-4 h-4" />
-                      </a>
-                    </h4>
-                    <p className="text-sm text-muted-foreground/70">{project.status}</p>
+              {PERSONAL_PROJECTS.map((project) => (
+                <div key={project.title} className="space-y-4">
+                  <div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {project.title}
+                      <Link className="w-4 h-4" />
+                    </a>
+                    <p className="text-sm text-muted-foreground/80 mt-1">
+                      {project.status}
+                    </p>
                   </div>
-                  
-                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                  
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-muted-foreground/50 mt-1">•</span>
-                        <span>{highlight}</span>
-                      </li>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.highlights.map((highlight) => (
+                      <span key={highlight} className="pill-ghost px-3 py-2">
+                        {highlight}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </motion.article>
+          </motion.article>
+        </div>
       </div>
     </section>
   );
-} 
+}

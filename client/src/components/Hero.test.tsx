@@ -1,25 +1,34 @@
-import { render, screen } from '@testing-library/react';
-import Hero from './Hero';
-import { SOCIAL_LINKS } from '@/lib/constants';
+import { render, screen } from "@testing-library/react";
+import Hero from "./Hero";
 
-describe('Hero Component', () => {
-  it('renders the name and title', () => {
+describe("Hero Component", () => {
+  it("renders the hero headline and subtitle", () => {
     render(<Hero />);
-    expect(screen.getByText('Andrew Kittridge')).toBeInTheDocument();
-    expect(screen.getByText('Full-Stack Web Developer | Java, Spring & Enterprise Modernization')).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /Build decisive systems/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/secure software/i)
+    ).toBeInTheDocument();
   });
 
-  it('renders social links', () => {
+  it("highlights primary contact actions", () => {
     render(<Hero />);
-    expect(screen.getByText(SOCIAL_LINKS.email)).toBeInTheDocument();
-    expect(screen.getByText('LinkedIn')).toBeInTheDocument();
-    expect(screen.getByText('GitHub')).toBeInTheDocument();
-    expect(screen.getByText(SOCIAL_LINKS.phone)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /engage andrew/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /track record/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /linkedin/i })
+    ).toBeInTheDocument();
   });
 
-  it('renders buttons', () => {
+  it("lists modernization highlights", () => {
     render(<Hero />);
-    expect(screen.getByText('Get in Touch')).toBeInTheDocument();
-    expect(screen.getByText('View My Work')).toBeInTheDocument();
+    expect(screen.getByText(/8\+ yrs enterprise delivery/i)).toBeInTheDocument();
+    expect(screen.getByText(/Active Secret clearance/i)).toBeInTheDocument();
+    expect(screen.getByText(/USMC platforms/i)).toBeInTheDocument();
   });
-}); 
+});

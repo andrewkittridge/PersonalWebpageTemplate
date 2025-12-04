@@ -3,68 +3,82 @@ import { Code, Globe, Database, Wrench, User } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
-const categoryIcons: { [key: string]: JSX.Element } = {
-  languages: <Code className="w-5 h-5 text-muted-foreground" />,
-  webTechnologies: <Globe className="w-5 h-5 text-muted-foreground" />,
-  database: <Database className="w-5 h-5 text-muted-foreground" />,
-  tools: <Wrench className="w-5 h-5 text-muted-foreground" />,
-  personal: <User className="w-5 h-5 text-muted-foreground" />,
+const categoryIcons: Record<string, JSX.Element> = {
+  languages: <Code className="w-5 h-5" />,
+  webTechnologies: <Globe className="w-5 h-5" />,
+  database: <Database className="w-5 h-5" />,
+  tools: <Wrench className="w-5 h-5" />,
+  personal: <User className="w-5 h-5" />,
 };
 
-const categoryTitles: { [key: string]: string } = {
+const categoryTitles: Record<string, string> = {
   languages: "Languages",
   webTechnologies: "Web Technologies",
-  database: "Database",
-  tools: "Tools & Methodologies",
-  personal: "Personal & Emerging Tech"
+  database: "Data & Storage",
+  tools: "Tooling & Delivery",
+  personal: "Emerging Tech",
 };
 
 export default function Skills() {
-  const sectionRef = useSectionAnalytics<HTMLDivElement>('Skills');
-  
-  return (
-    <section ref={sectionRef}>
-      {/* Typography-focused header */}
-      <div className="text-center content-spacing">
-        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
-          Skills
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Comprehensive expertise in Java, Spring Boot, enterprise applications, and modern web development technologies.
-        </p>
-      </div>
+  const sectionRef = useSectionAnalytics<HTMLDivElement>("Skills");
 
-      {/* Simplified skills grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
-          <motion.article
-            key={category}
-            className="minimal-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-          >
-            <div className="space-y-4">
-              {/* Category header */}
-              <div className="flex items-center gap-3">
-                {categoryIcons[category]}
-                <h3 className="text-lg font-medium text-foreground">
-                  {categoryTitles[category] || category}
-                </h3>
+  return (
+    <section
+      ref={sectionRef}
+      id="skills"
+      className="section-shell scroll-mt-24"
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(900px at 50% 8%, rgba(224,180,120,0.24), transparent 55%)",
+        }}
+        aria-hidden
+      />
+
+      <div className="page-shell relative z-10 space-y-12">
+        <div className="section-heading">
+          <p className="section-label">Capabilities</p>
+          <h2 className="section-title">Build systems that stay online.</h2>
+          <p className="section-description">
+            JVM performance tuning, secure Spring services, and resilient front-ends combine
+            with pragmatic delivery so teams keep shipping without drama.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
+            <motion.article
+              key={category}
+              className="surface-card"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.05, ease: "easeOut" }}
+            >
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <div className="flex items-center gap-3">
+                  <span className="icon-badge">
+                    {categoryIcons[category] ?? <Code className="w-5 h-5" />}
+                  </span>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {categoryTitles[category] || category}
+                  </h3>
+                </div>
+                <span className="chip-ghost">{skills.length} items</span>
               </div>
 
-              {/* Skills list */}
-              <div className="space-y-2">
-                {skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span key={skill} className="pill-ghost px-3 py-2">
                     {skill.replace(" (expert-level)", "").replace(" (advanced)", "")}
-                  </div>
+                  </span>
                 ))}
               </div>
-            </div>
-          </motion.article>
-        ))}
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );

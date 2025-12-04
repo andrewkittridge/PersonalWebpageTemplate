@@ -1,150 +1,91 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Send, ShieldCheck, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
+
+const promptSuggestions = [
+  "Ship secure Spring Boot releases",
+  "Modernize USMC workflows",
+  "Simplify release pipelines",
+  "Trim Oracle latency",
+];
 
 export default function Hero() {
   return (
     <section
-      className="min-h-screen flex items-center justify-center px-4 relative"
       aria-labelledby="hero-heading"
+      className="relative isolate overflow-hidden min-h-[88vh] pt-28 pb-16 lg:pb-24 flex items-center"
     >
-      <div className="max-w-5xl mx-auto text-center">
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(1100px at 78% 32%, rgba(224,180,120,0.28), transparent 55%), radial-gradient(900px at 18% 60%, rgba(90,121,255,0.18), transparent 50%)",
+        }}
+        aria-hidden
+      />
+      <div className="beam beam--tight" aria-hidden />
+      <div className="grid-line" aria-hidden />
+
+      <div className="page-shell relative z-10 grid gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="content-spacing"
+          className="space-y-8"
         >
-          {/* Enhanced typography-focused header */}
-          <header className="space-y-fluid">
-            <h1
-              id="hero-heading"
-              className="text-display text-foreground"
-            >
-              Andrew Kittridge
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            <ShieldCheck className="h-4 w-4 text-primary" />
+            Secret cleared · Mission-ready
+          </div>
+
+          <header className="space-y-6">
+            <p className="section-label">Full-stack engineer</p>
+            <h1 id="hero-heading" className="section-title">
+              Build decisive systems for teams that can&apos;t miss.
             </h1>
-            <p className="text-heading-2 text-muted-foreground font-normal max-w-4xl mx-auto">
-              Full-Stack Web Developer
-            </p>
-            <p className="text-body-large text-muted-foreground/80 max-w-3xl mx-auto">
-              Specializing in Java, Spring & Enterprise Modernization
+            <p className="section-description">
+              Andrew Kittridge architects secure software for the U.S. Marine Corps and
+              enterprise leaders—pairing Java/Spring rigor with React fluency and Oracle
+              performance tuning.
             </p>
           </header>
 
-          {/* Enhanced contact information */}
-          <address className="not-italic">
-            <nav aria-label="Contact information">
-              <ul className="flex flex-wrap items-center justify-center gap-6 text-body-small text-muted-foreground">
-                <li>
-                  <a
-                    href={`mailto:${SOCIAL_LINKS.email}`}
-                    className="flex items-center gap-2 hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                    aria-label={`Send email to ${SOCIAL_LINKS.email}`}
-                  >
-                    <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    <span className="hidden sm:inline">{SOCIAL_LINKS.email}</span>
-                    <span className="sm:hidden">Email</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={SOCIAL_LINKS.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                    aria-label="Visit LinkedIn profile (opens in new tab)"
-                  >
-                    <Linkedin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={SOCIAL_LINKS.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                    aria-label="Visit GitHub profile (opens in new tab)"
-                  >
-                    <Github className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${SOCIAL_LINKS.phone}`}
-                    className="flex items-center gap-2 hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                    aria-label={`Call ${SOCIAL_LINKS.phone}`}
-                  >
-                    <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    <span className="hidden sm:inline">{SOCIAL_LINKS.phone}</span>
-                    <span className="sm:hidden">Call</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </address>
+          <div className="flex flex-wrap items-center gap-3">
+            <a href="#contact" className="pill-solid">
+              Engage Andrew
+              <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden />
+            </a>
+            <a
+              href="#experience"
+              className="pill-ghost"
+            >
+              Track record
+              <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
+            </a>
+            <a
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="pill-ghost"
+            >
+              LinkedIn
+            </a>
+          </div>
 
-          {/* Enhanced action buttons */}
-          <nav
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
-            aria-label="Primary actions"
-          >
-            <Button
-              size="lg"
-              asChild
-              className="minimal-button-primary text-base px-8 py-3 h-auto"
-            >
-              <a
-                href="#contact"
-                aria-describedby="contact-description"
-              >
-                Get in Touch
-                <span id="contact-description" className="sr-only">
-                  Navigate to contact section
+          <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+            {["8+ yrs enterprise delivery", "Active Secret clearance", "USMC platforms", "Operational modernization"].map(
+              (item) => (
+                <span key={item} className="chip-ghost">
+                  {item}
                 </span>
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="minimal-button-ghost text-base px-8 py-3 h-auto border-2"
-            >
-              <a
-                href="#experience"
-                aria-describedby="work-description"
-              >
-                View My Work
-                <span id="work-description" className="sr-only">
-                  Navigate to experience section
-                </span>
-              </a>
-            </Button>
-          </nav>
+              ),
+            )}
+          </div>
         </motion.div>
 
-        {/* Enhanced scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <a
-            href="#about"
-            aria-label="Scroll to about section"
-            className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md p-2"
-          >
-            <span className="text-caption">Scroll</span>
-            <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" aria-hidden="true" />
-          </a>
-        </motion.div>
       </div>
+
+      <p className="hero-watermark absolute bottom-6 left-4">Kittridge</p>
     </section>
   );
 }

@@ -42,23 +42,43 @@ export const SKILLS_CATEGORIES = {
     "Oracle Enterprise Manager",
     "Jenkins CI/CD",
     "Docker",
-    "Microservices Architecture"
+    "Microservices Architecture",
+    "Cursor (AI pair programming, refactors, tests)"
   ],
-  personal: ["React", "LLM API Integration", "Node.js", "Express.js"]
+  personal: [
+    "React", 
+    "LLM API Integration (x.ai Grok API)", 
+    "Node.js", 
+    "Express.js",
+    "iOS (SwiftUI, Xcode, TestFlight/App Store Connect)",
+    "Agentic coding workflows (LLM planning/execution)"
+  ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Web Developer",
+    title: "Senior Web Developer / Team Lead",
     company: "MetroStar",
     location: "Reston, VA",
     period: "November 2022 – Present",
     achievements: [
-      "Architected and optimized critical U.S. Marine Corps platforms, including the Marine Resource Orders Writing Service (MROWS) for streamlined personnel order management and the Marine Corps Permanent Duty Travel (MCPDT) for efficient travel entitlement processing.",
-      "Built robust, STIG-compliant Java and Spring Boot solutions for MROWS, automating workflows and unlocking 25% operational efficiency gains.",
-      "Slashed Oracle SQL query latencies by 30% via targeted refactoring, indexing optimizations, and performance tuning, elevating app responsiveness.",
-      "Led the migration of a legacy Struts app to Spring Boot microservices, boosting maintainability by 20% and enabling faster iterations.",
-      "Mentored emerging developers on Spring Boot best practices and Agile methodologies, slashing onboarding times by 40% and building a collaborative, high-velocity team."
+      "Team lead and senior developer for USMC platforms (MROWS, MCPDT), tightening orders and travel flows for operators.",
+      "Deliver STIG-compliant Spring Boot services that automate approval and entitlement workflows, improving throughput by ~25%.",
+      "Cut Oracle SQL latency ~30% via targeted query refactors, indexing, and instrumentation to surface slow paths.",
+      "Led Struts-to-Spring Boot service migration, improving maintainability by ~20% and unblocking faster release cadence.",
+      "Mentor engineers on Spring/React patterns and reviews; shortened onboarding by ~40% with pairing and playbooks."
+    ]
+  },
+  {
+    title: "Founder & Builder",
+    company: "Lumin Faith",
+    location: "Indianapolis, IN",
+    period: "November 2024 – Present",
+    url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
+    achievements: [
+      "Designed, engineered, and shipped Lumin Faith (SwiftUI) to the App Store: AI faith conversations, daily verses, study plans, and prayer journal.",
+      "Built premium tier (higher AI limits, advanced insights, cloud sync) with respectful notifications, widgets, and liturgical season awareness.",
+      "Integrated x.ai Grok API and agentic workflows (Cursor) to generate study prompts, refine copy, and accelerate QA; shipped via TestFlight iterations."
     ]
   },
   {
@@ -67,10 +87,10 @@ export const EXPERIENCE = [
     location: "Fairfax, VA",
     period: "July 2018 – November 2022",
     achievements: [
-      "Drove feature innovations and maintenance for the U.S. Marine Corps' Document Tracking and Management System (DTMS), managing official docs and training records.",
-      "Elevated DTMS front-end experiences with jQuery and HTML5, crafting intuitive interfaces that cut user errors by 10%.",
-      "Engineered STIG-compliant Java and Spring applications in secure environments, delivering 100% alignment with federal security mandates.",
-      "Collaborated in Agile squads to debug and resolve intricate issues, ensuring 24/7 uptime for essential USMC systems."
+      "Built and maintained DTMS (USMC document/training tracking), balancing feature delivery with strict uptime goals.",
+      "Refined jQuery/HTML5 UI flows that reduced user error rates by ~10% and lowered ticket volume.",
+      "Shipped STIG-compliant Java/Spring components in secure environments with consistent audit pass rates.",
+      "Worked in agile squads to triage and resolve production issues quickly, keeping essential systems stable."
     ]
   },
   {
@@ -79,8 +99,8 @@ export const EXPERIENCE = [
     location: "Arlington, VA",
     period: "July 2017 – July 2018",
     achievements: [
-      "Pivoted key contributions to a large-scale Struts-to-Spring migration, teaming with seniors to amplify scalability and performance.",
-      "Provided mission-critical support for enterprise apps like DTMS and the Unit Deployment Management Information Processing System (UDMIPS) for deployment logistics, guaranteeing reliability in high-pressure scenarios."
+      "Supported large Struts-to-Spring migration efforts, pairing with senior engineers to improve scalability and performance.",
+      "Provided application support for DTMS and UDMIPS deployment-logistics tooling, maintaining reliability for operational teams."
     ]
   }
 ];
@@ -96,13 +116,16 @@ export const EDUCATION = {
 export const PERSONAL_PROJECTS = [
   {
     title: "Lumin Faith",
-    status: "Personal Initiative",
-    url: "https://lumin.faith",
-    description: "Fueled by a passion for fusing tech with faith, Lumin Faith reimagines Bible study as an interactive, AI-enhanced journey. As a committed Christian, I design tools to empower deeper scriptural engagement for the community.",
+    status: "Solo build · App Store",
+    url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
+    description: "AI-guided, Christ-centered Bible companion built end-to-end: Scripture study, prayer journaling, and reflective prompts designed, engineered, and shipped solo.",
     highlights: [
-      "Explore: Dive into biblical history and cultural nuances.",
-      "Learn: Unlock AI-generated explanations and insights for clarity.",
-      "Grow: Uncover thematic threads and accelerate spiritual evolution."
+      "AI Faith Conversations: warm, Christ-centered responses across devotional, historical, applicational, Christ-centered, contemplative modes.",
+      "Personalized daily verses and guided study plans (book-by-book and theme-based) with quizzes and progress tracking.",
+      "Prayer journal with AI prompts and reflective analysis for insights and gratitude capture.",
+      "Liturgical season awareness (Advent, Lent, Easter) plus gentle habits like streaks, respectful notifications, and serene widgets.",
+      "LuminFaith Premium: unlocks higher AI limits, advanced insights, and ad-free experience with cloud sync and priority updates.",
+      "SwiftUI + Xcode pipeline from prototype through TestFlight to App Store with agentic workflows (Cursor + x.ai Grok API)."
     ]
   }
 ];
