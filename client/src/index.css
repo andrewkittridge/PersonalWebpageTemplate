@@ -6,25 +6,25 @@
 
 @layer base {
   :root {
-    --background: 225 16% 5%;
+    --background: 225 16% 4%;
     --foreground: 215 8% 92%;
     --card: 223 14% 8%;
     --card-foreground: 215 8% 92%;
     --popover: 223 14% 8%;
     --popover-foreground: 215 8% 92%;
-    --primary: 36 92% 72%;
+    --primary: 36 92% 74%;
     --primary-foreground: 228 21% 8%;
     --secondary: 225 12% 16%;
     --secondary-foreground: 215 8% 92%;
     --muted: 225 10% 18%;
     --muted-foreground: 215 10% 68%;
-    --accent: 220 12% 12%;
-    --accent-foreground: 215 8% 92%;
+    --accent: 195 78% 63%;
+    --accent-foreground: 225 16% 6%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
     --border: 225 10% 22%;
     --input: 225 10% 22%;
-    --ring: 36 92% 72%;
+    --ring: 36 92% 74%;
     --radius: 1.6rem;
   }
 
@@ -62,11 +62,12 @@
       "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #050505;
+    background-color: #040507;
     background-image:
-      radial-gradient(1100px at 78% 18%, rgba(224, 180, 120, 0.2), transparent 58%),
-      radial-gradient(900px at 18% 62%, rgba(90, 121, 255, 0.16), transparent 52%),
-      linear-gradient(140deg, #050505 0%, #050505 55%, #0a0806 100%);
+      radial-gradient(1100px at 78% 18%, rgba(224, 180, 120, 0.18), transparent 58%),
+      radial-gradient(980px at 20% 64%, rgba(68, 200, 255, 0.2), transparent 52%),
+      radial-gradient(800px at 48% 28%, rgba(110, 120, 255, 0.12), transparent 50%),
+      conic-gradient(from 120deg at 60% 50%, #07090f 0deg, #0c0d12 110deg, #040507 210deg, #050509 320deg);
     background-attachment: fixed;
     color: hsl(var(--foreground));
   }
@@ -165,6 +166,65 @@
     font-size: clamp(96px, 18vw, 220px);
     letter-spacing: -0.05em;
     line-height: 0.9;
+  }
+
+  .console-pane {
+    @apply rounded-[32px] border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.8)];
+    box-shadow:
+      0 30px 100px -70px rgba(0, 0, 0, 0.9),
+      0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+      0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+
+  .ops-stack {
+    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/5 via-white/10 to-white/0 p-6 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.9)];
+  }
+
+  .ops-card {
+    @apply rounded-2xl border border-white/10 bg-black/40 px-5 py-4 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)];
+  }
+
+  .ops-bar {
+    @apply h-1.5 w-full overflow-hidden rounded-full bg-white/5;
+  }
+
+  .ops-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-primary via-accent to-white;
+  }
+
+  .module-chrome {
+    @apply flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-muted-foreground;
+  }
+
+  .telemetry-grid {
+    @apply grid gap-4 rounded-[28px] border border-white/10 bg-black/50 p-6 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.8)] backdrop-blur-xl;
+  }
+
+  .telemetry-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.24em] text-muted-foreground;
+  }
+
+  .mission-rail {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-5 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.9)] backdrop-blur-xl;
+  }
+
+  .mission-rail__item {
+    @apply flex items-start justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 via-white/0 to-white/0 px-4 py-4;
+  }
+
+  .mission-grid {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 80% at 60% 10%, rgba(224, 180, 120, 0.16), transparent),
+      radial-gradient(50% 60% at 18% 70%, rgba(68, 200, 255, 0.14), transparent),
+      linear-gradient(110deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 70%),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 140px 140px, 140px 140px;
+    mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .prompt-shell {
