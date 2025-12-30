@@ -12,6 +12,7 @@ const Experience = lazy(() => import("@/components/Experience"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Education = lazy(() => import("@/components/Education"));
 const Contact = lazy(() => import("@/components/Contact"));
+const Principles = lazy(() => import("@/components/Principles"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 export default function Home() {
@@ -42,13 +43,17 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.25, ease: "easeOut" }}
           className="flex flex-col"
         >
           <Suspense fallback={<SkeletonCard />}>
             <About />
+          </Suspense>
+
+          <Suspense fallback={<SkeletonCard />}>
+            <Principles />
           </Suspense>
 
           <Suspense fallback={<SkeletonCard />}>

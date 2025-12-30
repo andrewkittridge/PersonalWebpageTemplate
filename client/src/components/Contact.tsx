@@ -71,11 +71,11 @@ export default function Contact() {
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.aside
-            className="glass-panel"
-            initial={{ opacity: 0, y: 24 }}
+            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-10 space-y-8"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.95, ease: "easeOut" }}
           >
             <div className="space-y-6">
               <div>
@@ -134,7 +134,7 @@ export default function Contact() {
                   { label: "Focus", value: "Java · Spring · React" },
                   { label: "Engagements", value: "Hybrid or Remote" },
                 ].map((item) => (
-                  <div key={item.label} className="stat-card text-left">
+                  <div key={item.label} className="text-left rounded-[22px] border border-white/10 px-5 py-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
                       {item.label}
                     </p>
@@ -148,11 +148,11 @@ export default function Contact() {
           </motion.aside>
 
           <motion.article
-            className="surface-card"
-            initial={{ opacity: 0, y: 24 }}
+            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-10"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
           >
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-foreground">

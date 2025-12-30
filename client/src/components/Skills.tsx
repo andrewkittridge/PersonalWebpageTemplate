@@ -51,11 +51,11 @@ export default function Skills() {
           {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
             <motion.article
               key={category}
-              className="surface-card"
-              initial={{ opacity: 0, y: 24 }}
+              className="rounded-[26px] border border-white/10 bg-transparent px-6 py-7 md:px-7 md:py-8"
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05, ease: "easeOut" }}
+              transition={{ duration: 0.9, delay: index * 0.06, ease: "easeOut" }}
             >
               <div className="flex items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3">
