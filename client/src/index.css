@@ -177,7 +177,7 @@
   }
 
   .ops-stack {
-    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/5 via-white/10 to-white/0 p-6 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.9)];
+    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/5 via-white/3 to-white/0 p-6 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.9)];
   }
 
   .ops-card {
