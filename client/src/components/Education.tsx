@@ -24,11 +24,11 @@ export default function Education() {
 
         <div className="grid gap-10 lg:grid-cols-2">
           <motion.article
-            className="surface-card"
-            initial={{ opacity: 0, y: 24 }}
+            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-9"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.95, ease: "easeOut" }}
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="icon-badge">
@@ -61,11 +61,11 @@ export default function Education() {
           </motion.article>
 
           <motion.article
-            className="surface-card"
-            initial={{ opacity: 0, y: 24 }}
+            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-9"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="icon-badge">

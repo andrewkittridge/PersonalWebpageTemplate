@@ -28,9 +28,9 @@ export default function Hero() {
 
       <div className="page-shell relative z-10 grid gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center">
         <motion.div
-          initial={{ opacity: 0, y: 36 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1.05, ease: "easeOut" }}
           className="space-y-8"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-muted-foreground">

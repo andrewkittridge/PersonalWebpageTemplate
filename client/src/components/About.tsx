@@ -33,11 +33,11 @@ export default function About() {
 
       <div className="page-shell relative z-10 grid gap-12 items-start">
         <motion.article
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="space-y-8"
+          transition={{ duration: 1.1, ease: "easeOut" }}
+          className="space-y-10"
         >
           <div className="section-heading">
             <p className="section-label">Profile</p>
@@ -50,9 +50,12 @@ export default function About() {
             </p>
           </div>
 
-          <div className="glass-panel space-y-5 max-w-3xl">
+          <div className="rounded-[32px] border border-white/10 bg-transparent px-7 py-8 md:px-10 md:py-10 space-y-6">
             {aboutData.description.map((paragraph, index) => (
-              <p key={index} className="text-muted-foreground leading-relaxed">
+              <p
+                key={paragraph}
+                className={`text-muted-foreground leading-relaxed ${index > 0 ? "border-t border-white/10 pt-6" : ""}`}
+              >
                 {paragraph}
               </p>
             ))}

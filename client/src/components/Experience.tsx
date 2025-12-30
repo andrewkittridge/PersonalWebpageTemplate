@@ -30,18 +30,16 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-8">
           {EXPERIENCE.map((exp, index) => (
             <motion.article
               key={exp.title}
-              className="relative overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 p-6 lg:p-7 backdrop-blur"
-              initial={{ opacity: 0, y: 24 }}
+              className="relative overflow-hidden rounded-[30px] border border-white/10 bg-transparent p-7 lg:p-8"
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.08, ease: "easeOut" }}
+              transition={{ duration: 1, delay: index * 0.06, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 pointer-events-none opacity-60" style={{ background: "radial-gradient(700px at 90% 40%, rgba(224,180,120,0.18), transparent 55%)" }} />
-
               <div className="flex flex-wrap items-center gap-3">
                 <span className="icon-badge">
                   <Briefcase className="w-4 h-4" />
@@ -67,12 +65,12 @@ export default function Experience() {
                 <span className="text-muted-foreground/70">{exp.period}</span>
               </div>
 
-              <div className="divider my-5" />
+              <div className="h-px w-full bg-white/10 my-6" />
 
-              <ul className="space-y-3 text-muted-foreground leading-relaxed">
+              <ul className="space-y-4 text-muted-foreground leading-relaxed">
                 {exp.achievements.map((achievement) => (
                   <li key={achievement} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary/60" />
+                    <span className="mt-2 h-px w-8 rounded-full bg-primary/60" />
                     <span>{achievement}</span>
                   </li>
                 ))}
