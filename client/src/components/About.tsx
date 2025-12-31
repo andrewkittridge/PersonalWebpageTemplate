@@ -39,10 +39,10 @@ export default function About() {
           <div className="section-heading">
             <p className="section-label">Profile</p>
             <h2 id="about-heading" className="section-title">
-              SpaceX-inspired rigor, applied to modern web apps.
+              Enterprise-grade rigor for modern web applications.
             </h2>
             <p className="section-description">
-              Full-stack engineer building reactive interfaces and resilient Spring services that feel like a control room. I mix first-principles thinking with practical delivery so teams can ship fast, securely, and with confidence.
+              Full-Stack Java Developer delivering secure Spring Boot services, Oracle-backed workflows, and React interfaces for federal missions. I modernize legacy systems, wire in observability, and build the documentation needed to keep teams moving.
             </p>
           </div>
 

@@ -40,8 +40,8 @@ export default function Skills() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Systems stack</p>
-          <h2 className="section-title">The kit for Musk-mode delivery.</h2>
-          <p className="section-description">Frontier-ready skills across UI, services, and observability—so launches are fast, measurable, and safe.</p>
+          <h2 className="section-title">Stack for secure enterprise delivery.</h2>
+          <p className="section-description">Skills across Java, Spring Boot, Oracle, and React to modernize legacy systems, keep compliance, and ship reliable releases.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

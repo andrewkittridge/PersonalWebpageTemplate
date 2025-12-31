@@ -53,9 +53,9 @@ export default function Principles() {
           className="section-heading"
         >
           <p className="section-label">Operating system</p>
-          <h2 className="section-title">Principles for Musk-mode execution.</h2>
+          <h2 className="section-title">Delivery principles for secure systems.</h2>
           <p className="section-description max-w-4xl">
-            These are the constraints that keep delivery sharp: minimal abstractions, measurable impact, and relentless focus on speed and safety.
+            The constraints that keep delivery sharp: measurable impact, compliance-minded builds, and reliable user experiences.
           </p>
         </motion.div>
 

@@ -18,11 +18,11 @@ const missionStats: MissionStat[] = [
 ];
 
 const missionSignals = [
-  "First-principles thinking",
-  "Autonomy with humans-in-loop",
-  "Data over opinions",
-  "Hardcore engineering",
-  "Human-friendly motion",
+  "Enterprise modernization",
+  "STIG-compliant delivery",
+  "Oracle + Spring expertise",
+  "AI-assisted workflows",
+  "Accessible, resilient UIs",
 ];
 
 export default function Hero() {
@@ -63,13 +63,13 @@ export default function Hero() {
             <div className="flex flex-col gap-3">
               <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.34em] text-primary/80">
                 <Sparkles className="h-4 w-4" aria-hidden />
-                Java · Spring Boot · React · Systems thinking
+                Full-Stack Java · Spring Boot · React · Oracle
               </div>
               <h1 id="hero-heading" className="section-title">
-                SpaceX-inspired mission software with cockpit-grade calm.
+                Modernizing secure enterprise systems for the mission.
               </h1>
               <p className="section-description">
-                I design launch systems for the web—high-contrast interfaces, Spring services with telemetry baked in, and motion that feels like mission control. Every release ships with performance budgets, security guardrails, and human-friendly documentation.
+                Accomplished Full-Stack Java Developer with 8+ years delivering Spring Boot services, Oracle-backed data flows, and React experiences for federal programs. I modernize legacy platforms, enforce STIG compliance, and integrate AI capabilities inside Agile/DevOps pipelines.
               </p>
             </div>
           </header>
@@ -107,9 +107,9 @@ export default function Hero() {
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-muted-foreground">
                 <Orbit className="h-4 w-4 text-primary" aria-hidden />
-                Mission signals
+                Career signals
               </div>
-              <div className="tag-ghost">Built for velocity</div>
+              <div className="tag-ghost">Enterprise focus</div>
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               {missionSignals.map((item) => (

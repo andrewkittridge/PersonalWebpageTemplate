@@ -77,13 +77,13 @@ export default function Contact() {
               <div className="space-y-6">
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-primary/80">
-                    Full-Stack Web Engineer
+                    Full-Stack Java Developer
                   </p>
                   <h3 className="text-2xl font-semibold text-foreground mt-2">
-                    Java · Spring · React · Oracle SQL
+                    Enterprise modernization · Spring Boot · Oracle SQL
                   </h3>
                   <p className="text-muted-foreground mt-3">
-                    Secure, STIG-compliant enterprise delivery with motion-rich, accessible interfaces. Think of it as building a cockpit—everything measured and calm.
+                    Secure, STIG-compliant delivery for federal programs—pairing Spring Boot services, Oracle-backed data flows, and React experiences with clear documentation and observability.
                   </p>
                 </div>
 
