@@ -54,7 +54,7 @@ export default function Contact() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(900px at 20% 30%, rgba(90,121,255,0.18), transparent 52%), radial-gradient(960px at 80% 10%, rgba(224,180,120,0.22), transparent 55%)",
+            "radial-gradient(900px at 20% 30%, rgba(41,189,255,0.18), transparent 52%), radial-gradient(960px at 80% 10%, rgba(143,96,255,0.18), transparent 55%)",
         }}
         aria-hidden
       />
@@ -62,13 +62,13 @@ export default function Contact() {
       <div className="page-shell relative z-10">
         <div className="section-heading">
           <p className="section-label">Contact</p>
-          <h2 className="section-title">Let&apos;s connect.</h2>
-          <p className="section-description">Reach out using the details from the resume—email, phone, LinkedIn, or GitHub.</p>
+          <h2 className="section-title">Let&apos;s build your next release.</h2>
+          <p className="section-description">Pick the channel that works for you—email, call, LinkedIn, or GitHub—and let&apos;s map the roadmap together.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.aside
-            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-10 space-y-8"
+            className="rounded-[28px] border border-white/10 bg-white/5 px-7 py-8 md:px-9 md:py-10 space-y-8 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,10 +80,10 @@ export default function Contact() {
                   Full-Stack Web Developer
                 </p>
                 <h3 className="text-2xl font-semibold text-foreground mt-2">
-                  Java · Spring · Oracle SQL
+                  Java · Spring · React · Oracle SQL
                 </h3>
                 <p className="text-muted-foreground mt-3">
-                  Secure, STIG-compliant enterprise delivery with an active Secret Security Clearance and a focus on performant, user-centered applications.
+                  Secure, STIG-compliant enterprise delivery with motion-rich, accessible interfaces. I move from idea to production with observability wired in.
                 </p>
               </div>
 
@@ -123,7 +123,7 @@ export default function Contact() {
           </motion.aside>
 
           <motion.article
-            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-10"
+            className="rounded-[28px] border border-white/10 bg-white/5 px-7 py-8 md:px-9 md:py-10 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -201,6 +201,21 @@ export default function Contact() {
               </Form>
             </div>
           </motion.article>
+        </div>
+
+        <div className="glass-panel grid gap-4 md:grid-cols-4">
+          {[
+            { label: "Response time", value: "< 24h", detail: "Weekdays" },
+            { label: "Engagements", value: "Design · Build · Optimize", detail: "Flexible scopes" },
+            { label: "Location", value: "Remote / Hybrid", detail: "ET-friendly hours" },
+            { label: "Focus", value: "Modern web apps", detail: "Data & security first" },
+          ].map((item) => (
+            <div key={item.label} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 space-y-2">
+              <p className="text-xs uppercase tracking-[0.26em] text-muted-foreground">{item.label}</p>
+              <p className="text-lg font-semibold text-foreground">{item.value}</p>
+              <p className="text-muted-foreground text-sm">{item.detail}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

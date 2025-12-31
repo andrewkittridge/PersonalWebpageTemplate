@@ -5,10 +5,10 @@ describe("Hero Component", () => {
   it("renders the hero headline and subtitle", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("heading", { name: /Full-stack web developer specializing in Java, Spring, and enterprise solutions/i })
+      screen.getByRole("heading", { name: /Building modern web app experiences with secure, scalable engineering/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Over seven years delivering secure, scalable applications/i)
+      screen.getByText(/I craft responsive, analytics-friendly platforms/i)
     ).toBeInTheDocument();
   });
 
@@ -27,8 +27,8 @@ describe("Hero Component", () => {
 
   it("lists modernization highlights", () => {
     render(<Hero />);
-    expect(screen.getByText(/Java & Spring Framework/i)).toBeInTheDocument();
-    expect(screen.getByText(/Oracle SQL & PL\/SQL/i)).toBeInTheDocument();
-    expect(screen.getByText(/Secret Security Clearance/i)).toBeInTheDocument();
+    expect(screen.getByText(/Design systems & tokens/i)).toBeInTheDocument();
+    expect(screen.getByText(/Secure delivery with clearance/i)).toBeInTheDocument();
+    expect(screen.getByText(/LLM-infused product flows/i)).toBeInTheDocument();
   });
 });
