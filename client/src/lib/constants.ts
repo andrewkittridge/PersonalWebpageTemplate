@@ -1,6 +1,6 @@
-export const SITE_TITLE = "Andrew Kittridge | Product & Growth Marketing Leader";
+export const SITE_TITLE = "Andrew Kittridge | Full-Stack Web Developer";
 export const SITE_DESCRIPTION =
-  "Resume-style portfolio for Andrew Kittridge, a product and growth marketing leader who connects positioning, lifecycle, and RevOps to deliver measurable outcomes.";
+  "Resume-style portfolio for Andrew Kittridge, a Full-Stack Web Developer specializing in Java, Spring, and secure enterprise solutions.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -10,72 +10,68 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  leadership: [
-    "Fractional CMO / Head of Marketing engagements",
-    "Cross-functional leadership with product, sales, and RevOps",
-    "Roadmapping, prioritization, and measurement cadences",
-    "Calm stakeholder communication and executive reporting"
+  programming: [
+    "Java (expert-level proficiency)",
+    "JavaScript (advanced)"
   ],
-  productMarketing: [
-    "Positioning and narrative design",
-    "ICP and persona clarity",
-    "Offer packaging and pricing",
-    "Web + landing page conversion copy",
-    "Sales playbooks, battlecards, and demo scripts"
+  webTech: [
+    "Spring Framework (Spring Boot, Spring MVC)",
+    "Struts",
+    "jQuery",
+    "HTML5",
+    "CSS3",
+    "RESTful APIs",
+    "SOAP Web Services",
+    "Maven"
   ],
-  growthLifecycle: [
-    "Lifecycle email/SMS and in-product journeys",
-    "Product-led onboarding",
-    "Paid activation and retargeting playbooks",
-    "Experiment roadmaps and CRO"
+  database: [
+    "Oracle SQL (query optimization, stored procedures)",
+    "PL/SQL (triggers, functions)"
   ],
-  contentStory: [
-    "Thought leadership ghostwriting",
-    "SEO content systems",
-    "Video scripts and storyboards",
-    "Launch comms and PR alignment"
+  tools: [
+    "Agile (Scrum, Kanban)",
+    "Git (branching strategies)",
+    "STIG Compliance",
+    "Secret Security Clearance (active)"
   ],
-  analyticsOps: [
-    "Attribution and tagging governance",
-    "North-star dashboards",
-    "RevOps hygiene + routing and SLA alerts",
-    "Reporting cadences sales trusts"
+  personalProjects: [
+    "React (component-based architecture)",
+    "Large Language Model (LLM) APIs"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Fractional Marketing Lead",
-    company: "Independent Consulting",
-    location: "Remote",
-    period: "2022 — Present",
+    title: "Web Developer",
+    company: "MetroStar",
+    location: "Reston, VA",
+    period: "November 2022 – Present",
     achievements: [
-      "Run positioning, lifecycle, and demand programs for leadership teams that need revenue clarity without extra headcount.",
-      "Reset websites, landing experiences, and nurture programs to improve demo quality and speed up approvals.",
-      "Partner with sales, product, and RevOps to keep routing clean, follow-up consistent, and attribution trustworthy."
+      "Spearheaded the migration of legacy Struts-based applications to the Spring Framework, increasing maintainability by 20% and modernizing infrastructure for scalability.",
+      "Optimized complex Oracle SQL queries and indexing strategies, reducing execution times by 30% and improving responsiveness.",
+      "Revamped UI/UX for a mission-critical enterprise application with JavaScript and CSS3, leading to a 15% improvement in user satisfaction scores.",
+      "Developed secure, STIG-compliant solutions with Java and Spring, achieving 25% gains in operational efficiency by streamlining workflows.",
+      "Mentored new developers in Spring Framework best practices and Agile, shortening onboarding time by 40% and strengthening team performance."
     ]
   },
   {
-    title: "Founder & Product Lead",
-    company: "Lumin Faith (iOS)",
-    location: "Indianapolis, IN",
-    period: "2024 — Present",
-    url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
+    title: "Associate Programmer",
+    company: "General Dynamics Information Technology",
+    location: "Fairfax, VA",
+    period: "July 2018 – November 2022",
     achievements: [
-      "Designed the product narrative, pricing ladders, and paywall experience that converted 11% of active users in month one.",
-      "Built lifecycle flows (welcome, ritual nudges, churn saves) that improved weekly retention by 19% without spam.",
-      "Shipped App Store metadata, in-app placements, and product messaging to keep growth and feature velocity aligned."
+      "Improved front-end functionality and UI/UX using jQuery and HTML5, reducing user error rates by 10% and enhancing workflows.",
+      "Designed and implemented STIG-compliant Java and Spring applications for cleared environments, maintaining compliance with federal security standards."
     ]
   },
   {
-    title: "Product Marketing & RevOps Lead",
-    company: "Mission platform and enterprise SaaS teams",
-    location: "Hybrid",
-    period: "2018 — 2023",
+    title: "Associate Consultant",
+    company: "InfoReliance",
+    location: "Arlington, VA",
+    period: "July 2017 – July 2018",
     achievements: [
-      "Built value stories and enablement kits (decks, battlecards, demo scripts) that kept sales confident in complex deals.",
-      "Rebuilt nurture, webinar, and paid programs with segmented messaging that doubled MQL → SQL conversion while holding CAC flat.",
-      "Implemented UTM governance, dashboards, routing hygiene, and SLA alerts to improve attribution and speed-to-lead."
+      "Supported Struts-to-Spring migrations alongside senior developers to enhance system scalability and performance for enterprise clients.",
+      "Provided technical support for secure enterprise applications, troubleshooting compatibility issues to maintain consistent performance."
     ]
   }
 ];
@@ -85,22 +81,21 @@ export const EDUCATION = {
   institution: "University of Indianapolis",
   location: "Indianapolis, IN",
   graduationDate: "May 2017",
-  description: "Research-backed foundation that informs how we test narratives, measure impact, and keep experiments disciplined."
+  description:
+    "Completed a rigorous curriculum focused on software development, database systems, and web technologies, building a strong foundation in Java, algorithms, and system design. Participated in team-based capstone projects developing full-stack applications under Agile conditions."
 };
 
 export const PERSONAL_PROJECTS = [
   {
-    title: "Lumin Faith",
-    status: "Solo build · App Store",
-    url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
-    description: "AI-guided, Christ-centered Bible companion built end-to-end: Scripture study, prayer journaling, and reflective prompts designed, engineered, and shipped solo.",
+    title: "AI-Enhanced Web Application",
+    status: "Independent Development · Ongoing",
+    description:
+      "Designed and developed a dynamic, AI-driven web application using React for a responsive frontend and Large Language Model (LLM) APIs for real-time content generation and user interaction.",
     highlights: [
-      "AI Faith Conversations: warm, Christ-centered responses across devotional, historical, applicational, Christ-centered, contemplative modes.",
-      "Personalized daily verses and guided study plans (book-by-book and theme-based) with quizzes and progress tracking.",
-      "Prayer journal with AI prompts and reflective analysis for insights and gratitude capture.",
-      "Liturgical season awareness (Advent, Lent, Easter) plus gentle habits like streaks, respectful notifications, and serene widgets.",
-      "LuminFaith Premium: unlocks higher AI limits, advanced insights, and ad-free experience with cloud sync and priority updates.",
-      "SwiftUI + Xcode pipeline from prototype through TestFlight to App Store with agentic workflows (Cursor + x.ai Grok API)."
+      "Modular, component-based architecture with React for scalability and maintainability.",
+      "LLM API integration enabling automated text generation and conversational interfaces.",
+      "Responsive design with CSS3 and JavaScript for seamless desktop and mobile experiences.",
+      "Emphasis on usability and accessibility across real-time interactive features."
     ]
   }
 ];

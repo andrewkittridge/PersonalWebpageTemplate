@@ -16,7 +16,7 @@ export default function Footer() {
             AK
           </Link>
           <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-            Product and growth marketing leader connecting positioning, lifecycle, and RevOps so teams can see impact faster.
+            Full-Stack Web Developer specializing in Java, Spring, Oracle SQL, and secure enterprise applications.
           </p>
         </div>
 

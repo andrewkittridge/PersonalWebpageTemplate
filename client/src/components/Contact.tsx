@@ -16,7 +16,7 @@ import {
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 import { trackInteraction } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/constants";
-import { Mail, Phone, Linkedin, Github, MapPin } from "lucide-react";
+import { Mail, Phone, Linkedin, Github } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -62,10 +62,8 @@ export default function Contact() {
       <div className="page-shell relative z-10">
         <div className="section-heading">
           <p className="section-label">Contact</p>
-          <h2 className="section-title">Let&apos;s talk about your next move.</h2>
-          <p className="section-description">
-            Whether you need a fractional lead, a launch partner, or a focused sprint, I can plug in quickly and leave durable systems behind.
-          </p>
+          <h2 className="section-title">Let&apos;s connect.</h2>
+          <p className="section-description">Reach out using the details from the resume—email, phone, LinkedIn, or GitHub.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
@@ -79,13 +77,13 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-primary/80">
-                  Response within 24h
+                  Full-Stack Web Developer
                 </p>
                 <h3 className="text-2xl font-semibold text-foreground mt-2">
-                  Clear direction, faster execution.
+                  Java · Spring · Oracle SQL
                 </h3>
                 <p className="text-muted-foreground mt-3">
-                  Reach out for repositioning, launch support, lifecycle systems, or a steady marketing lead who can steward RevOps decisions.
+                  Secure, STIG-compliant enterprise delivery with an active Secret Security Clearance and a focus on performant, user-centered applications.
                 </p>
               </div>
 
@@ -101,10 +99,6 @@ export default function Contact() {
                   <Phone className="h-5 w-5" />
                   {SOCIAL_LINKS.phone}
                 </a>
-                <div className="contact-link cursor-default">
-                  <MapPin className="h-5 w-5" />
-                  Indianapolis, IN · Remote friendly
-                </div>
                 <a
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
@@ -125,23 +119,6 @@ export default function Contact() {
                 </a>
               </address>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { label: "Timezone", value: "EST (UTC-5)" },
-                  { label: "Availability", value: "Fractional or project-based" },
-                  { label: "Focus", value: "Positioning · Lifecycle · RevOps" },
-                  { label: "Collaboration", value: "Embedded with product, sales, RevOps" },
-                ].map((item) => (
-                  <div key={item.label} className="text-left rounded-[22px] border border-white/10 px-5 py-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
-                      {item.label}
-                    </p>
-                    <p className="text-base font-semibold text-foreground mt-1">
-                      {item.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
           </motion.aside>
 
@@ -167,7 +144,7 @@ export default function Contact() {
                         <FormLabel>Name</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Andrew, product lead at..."
+                            placeholder="Your name"
                             className="form-input"
                             {...field}
                           />
@@ -204,7 +181,7 @@ export default function Contact() {
                           <Textarea
                             rows={5}
                             className="form-input resize-none"
-                            placeholder="Tell me about the goal, stack, and key deliverables..."
+                            placeholder="Share the project details or questions."
                             {...field}
                           />
                         </FormControl>

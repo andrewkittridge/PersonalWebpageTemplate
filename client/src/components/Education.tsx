@@ -14,11 +14,9 @@ export default function Education() {
     >
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Proof</p>
-          <h2 className="section-title">Education and projects that shape my approach.</h2>
-          <p className="section-description">
-            Formal training keeps me analytical; shipped products keep me honest about what real audiences respond to.
-          </p>
+          <p className="section-label">Education & Projects</p>
+          <h2 className="section-title">Foundations that support enterprise work.</h2>
+          <p className="section-description">Academic training and personal projects that reinforce Java, web technologies, and AI-driven development from the resume.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">
@@ -51,11 +49,6 @@ export default function Education() {
               {EDUCATION.description && (
                 <p className="leading-relaxed">{EDUCATION.description}</p>
               )}
-              <ul className="list-disc list-inside text-sm text-muted-foreground/90 space-y-1">
-                <li>Behavioral research + experimentation fundamentals</li>
-                <li>Cross-discipline collaboration with design and comms</li>
-                <li>Operations mindset applied to marketing and product</li>
-              </ul>
             </div>
           </motion.article>
 
@@ -79,15 +72,19 @@ export default function Education() {
               {PERSONAL_PROJECTS.map((project) => (
                 <div key={project.title} className="space-y-4">
                   <div>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
-                    >
-                      {project.title}
-                      <Link className="w-4 h-4" />
-                    </a>
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {project.title}
+                        <Link className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <p className="text-lg font-medium text-foreground">{project.title}</p>
+                    )}
                     <p className="text-sm text-muted-foreground/80 mt-1">
                       {project.status}
                     </p>

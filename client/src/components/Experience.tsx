@@ -24,10 +24,8 @@ export default function Experience() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Experience</p>
-          <h2 className="section-title">Roles and wins worth knowing.</h2>
-          <p className="section-description">
-            A blend of product marketing, lifecycle, and revenue operations work across consulting, founding, and in-house leadership roles.
-          </p>
+          <h2 className="section-title">Enterprise delivery rooted in Java and Spring.</h2>
+          <p className="section-description">Hands-on roles modernizing legacy systems, hardening security, and improving performance for mission-critical applications.</p>
         </div>
 
         <div className="grid gap-8">

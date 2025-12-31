@@ -5,9 +5,9 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const aboutData = {
   description: [
-    "I blend product marketing, lifecycle, and RevOps so leadership teams can see impact without adding a dozen new vendors. I specialize in repositioning products, orchestrating launches, and building the connective tissue between strategy and execution.",
-    "My work spans B2B SaaS, public sector platforms, and premium consumer launches. Whether leading a sprint or embedding alongside your team, I keep messaging, channel mix, and sales enablement aligned.",
-    "Based in Indianapolis with remote reach. I enjoy making complex products obvious, keeping attribution clean, and building calm systems that ship every week.",
+    "Results-driven Full-Stack Web Developer with over seven years of experience designing, developing, and delivering secure, scalable, and high-performance enterprise applications.",
+    "Specializes in Java, Spring Framework, JavaScript, and Oracle SQL to modernize legacy systems, optimize database performance, and enhance UI/UX for measurable gains.",
+    "Holds an active Secret Security Clearance and thrives in Agile environments while mentoring developers and integrating React with LLM APIs in personal projects.",
   ],
 };
 
@@ -41,10 +41,10 @@ export default function About() {
           <div className="section-heading">
             <p className="section-label">Profile</p>
             <h2 id="about-heading" className="section-title">
-              Marketing leader who can strategize and ship.
+              Full-stack developer focused on secure enterprise solutions.
             </h2>
             <p className="section-description">
-              I move between positioning, creative, lifecycle, and the RevOps hygiene that makes measurement real. Teams get a steady operator who can own the story and the systems.
+              I modernize applications, optimize database performance, and deliver STIG-compliant software with Java, Spring, and Oracle SQL while improving interfaces that users rely on.
             </p>
           </div>
 

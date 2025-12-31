@@ -1,44 +1,42 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
-import {
-  Activity,
-  ArrowDownRight,
-  ArrowUpRight,
-  Cpu,
-  Radar,
-  Send,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { Activity, ArrowDownRight, ArrowUpRight, Database, Layers, ShieldCheck, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
-const opsStack = [
+const impactStack = [
   {
-    title: "Repositioning sprints",
-    status: "Positioning",
-    metric: "38% more SQLs",
-    load: 82,
-    detail: "ICP clarity, offer packaging, conversion copy",
+    title: "Struts to Spring",
+    status: "Architecture",
+    metric: "20% maintainability",
+    load: 20,
+    detail: "Migrated legacy Struts applications to Spring for scalable delivery.",
   },
   {
-    title: "Lifecycle system",
-    status: "Lifecycle",
-    metric: "19% retention gain",
-    load: 74,
-    detail: "Welcome + ritual nudges, churn save plays",
+    title: "Oracle SQL tuning",
+    status: "Performance",
+    metric: "30% faster queries",
+    load: 30,
+    detail: "Refactored queries and indexing to improve responsiveness.",
   },
   {
-    title: "Premium launch",
-    status: "Product + Growth",
-    metric: "11% premium month one",
-    load: 88,
-    detail: "Pricing, paywall, in-app messaging",
+    title: "UI/UX overhaul",
+    status: "Experience",
+    metric: "15% higher satisfaction",
+    load: 15,
+    detail: "Enhanced mission-critical interfaces with JavaScript and CSS3.",
+  },
+  {
+    title: "Secure delivery",
+    status: "Compliance",
+    metric: "25% efficiency gain",
+    load: 25,
+    detail: "Built STIG-compliant Spring solutions that streamlined workflows.",
   },
 ];
 
 export default function Hero() {
   const totalLoad = useMemo(
-    () => Math.round(opsStack.reduce((acc, item) => acc + item.load, 0) / opsStack.length),
+    () => Math.round(impactStack.reduce((acc, item) => acc + item.load, 0) / impactStack.length),
     [],
   );
 
@@ -68,7 +66,7 @@ export default function Hero() {
         >
           <div className="module-chrome">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            Product & Growth Marketing · Resume Snapshot
+            Full-Stack Web Developer · Resume Snapshot
           </div>
 
           <header className="space-y-5">
@@ -76,15 +74,14 @@ export default function Hero() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary/80">
                 <Activity className="h-4 w-4" aria-hidden />
-                Product + Lifecycle + RevOps
+                Java · Spring · Secure Enterprise Apps
               </div>
               <h1 id="hero-heading" className="section-title">
-                I connect positioning, product, and lifecycle so teams can see revenue faster.
+                Full-stack web developer specializing in Java, Spring, and enterprise solutions.
               </h1>
               <p className="section-description">
-                Product and growth marketing leader with a record of shipping launches, building lifecycle systems,
-                and keeping RevOps hygiene in check. Available for fractional leadership, focused sprints, or
-                embedded support alongside your team.
+                Over seven years delivering secure, scalable applications with Java, Spring, JavaScript, and Oracle SQL.
+                Experienced in modernizing legacy systems, optimizing database performance, and improving interfaces for mission-critical users.
               </p>
             </div>
           </header>
@@ -112,7 +109,7 @@ export default function Hero() {
           </div>
 
           <div className="mission-rail relative overflow-hidden">
-            {["Positioning + narrative design", "Lifecycle and retention", "RevOps and analytics", "Founder-friendly", "Security-aware"].map(
+            {["Java & Spring Framework", "Oracle SQL & PL/SQL", "STIG-compliant delivery", "Secret Security Clearance", "React + LLM API integration"].map(
               (item) => (
                 <div key={item} className="mission-rail__item">
                   <span className="text-sm font-semibold text-foreground">{item}</span>
@@ -133,7 +130,7 @@ export default function Hero() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="icon-badge">
-                  <Radar className="h-5 w-5 text-accent" aria-hidden />
+                  <Layers className="h-5 w-5 text-accent" aria-hidden />
                 </div>
                 <div>
                   <p className="section-label">Career snapshot</p>
@@ -147,7 +144,7 @@ export default function Hero() {
             </div>
 
           <div className="grid gap-3">
-            {opsStack.map((item, index) => (
+            {impactStack.map((item, index) => (
               <motion.div
                 key={item.title}
                 className="ops-card"
@@ -160,7 +157,7 @@ export default function Hero() {
                     <p className="text-sm uppercase tracking-[0.28em] text-muted-foreground">{item.status}</p>
                     <p className="text-lg font-semibold text-foreground">{item.title}</p>
                   </div>
-                  <Cpu className="h-5 w-5 text-primary" aria-hidden />
+                  <Database className="h-5 w-5 text-primary" aria-hidden />
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
                 <div className="mt-3 flex items-center gap-3">
@@ -177,25 +174,25 @@ export default function Hero() {
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <div className="icon-badge">
-                  <Send className="h-4 w-4 text-primary" aria-hidden />
+                  <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
                 </div>
-                <p className="text-sm font-semibold text-foreground">Campaign control</p>
+                <p className="text-sm font-semibold text-foreground">Secure delivery</p>
               </div>
               <div className="telemetry-chip">
                 <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
-                Quality gates
+                Secret clearance
               </div>
             </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Pipeline health</p>
-                  <p className="text-lg font-semibold text-foreground">SQLs ↑</p>
-                  <p>Audience + offer clarity, better follow-up</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Core stack</p>
+                  <p className="text-lg font-semibold text-foreground">Java · Spring · REST</p>
+                  <p>Spring Boot and Spring MVC with RESTful APIs and SOAP services.</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Activation</p>
-                  <p className="text-lg font-semibold text-foreground">Time-to-value ↓</p>
-                  <p>Lifecycle automation + product messaging</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Data focus</p>
+                  <p className="text-lg font-semibold text-foreground">Oracle SQL · PL/SQL</p>
+                  <p>Query optimization, stored procedures, triggers, and functions.</p>
                 </div>
               </div>
             <div className="flex items-center justify-between text-sm text-muted-foreground">
@@ -209,7 +206,7 @@ export default function Hero() {
 
       </div>
 
-      <p className="hero-watermark absolute bottom-6 left-4">Growth Ops</p>
+      <p className="hero-watermark absolute bottom-6 left-4">Full-Stack Java</p>
     </section>
   );
 }
