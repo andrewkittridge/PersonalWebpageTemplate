@@ -24,8 +24,8 @@ export default function Experience() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Mission log</p>
-          <h2 className="section-title">Shipping with a launch crew mindset.</h2>
-          <p className="section-description">Modernization, secure delivery, and data-rich interfaces—mission patches from building systems that have to work on day one.</p>
+          <h2 className="section-title">Shipping with an enterprise delivery mindset.</h2>
+          <p className="section-description">Modernization, secure delivery, and data-rich interfaces—stories from building systems that have to work on day one.</p>
         </div>
 
         <div className="grid gap-8">

@@ -61,9 +61,9 @@ export default function Contact() {
 
       <div className="page-shell relative z-10">
         <div className="section-heading">
-          <p className="section-label">Mission control</p>
-          <h2 className="section-title">Ready to launch the next release.</h2>
-          <p className="section-description">Choose your channel—email, call, LinkedIn, or GitHub—and we&apos;ll map the flight plan together.</p>
+          <p className="section-label">Contact</p>
+          <h2 className="section-title">Ready to plan your next project.</h2>
+          <p className="section-description">Email, call, LinkedIn, or GitHub—choose a channel and let&apos;s map the path to delivery.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">

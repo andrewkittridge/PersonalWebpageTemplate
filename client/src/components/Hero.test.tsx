@@ -15,7 +15,7 @@ describe("Hero Component", () => {
   it("highlights primary contact actions", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("link", { name: /book a launch/i })
+      screen.getByRole("link", { name: /schedule a call/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /mission log/i })

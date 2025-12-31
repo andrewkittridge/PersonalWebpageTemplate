@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-3">
             <div className="tag">
               <Rocket className="h-4 w-4 text-primary" />
-              Mission portfolio · Built for orbit
+              Portfolio · Enterprise delivery
             </div>
             <div className="tag-ghost text-xs">Telemetry-first</div>
             <div className="tag-ghost text-xs">Human-centered motion</div>
@@ -76,7 +76,7 @@ export default function Hero() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a href="#contact" className="pill-solid">
-              Book a launch
+              Schedule a call
               <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
@@ -138,7 +138,7 @@ export default function Hero() {
                 <p className="text-lg font-semibold text-foreground">Engineering signals</p>
               </div>
             </div>
-            <div className="tag-ghost text-xs">Launch console</div>
+            <div className="tag-ghost text-xs">Delivery console</div>
           </div>
 
           <div className="grid gap-3">

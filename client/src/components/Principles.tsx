@@ -18,7 +18,7 @@ const principles = [
   {
     title: "Move fast, instrument faster",
     description:
-      "Telemetry-first delivery with dashboards, alerts, and logs so every launch is observable and debuggable.",
+      "Telemetry-first delivery with dashboards, alerts, and logs so every release is observable and debuggable.",
     icon: <Timer className="h-5 w-5 text-primary" aria-hidden />,
   },
   {

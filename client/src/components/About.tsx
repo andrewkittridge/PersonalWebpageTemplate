@@ -51,7 +51,7 @@ export default function About() {
               {[
                 "I architect component systems, motion libraries, and analytics-ready flows that keep experiences cohesive across platforms.",
                 "On the back end, I tune Spring Boot and Oracle SQL for latency, traceability, and scale—pairing APIs with the telemetry needed to prove they perform.",
-                "Secret-cleared and comfortable in regulated spaces, I document, mentor, and automate so teams can deliver like a launch crew.",
+                "Secret-cleared and comfortable in regulated spaces, I document, mentor, and automate so teams can deliver with confidence.",
               ].map((paragraph, index) => (
                 <p
                   key={paragraph}

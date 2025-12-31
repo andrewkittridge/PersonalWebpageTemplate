@@ -65,7 +65,7 @@ export default function Navigation() {
             className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.5em]"
             aria-label="Navigate home"
           >
-            ak · launch
+            ak · portfolio
           </Link>
 
           <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1 backdrop-blur">
@@ -93,7 +93,7 @@ export default function Navigation() {
               href="#experience"
               className="pill-solid hidden md:inline-flex"
             >
-              Launch project
+              Start project
             </a>
             <button
               className="pill-ghost md:hidden px-3 py-2"
