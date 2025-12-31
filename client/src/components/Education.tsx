@@ -15,13 +15,13 @@ export default function Education() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Education & Projects</p>
-          <h2 className="section-title">Foundations that support enterprise work.</h2>
-          <p className="section-description">Academic training and personal projects that reinforce Java, web technologies, and AI-driven development from the resume.</p>
+          <h2 className="section-title">Foundations that power the modern app work.</h2>
+          <p className="section-description">Academic rigor and personal builds that keep my approach sharp, experimental, and production-ready.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">
           <motion.article
-            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-9"
+            className="rounded-[28px] border border-white/10 bg-white/5 px-7 py-8 md:px-9 md:py-9 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function Education() {
           </motion.article>
 
           <motion.article
-            className="rounded-[28px] border border-white/10 bg-transparent px-7 py-8 md:px-9 md:py-9"
+            className="rounded-[28px] border border-white/10 bg-white/5 px-7 py-8 md:px-9 md:py-9 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,10 +85,10 @@ export default function Education() {
                     ) : (
                       <p className="text-lg font-medium text-foreground">{project.title}</p>
                     )}
-                    <p className="text-sm text-muted-foreground/80 mt-1">
-                      {project.status}
-                    </p>
-                  </div>
+                  <p className="text-sm text-muted-foreground/80 mt-1">
+                    {project.status}
+                  </p>
+                </div>
                   <p className="text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
@@ -103,6 +103,18 @@ export default function Education() {
               ))}
             </div>
           </motion.article>
+        </div>
+        <div className="glass-panel grid gap-4 md:grid-cols-3">
+          {[
+            { title: "Recent learning", detail: "Advancing motion design and data visualization patterns for dashboards." },
+            { title: "AI exploration", detail: "LLM-powered prompts and retrieval workflows embedded in React apps." },
+            { title: "Ops hygiene", detail: "Documentation-first approach with runbooks, accessibility notes, and analytics events." },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 space-y-2">
+              <p className="text-sm uppercase tracking-[0.26em] text-muted-foreground">{item.title}</p>
+              <p className="text-muted-foreground leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

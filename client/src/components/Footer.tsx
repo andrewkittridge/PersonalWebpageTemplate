@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/5 bg-gradient-to-b from-transparent via-black/60 to-black py-12">
+    <footer className="relative border-t border-white/5 bg-gradient-to-b from-transparent via-black/70 to-black py-12 mt-6">
       <div className="page-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <Link
@@ -16,7 +16,7 @@ export default function Footer() {
             AK
           </Link>
           <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-            Full-Stack Web Developer specializing in Java, Spring, Oracle SQL, and secure enterprise applications.
+            Full-Stack Web Developer specializing in Java, Spring, Oracle SQL, and modern web experiences with accessibility, analytics, and security built in.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
 
       <div className="page-shell mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
-        © {currentYear} Andrew Kittridge. All rights reserved.
+        © {currentYear} Andrew Kittridge · Modern web app delivery.
       </div>
     </footer>
   );

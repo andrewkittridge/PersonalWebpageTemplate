@@ -52,7 +52,7 @@ export default function Navigation() {
         animate={{ y: 0 }}
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "border-b border-white/5 bg-black/60 backdrop-blur-xl"
+            ? "border-b border-white/5 bg-black/65 backdrop-blur-2xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.8)]"
             : "bg-transparent"
         }`}
         role="navigation"
@@ -64,7 +64,7 @@ export default function Navigation() {
             className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.5em]"
             aria-label="Navigate home"
           >
-            ak.
+            ak · studio
           </Link>
 
           <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1 backdrop-blur">
@@ -86,13 +86,13 @@ export default function Navigation() {
               href="#contact"
               className="pill-ghost hidden md:inline-flex"
             >
-              Email me
+              Let&apos;s talk
             </a>
             <a
               href="#experience"
               className="pill-solid hidden md:inline-flex"
             >
-              View experience
+              Launch project
             </a>
             <button
               className="pill-ghost md:hidden px-3 py-2"

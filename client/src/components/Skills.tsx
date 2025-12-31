@@ -32,7 +32,7 @@ export default function Skills() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(900px at 50% 8%, rgba(224,180,120,0.24), transparent 55%)",
+            "radial-gradient(980px at 50% 10%, rgba(41,189,255,0.22), transparent 55%)",
         }}
         aria-hidden
       />
@@ -40,15 +40,15 @@ export default function Skills() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Technical Skills</p>
-          <h2 className="section-title">Stack depth built in enterprise delivery.</h2>
-          <p className="section-description">Technologies and methods used across Java, Spring, secure enterprise environments, and AI-driven personal projects.</p>
+          <h2 className="section-title">Skills tuned for modern product delivery.</h2>
+          <p className="section-description">Systems thinking, UI craft, and performance-minded engineering for secure, data-heavy web apps.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
             <motion.article
               key={category}
-              className="rounded-[26px] border border-white/10 bg-transparent px-6 py-7 md:px-7 md:py-8"
+              className="rounded-[26px] border border-white/10 bg-white/5 px-6 py-7 md:px-7 md:py-8 shadow-[0_32px_110px_-90px_rgba(0,0,0,0.9)]"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -74,6 +74,25 @@ export default function Skills() {
                 ))}
               </div>
             </motion.article>
+          ))}
+        </div>
+
+        <div className="glass-panel grid gap-4 md:grid-cols-3">
+          {[
+            { title: "Front-end", items: ["Design tokens", "Animation systems", "Accessibility", "Performance budgets"] },
+            { title: "Back-end", items: ["Spring Boot", "REST & SOAP", "Oracle SQL tuning", "Observability"] },
+            { title: "Collaboration", items: ["Mentorship", "Agile delivery", "Docs & runbooks", "Analytics wiring"] },
+          ].map((group) => (
+            <div key={group.title} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 space-y-3">
+              <p className="text-sm uppercase tracking-[0.26em] text-muted-foreground">{group.title}</p>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="pill-ghost px-3 py-2 text-xs md:text-sm">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

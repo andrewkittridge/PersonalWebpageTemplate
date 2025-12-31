@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 225 16% 4%;
-    --foreground: 215 8% 92%;
-    --card: 223 14% 8%;
-    --card-foreground: 215 8% 92%;
-    --popover: 223 14% 8%;
-    --popover-foreground: 215 8% 92%;
-    --primary: 36 92% 74%;
-    --primary-foreground: 228 21% 8%;
-    --secondary: 225 12% 16%;
-    --secondary-foreground: 215 8% 92%;
-    --muted: 225 10% 18%;
-    --muted-foreground: 215 10% 68%;
-    --accent: 195 78% 63%;
-    --accent-foreground: 225 16% 6%;
+    --background: 224 33% 6%;
+    --foreground: 218 12% 94%;
+    --card: 226 26% 10%;
+    --card-foreground: 218 12% 94%;
+    --popover: 226 26% 10%;
+    --popover-foreground: 218 12% 94%;
+    --primary: 193 95% 68%;
+    --primary-foreground: 223 18% 8%;
+    --secondary: 239 29% 14%;
+    --secondary-foreground: 218 12% 94%;
+    --muted: 230 18% 18%;
+    --muted-foreground: 220 14% 70%;
+    --accent: 267 92% 72%;
+    --accent-foreground: 224 33% 6%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 10% 22%;
-    --input: 225 10% 22%;
-    --ring: 36 92% 74%;
-    --radius: 1.6rem;
+    --border: 228 19% 24%;
+    --input: 228 19% 22%;
+    --ring: 193 95% 68%;
+    --radius: 1.4rem;
   }
 
   .dark {
-    --background: 225 16% 4%;
-    --foreground: 210 7% 94%;
-    --card: 223 12% 6%;
-    --card-foreground: 210 7% 94%;
-    --popover: 223 12% 6%;
-    --popover-foreground: 210 7% 94%;
-    --primary: 36 92% 74%;
-    --primary-foreground: 225 16% 6%;
-    --secondary: 223 10% 14%;
-    --secondary-foreground: 210 7% 94%;
-    --muted: 223 10% 16%;
-    --muted-foreground: 215 10% 68%;
-    --accent: 222 11% 12%;
-    --accent-foreground: 210 7% 94%;
+    --background: 226 36% 5%;
+    --foreground: 220 12% 94%;
+    --card: 230 22% 10%;
+    --card-foreground: 220 12% 94%;
+    --popover: 230 22% 10%;
+    --popover-foreground: 220 12% 94%;
+    --primary: 193 95% 68%;
+    --primary-foreground: 226 36% 5%;
+    --secondary: 239 32% 12%;
+    --secondary-foreground: 220 12% 94%;
+    --muted: 236 18% 15%;
+    --muted-foreground: 220 12% 70%;
+    --accent: 267 92% 72%;
+    --accent-foreground: 226 36% 5%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 9% 18%;
-    --input: 225 9% 18%;
-    --ring: 36 92% 74%;
+    --border: 232 18% 22%;
+    --input: 232 18% 22%;
+    --ring: 193 95% 68%;
   }
 
   html {
@@ -58,16 +58,16 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
+    font-family: "Inter", "Space Grotesk", -apple-system, BlinkMacSystemFont,
       "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #040507;
+    background-color: #04060c;
     background-image:
-      radial-gradient(1100px at 78% 18%, rgba(224, 180, 120, 0.18), transparent 58%),
-      radial-gradient(980px at 20% 64%, rgba(68, 200, 255, 0.2), transparent 52%),
-      radial-gradient(800px at 48% 28%, rgba(110, 120, 255, 0.12), transparent 50%),
-      conic-gradient(from 120deg at 60% 50%, #07090f 0deg, #0c0d12 110deg, #040507 210deg, #050509 320deg);
+      radial-gradient(1200px at 14% 18%, rgba(41, 189, 255, 0.18), transparent 55%),
+      radial-gradient(1100px at 85% 16%, rgba(143, 96, 255, 0.12), transparent 54%),
+      radial-gradient(980px at 50% 72%, rgba(255, 176, 94, 0.1), transparent 58%),
+      linear-gradient(120deg, #05070e 10%, #070c14 45%, #04060c 90%);
     background-attachment: fixed;
     color: hsl(var(--foreground));
   }
@@ -78,11 +78,11 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cpath fill='%23ffffff' fill-opacity='0.018' d='M0 0h70v70H0zM70 70h70v70H70z'/%3E%3C/svg%3E"),
-      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.025), transparent 40%),
-      radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.02), transparent 50%);
-    mix-blend-mode: soft-light;
-    opacity: 0.6;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath fill='%23ffffff' fill-opacity='0.016' d='M0 0h80v80H0zM80 80h80v80H80z'/%3E%3C/svg%3E"),
+      radial-gradient(circle at 22% 32%, rgba(255, 255, 255, 0.02), transparent 40%),
+      radial-gradient(circle at 76% 54%, rgba(255, 255, 255, 0.02), transparent 50%);
+    mix-blend-mode: lighten;
+    opacity: 0.5;
     z-index: -1;
   }
 
@@ -98,11 +98,11 @@
 
 @layer components {
   .page-shell {
-    @apply relative mx-auto w-full max-w-6xl px-4 md:px-8;
+    @apply relative mx-auto w-full max-w-7xl px-5 md:px-10;
   }
 
   .section-shell {
-    @apply relative isolate overflow-hidden py-20 md:py-28;
+    @apply relative isolate overflow-hidden py-16 md:py-24;
   }
 
   .section-heading {
@@ -114,39 +114,39 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-semibold leading-tight text-foreground;
+    @apply text-3xl md:text-5xl font-semibold leading-tight text-foreground tracking-tight;
   }
 
   .section-description {
-    @apply text-lg text-muted-foreground max-w-3xl;
+    @apply text-lg text-muted-foreground max-w-3xl leading-relaxed;
   }
 
   .nav-link {
-    @apply rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground transition hover:text-foreground hover:bg-white/5;
+    @apply rounded-full px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground transition hover:text-foreground hover:bg-white/10 hover:border-white/10 border border-transparent;
   }
 
   .pill {
-    @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition;
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition shadow-[0_10px_40px_-22px_rgba(0,0,0,0.55)];
   }
 
   .pill-solid {
-    @apply pill bg-foreground text-background shadow-[0_10px_40px_-24px_rgba(0,0,0,0.7)];
+    @apply pill bg-gradient-to-r from-primary via-accent to-primary/80 text-background shadow-[0_20px_70px_-32px_rgba(0,0,0,0.8)];
   }
 
   .pill-ghost {
-    @apply pill border border-white/10 bg-white/5 text-foreground hover:border-white/20;
+    @apply pill border border-white/10 bg-white/5 text-foreground hover:border-primary/40 hover:text-primary;
   }
 
   .glass-panel {
-    @apply rounded-[28px] border border-white/10 bg-white/5 px-6 py-6 backdrop-blur-xl shadow-[0_24px_80px_-48px_rgba(0,0,0,0.9)];
+    @apply rounded-[28px] border border-white/10 bg-white/5 px-6 py-6 backdrop-blur-2xl shadow-[0_30px_100px_-60px_rgba(0,0,0,0.85)];
   }
 
   .surface-card {
-    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-6 py-6 backdrop-blur-md shadow-[0_30px_120px_-80px_rgba(0,0,0,0.95)];
+    @apply rounded-[30px] border border-white/10 bg-gradient-to-br from-white/5 via-white/0 to-white/0 px-7 py-6 backdrop-blur-xl shadow-[0_35px_120px_-75px_rgba(0,0,0,0.9)];
   }
 
   .stat-card {
-    @apply rounded-[22px] border border-white/10 bg-white/5 px-5 py-5;
+    @apply rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-5 py-5 shadow-[0_15px_60px_-48px_rgba(0,0,0,0.9)];
   }
 
   .icon-badge {
@@ -154,7 +154,7 @@
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground shadow-[0_8px_24px_-20px_rgba(0,0,0,0.7)];
   }
 
   .chip-ghost {
@@ -177,11 +177,11 @@
   }
 
   .ops-stack {
-    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/5 via-white/10 to-white/0 p-6 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.9)];
+    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-white/0 p-6 backdrop-blur-xl shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)];
   }
 
   .ops-card {
-    @apply rounded-2xl border border-white/10 bg-black/40 px-5 py-4 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)];
+    @apply rounded-2xl border border-white/10 bg-black/40 px-5 py-4 shadow-[0_26px_80px_-50px_rgba(0,0,0,0.85)];
   }
 
   .ops-bar {
@@ -216,13 +216,13 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(60% 80% at 60% 10%, rgba(224, 180, 120, 0.16), transparent),
-      radial-gradient(50% 60% at 18% 70%, rgba(68, 200, 255, 0.14), transparent),
-      linear-gradient(110deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 70%),
-      linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 140px 140px, 140px 140px;
-    mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+      radial-gradient(62% 80% at 64% 12%, rgba(154, 114, 255, 0.18), transparent),
+      radial-gradient(50% 62% at 20% 70%, rgba(41, 199, 255, 0.12), transparent),
+      linear-gradient(120deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 120px 120px, 120px 120px;
+    mask-image: radial-gradient(circle at center, black 68%, transparent 98%);
     pointer-events: none;
     z-index: 0;
   }
@@ -258,18 +258,18 @@
   .beam {
     position: absolute;
     inset: 0;
-    background: radial-gradient(900px at 80% 45%, rgba(224, 180, 120, 0.26), transparent 55%);
-    filter: blur(48px);
-    opacity: 0.9;
+    background: radial-gradient(900px at 70% 48%, rgba(41, 189, 255, 0.26), transparent 55%);
+    filter: blur(52px);
+    opacity: 0.8;
     pointer-events: none;
   }
 
   .beam--cool {
-    background: radial-gradient(780px at 20% 55%, rgba(95, 122, 255, 0.22), transparent 50%);
+    background: radial-gradient(780px at 26% 55%, rgba(143, 96, 255, 0.22), transparent 50%);
   }
 
   .beam--tight {
-    background: radial-gradient(620px at 70% 48%, rgba(255, 255, 255, 0.2), transparent 52%);
+    background: radial-gradient(620px at 68% 48%, rgba(255, 255, 255, 0.18), transparent 52%);
   }
 
   .divider {
