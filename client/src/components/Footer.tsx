@@ -13,10 +13,10 @@ export default function Footer() {
             href="/"
             className="text-lg font-semibold tracking-[0.6em] uppercase"
           >
-            AK
+            AK · launch
           </Link>
           <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-            Full-Stack Web Developer specializing in Java, Spring, Oracle SQL, and modern web experiences with accessibility, analytics, and security built in.
+            Full-Stack engineer building launch-ready experiences—Java, Spring, React, and telemetry-driven delivery with accessibility and security built in.
           </p>
         </div>
 

@@ -1,26 +1,37 @@
 import { motion } from "framer-motion";
+import { Rocket, ShieldCheck, Sparkles, Timer, Wrench } from "lucide-react";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const principles = [
   {
-    title: "Design for systems",
+    title: "Start with physics",
     description:
-      "Component libraries, design tokens, and motion guidelines keep every screen consistent across the product surface.",
+      "First-principles thinking for architecture choices—measure latency, map dependencies, and avoid cargo-cult patterns.",
+    icon: <Rocket className="h-5 w-5 text-primary" aria-hidden />,
   },
   {
-    title: "Optimize for performance",
+    title: "Build the factory",
     description:
-      "Query tuning, caching, and budget-driven UI decisions deliver fast responses and smooth experiences.",
+      "Design systems, reusable motion, and automation that let teams ship features like an assembly line.",
+    icon: <Wrench className="h-5 w-5 text-primary" aria-hidden />,
   },
   {
-    title: "Deliver securely",
+    title: "Move fast, instrument faster",
     description:
-      "STIG-compliant pipelines, least-privilege defaults, and observability guardrails ensure trust at every release.",
+      "Telemetry-first delivery with dashboards, alerts, and logs so every launch is observable and debuggable.",
+    icon: <Timer className="h-5 w-5 text-primary" aria-hidden />,
   },
   {
-    title: "Elevate teams",
+    title: "Security is table stakes",
     description:
-      "Mentorship, documentation, and analytics wiring help teams launch confidently and measure what matters.",
+      "STIG-ready practices, least-privilege defaults, and clear runbooks to keep missions green.",
+    icon: <ShieldCheck className="h-5 w-5 text-primary" aria-hidden />,
+  },
+  {
+    title: "Humans stay in the loop",
+    description:
+      "Autonomy-ready flows that include off-ramps, accessibility, and documentation—no black boxes.",
+    icon: <Sparkles className="h-5 w-5 text-primary" aria-hidden />,
   },
 ];
 
@@ -41,10 +52,10 @@ export default function Principles() {
           transition={{ duration: 1.05, ease: "easeOut" }}
           className="section-heading"
         >
-          <p className="section-label">Focus</p>
-          <h2 className="section-title">Principles shaped for modern product teams.</h2>
+          <p className="section-label">Operating system</p>
+          <h2 className="section-title">Principles for Musk-mode execution.</h2>
           <p className="section-description max-w-4xl">
-            Methods drawn directly from resume projects: systems-level UX, measurable performance, secure delivery, and collaborative documentation.
+            These are the constraints that keep delivery sharp: minimal abstractions, measurable impact, and relentless focus on speed and safety.
           </p>
         </motion.div>
 
@@ -59,7 +70,9 @@ export default function Principles() {
               className="rounded-[30px] border border-white/10 bg-white/5 px-8 py-9 md:px-10 md:py-11 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]"
             >
               <div className="flex items-start gap-4">
-                <span className="h-10 w-1.5 rounded-full bg-gradient-to-b from-primary via-accent to-primary/80 mt-1" aria-hidden />
+                <span className="h-12 w-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center">
+                  {principle.icon}
+                </span>
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-foreground">{principle.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{principle.description}</p>

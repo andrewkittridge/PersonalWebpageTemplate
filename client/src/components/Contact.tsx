@@ -61,9 +61,9 @@ export default function Contact() {
 
       <div className="page-shell relative z-10">
         <div className="section-heading">
-          <p className="section-label">Contact</p>
-          <h2 className="section-title">Let&apos;s build your next release.</h2>
-          <p className="section-description">Pick the channel that works for you—email, call, LinkedIn, or GitHub—and let&apos;s map the roadmap together.</p>
+          <p className="section-label">Mission control</p>
+          <h2 className="section-title">Ready to launch the next release.</h2>
+          <p className="section-description">Choose your channel—email, call, LinkedIn, or GitHub—and we&apos;ll map the flight plan together.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
@@ -73,19 +73,19 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.95, ease: "easeOut" }}
-          >
-            <div className="space-y-6">
-              <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-primary/80">
-                  Full-Stack Web Developer
-                </p>
-                <h3 className="text-2xl font-semibold text-foreground mt-2">
-                  Java · Spring · React · Oracle SQL
-                </h3>
-                <p className="text-muted-foreground mt-3">
-                  Secure, STIG-compliant enterprise delivery with motion-rich, accessible interfaces. I move from idea to production with observability wired in.
-                </p>
-              </div>
+            >
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-primary/80">
+                    Full-Stack Web Engineer
+                  </p>
+                  <h3 className="text-2xl font-semibold text-foreground mt-2">
+                    Java · Spring · React · Oracle SQL
+                  </h3>
+                  <p className="text-muted-foreground mt-3">
+                    Secure, STIG-compliant enterprise delivery with motion-rich, accessible interfaces. Think of it as building a cockpit—everything measured and calm.
+                  </p>
+                </div>
 
               <address className="not-italic space-y-4 text-sm text-muted-foreground">
                 <a

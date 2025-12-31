@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 224 33% 6%;
-    --foreground: 218 12% 94%;
-    --card: 226 26% 10%;
-    --card-foreground: 218 12% 94%;
-    --popover: 226 26% 10%;
-    --popover-foreground: 218 12% 94%;
-    --primary: 193 95% 68%;
-    --primary-foreground: 223 18% 8%;
-    --secondary: 239 29% 14%;
-    --secondary-foreground: 218 12% 94%;
-    --muted: 230 18% 18%;
-    --muted-foreground: 220 14% 70%;
-    --accent: 267 92% 72%;
-    --accent-foreground: 224 33% 6%;
+    --background: 221 34% 6%;
+    --foreground: 210 18% 96%;
+    --card: 220 26% 9%;
+    --card-foreground: 210 18% 96%;
+    --popover: 220 26% 10%;
+    --popover-foreground: 210 18% 96%;
+    --primary: 191 97% 66%;
+    --primary-foreground: 221 34% 6%;
+    --secondary: 240 16% 14%;
+    --secondary-foreground: 210 18% 96%;
+    --muted: 230 16% 18%;
+    --muted-foreground: 215 14% 72%;
+    --accent: 320 80% 68%;
+    --accent-foreground: 221 34% 6%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 228 19% 24%;
-    --input: 228 19% 22%;
-    --ring: 193 95% 68%;
-    --radius: 1.4rem;
+    --border: 224 18% 24%;
+    --input: 224 18% 22%;
+    --ring: 191 97% 66%;
+    --radius: 1.2rem;
   }
 
   .dark {
-    --background: 226 36% 5%;
-    --foreground: 220 12% 94%;
-    --card: 230 22% 10%;
-    --card-foreground: 220 12% 94%;
-    --popover: 230 22% 10%;
-    --popover-foreground: 220 12% 94%;
-    --primary: 193 95% 68%;
-    --primary-foreground: 226 36% 5%;
-    --secondary: 239 32% 12%;
-    --secondary-foreground: 220 12% 94%;
-    --muted: 236 18% 15%;
-    --muted-foreground: 220 12% 70%;
-    --accent: 267 92% 72%;
-    --accent-foreground: 226 36% 5%;
+    --background: 222 40% 4%;
+    --foreground: 210 18% 96%;
+    --card: 220 26% 9%;
+    --card-foreground: 210 18% 96%;
+    --popover: 220 26% 10%;
+    --popover-foreground: 210 18% 96%;
+    --primary: 191 97% 66%;
+    --primary-foreground: 222 40% 4%;
+    --secondary: 240 20% 12%;
+    --secondary-foreground: 210 18% 96%;
+    --muted: 236 18% 16%;
+    --muted-foreground: 214 16% 72%;
+    --accent: 320 80% 68%;
+    --accent-foreground: 222 40% 4%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 232 18% 22%;
-    --input: 232 18% 22%;
-    --ring: 193 95% 68%;
+    --border: 228 18% 20%;
+    --input: 228 18% 20%;
+    --ring: 191 97% 66%;
   }
 
   html {
@@ -62,12 +62,12 @@
       "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #04060c;
+    background-color: #02050b;
     background-image:
-      radial-gradient(1200px at 14% 18%, rgba(41, 189, 255, 0.18), transparent 55%),
-      radial-gradient(1100px at 85% 16%, rgba(143, 96, 255, 0.12), transparent 54%),
-      radial-gradient(980px at 50% 72%, rgba(255, 176, 94, 0.1), transparent 58%),
-      linear-gradient(120deg, #05070e 10%, #070c14 45%, #04060c 90%);
+      radial-gradient(900px at 8% 16%, rgba(124, 249, 255, 0.16), transparent 52%),
+      radial-gradient(820px at 82% 10%, rgba(255, 111, 207, 0.12), transparent 52%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 32%),
+      linear-gradient(115deg, #05070d 15%, #05060b 45%, #020305 80%);
     background-attachment: fixed;
     color: hsl(var(--foreground));
   }
@@ -78,11 +78,11 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath fill='%23ffffff' fill-opacity='0.016' d='M0 0h80v80H0zM80 80h80v80H80z'/%3E%3C/svg%3E"),
-      radial-gradient(circle at 22% 32%, rgba(255, 255, 255, 0.02), transparent 40%),
-      radial-gradient(circle at 76% 54%, rgba(255, 255, 255, 0.02), transparent 50%);
-    mix-blend-mode: lighten;
-    opacity: 0.5;
+      radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.07), transparent 36%),
+      radial-gradient(circle at 78% 46%, rgba(255, 255, 255, 0.08), transparent 42%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23a0aec0' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M0 100h200M100 0v200'/%3E%3Cpath d='M100 0 200 100 100 200 0 100Z'/%3E%3C/g%3E%3C/svg%3E");
+    mix-blend-mode: screen;
+    opacity: 0.4;
     z-index: -1;
   }
 
@@ -98,7 +98,7 @@
 
 @layer components {
   .page-shell {
-    @apply relative mx-auto w-full max-w-7xl px-5 md:px-10;
+    @apply relative mx-auto w-full max-w-6xl px-5 md:px-10;
   }
 
   .section-shell {
@@ -110,11 +110,11 @@
   }
 
   .section-label {
-    @apply text-[11px] uppercase tracking-[0.4em] text-muted-foreground;
+    @apply text-[11px] uppercase tracking-[0.45em] text-muted-foreground/80;
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-semibold leading-tight text-foreground tracking-tight;
+    @apply text-4xl md:text-6xl font-semibold leading-tight text-foreground tracking-tight;
   }
 
   .section-description {
@@ -130,7 +130,7 @@
   }
 
   .pill-solid {
-    @apply pill bg-gradient-to-r from-primary via-accent to-primary/80 text-background shadow-[0_20px_70px_-32px_rgba(0,0,0,0.8)];
+    @apply pill bg-gradient-to-r from-primary via-white to-primary/70 text-background shadow-[0_25px_90px_-32px_rgba(0,0,0,0.9)];
   }
 
   .pill-ghost {
@@ -138,15 +138,15 @@
   }
 
   .glass-panel {
-    @apply rounded-[28px] border border-white/10 bg-white/5 px-6 py-6 backdrop-blur-2xl shadow-[0_30px_100px_-60px_rgba(0,0,0,0.85)];
+    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-6 py-6 backdrop-blur-2xl shadow-[0_30px_100px_-70px_rgba(0,0,0,0.9)];
   }
 
   .surface-card {
-    @apply rounded-[30px] border border-white/10 bg-gradient-to-br from-white/5 via-white/0 to-white/0 px-7 py-6 backdrop-blur-xl shadow-[0_35px_120px_-75px_rgba(0,0,0,0.9)];
+    @apply rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/0 px-7 py-6 backdrop-blur-xl shadow-[0_40px_140px_-80px_rgba(0,0,0,0.95)];
   }
 
   .stat-card {
-    @apply rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-5 py-5 shadow-[0_15px_60px_-48px_rgba(0,0,0,0.9)];
+    @apply rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-5 py-5 shadow-[0_20px_70px_-52px_rgba(0,0,0,0.9)];
   }
 
   .icon-badge {
@@ -158,46 +158,46 @@
   }
 
   .chip-ghost {
-    @apply chip hover:border-white/20 hover:text-foreground;
+    @apply chip hover:border-primary/30 hover:text-foreground hover:shadow-[0_12px_30px_-20px_rgba(124,249,255,0.4)];
   }
 
   .hero-watermark {
     @apply pointer-events-none select-none font-semibold uppercase text-white/5;
-    font-size: clamp(96px, 18vw, 220px);
+    font-size: clamp(110px, 18vw, 230px);
     letter-spacing: -0.05em;
     line-height: 0.9;
   }
 
   .console-pane {
-    @apply rounded-[32px] border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-xl shadow-[0_28px_100px_-70px_rgba(0,0,0,0.8)];
+    @apply rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 px-8 py-10 backdrop-blur-2xl shadow-[0_38px_140px_-90px_rgba(0,0,0,0.95)];
     box-shadow:
-      0 30px 100px -70px rgba(0, 0, 0, 0.9),
+      0 36px 120px -90px rgba(0, 0, 0, 0.95),
       0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
       0 0 0 1px rgba(255, 255, 255, 0.02);
   }
 
   .ops-stack {
-    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-white/0 p-6 backdrop-blur-xl shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)];
+    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-white/0 p-6 backdrop-blur-xl shadow-[0_32px_120px_-80px_rgba(0,0,0,0.9)];
   }
 
   .ops-card {
-    @apply rounded-2xl border border-white/10 bg-black/40 px-5 py-4 shadow-[0_26px_80px_-50px_rgba(0,0,0,0.85)];
+    @apply rounded-2xl border border-white/10 bg-black/50 px-5 py-4 shadow-[0_26px_80px_-50px_rgba(0,0,0,0.85)];
   }
 
   .ops-bar {
-    @apply h-1.5 w-full overflow-hidden rounded-full bg-white/5;
+    @apply h-1.5 w-full overflow-hidden rounded-full bg-white/10;
   }
 
   .ops-bar-fill {
-    @apply h-full rounded-full bg-gradient-to-r from-primary via-accent to-white;
+    @apply h-full rounded-full bg-gradient-to-r from-primary via-white to-accent;
   }
 
   .module-chrome {
-    @apply flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-muted-foreground;
+    @apply flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground;
   }
 
   .telemetry-grid {
-    @apply grid gap-4 rounded-[28px] border border-white/10 bg-black/50 p-6 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.8)] backdrop-blur-xl;
+    @apply grid gap-4 rounded-[28px] border border-white/10 bg-black/60 p-6 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.85)] backdrop-blur-2xl;
   }
 
   .telemetry-chip {
@@ -209,20 +209,20 @@
   }
 
   .mission-rail__item {
-    @apply flex items-start justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 via-white/0 to-white/0 px-4 py-4;
+    @apply flex items-start justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/10 via-white/0 to-white/0 px-4 py-4;
   }
 
   .mission-grid {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(62% 80% at 64% 12%, rgba(154, 114, 255, 0.18), transparent),
-      radial-gradient(50% 62% at 20% 70%, rgba(41, 199, 255, 0.12), transparent),
-      linear-gradient(120deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%),
-      linear-gradient(0deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 120px 120px, 120px 120px;
-    mask-image: radial-gradient(circle at center, black 68%, transparent 98%);
+      radial-gradient(58% 72% at 62% 18%, rgba(124, 249, 255, 0.18), transparent),
+      radial-gradient(46% 58% at 22% 72%, rgba(255, 111, 207, 0.16), transparent),
+      linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 48%, transparent 70%),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 140px 140px, 140px 140px;
+    mask-image: radial-gradient(circle at center, black 70%, transparent 98%);
     pointer-events: none;
     z-index: 0;
   }
@@ -249,8 +249,8 @@
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 120px 120px;
-    mask-image: radial-gradient(circle at center, black 60%, transparent 90%);
+    background-size: 160px 160px;
+    mask-image: radial-gradient(circle at center, black 62%, transparent 90%);
     pointer-events: none;
     z-index: 0;
   }
@@ -258,21 +258,21 @@
   .beam {
     position: absolute;
     inset: 0;
-    background: radial-gradient(900px at 70% 48%, rgba(41, 189, 255, 0.26), transparent 55%);
-    filter: blur(52px);
+    background: radial-gradient(780px at 68% 38%, rgba(124, 249, 255, 0.24), transparent 52%);
+    filter: blur(48px);
     opacity: 0.8;
     pointer-events: none;
   }
 
   .beam--cool {
-    background: radial-gradient(780px at 26% 55%, rgba(143, 96, 255, 0.22), transparent 50%);
+    background: radial-gradient(780px at 22% 55%, rgba(255, 111, 207, 0.2), transparent 50%);
   }
 
   .beam--tight {
-    background: radial-gradient(620px at 68% 48%, rgba(255, 255, 255, 0.18), transparent 52%);
+    background: radial-gradient(620px at 64% 38%, rgba(255, 255, 255, 0.18), transparent 52%);
   }
 
   .divider {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
   }
 }

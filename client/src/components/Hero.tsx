@@ -1,45 +1,31 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react";
-import { Activity, ArrowDownRight, ArrowUpRight, Database, Layers, ShieldCheck, Sparkles, Zap, Globe2, Rocket, Shield } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Gauge, Layers, Rocket, ShieldCheck, Sparkles, Wifi } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
-const impactStack = [
-  {
-    title: "Design systems",
-    status: "UI platform",
-    metric: "Consistency up 25%",
-    load: 25,
-    detail: "Rolled out component tokens and accessibility-first patterns across apps.",
-  },
-  {
-    title: "Performance tuning",
-    status: "Back end",
-    metric: "P99 ↓ 38%",
-    load: 38,
-    detail: "Refined Spring pipelines and Oracle indexes for responsive dashboards.",
-  },
-  {
-    title: "Modern web UX",
-    status: "Product",
-    metric: "CSAT +18",
-    load: 18,
-    detail: "Rebuilt enterprise journeys with React, animations, and zero-friction flows.",
-  },
-  {
-    title: "Secure delivery",
-    status: "Compliance",
-    metric: "Incidents 0",
-    load: 19,
-    detail: "Hardened STIG-compliant services with audit-ready observability.",
-  },
+type MissionStat = {
+  label: string;
+  value: string;
+  detail: string;
+  icon: LucideIcon;
+};
+
+const missionStats: MissionStat[] = [
+  { label: "Launch cadence", value: "12+ releases / yr", detail: "Continuous delivery with observability wired in.", icon: Rocket },
+  { label: "Latency budget", value: "< 200ms UI", detail: "Motion-first React, tuned with performance budgets.", icon: Gauge },
+  { label: "Security posture", value: "STIG-ready", detail: "Secret-cleared, least-privilege, zero-trust defaults.", icon: ShieldCheck },
+  { label: "Systems shipped", value: "30+ modules", detail: "Design systems, Spring services, analytics surfaces.", icon: Layers },
+];
+
+const missionSignals = [
+  "First-principles thinking",
+  "Autonomy ready",
+  "Data over opinions",
+  "Hardcore engineering",
+  "Human-friendly motion",
 ];
 
 export default function Hero() {
-  const totalLoad = useMemo(
-    () => Math.round(impactStack.reduce((acc, item) => acc + item.load, 0) / impactStack.length),
-    [],
-  );
-
   return (
     <section
       aria-labelledby="hero-heading"
@@ -49,7 +35,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(1200px at 78% 30%, rgba(41,189,255,0.22), transparent 55%), radial-gradient(980px at 18% 68%, rgba(143,96,255,0.18), transparent 50%)",
+            "radial-gradient(1100px at 80% 18%, rgba(124,249,255,0.18), transparent 55%), radial-gradient(900px at 12% 74%, rgba(255,111,207,0.15), transparent 52%)",
         }}
         aria-hidden
       />
@@ -66,42 +52,42 @@ export default function Hero() {
         >
           <div className="flex flex-wrap items-center gap-3">
             <div className="module-chrome">
-              <Shield className="h-4 w-4 text-primary" />
-              Modern Web Platform · Enterprise ready
+              <Rocket className="h-4 w-4 text-primary" />
+              Musk-mode portfolio · Built for lift-off
             </div>
             <div className="chip-ghost text-xs">
-              <Zap className="h-4 w-4 text-primary" aria-hidden />
-              Real-time UI
+              <Wifi className="h-4 w-4 text-primary" aria-hidden />
+              Real-time ready
             </div>
           </div>
 
-          <header className="space-y-5">
+          <header className="space-y-6">
             <p className="section-label">Andrew Kittridge</p>
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary/80">
-                <Activity className="h-4 w-4" aria-hidden />
-                Java · Spring · Modern Web Apps
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.34em] text-primary/80">
+                <Sparkles className="h-4 w-4" aria-hidden />
+                Java · Spring · React · Systems thinking
               </div>
               <h1 id="hero-heading" className="section-title">
-                Building modern web app experiences with secure, scalable engineering.
+                Launch-ready software with a SpaceX-level control room vibe.
               </h1>
               <p className="section-description">
-                I craft responsive, analytics-friendly platforms with Java, Spring, React, and rich UI systems. Each release blends motion,
-                accessibility, and observability so enterprise teams can ship confidently.
+                I build human, high-contrast interfaces backed by resilient Spring services, tuned telemetry, and motion that feels like a cockpit display.
+                Every release is measured, secure, and obsessively optimized for speed.
               </p>
             </div>
           </header>
 
           <div className="flex flex-wrap items-center gap-3">
             <a href="#contact" className="pill-solid">
-              Contact
+              Book a launch
               <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
               href="#experience"
               className="pill-ghost"
             >
-              View experience
+              Mission log
               <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
@@ -116,20 +102,18 @@ export default function Hero() {
               href="#skills"
               className="pill-ghost"
             >
-              Skills overview
+              Systems stack
               <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
           </div>
 
           <div className="mission-rail relative overflow-hidden">
-            {["Design systems & tokens", "API performance & reliability", "Secure delivery with clearance", "LLM-infused product flows", "Observability baked in"].map(
-              (item) => (
-                <div key={item} className="mission-rail__item">
-                  <span className="text-sm font-semibold text-foreground">{item}</span>
-                  <Sparkles className="h-4 w-4 text-primary" aria-hidden />
-                </div>
-              ),
-            )}
+            {missionSignals.map((item) => (
+              <div key={item} className="mission-rail__item">
+                <span className="text-sm font-semibold text-foreground">{item}</span>
+                <Sparkles className="h-4 w-4 text-primary" aria-hidden />
+              </div>
+            ))}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-transparent to-background opacity-50" />
           </div>
         </motion.div>
@@ -144,41 +128,42 @@ export default function Hero() {
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="icon-badge">
-                  <Layers className="h-5 w-5 text-accent" aria-hidden />
+                  <ShieldCheck className="h-5 w-5 text-accent" aria-hidden />
                 </div>
                 <div>
-                  <p className="section-label">Product snapshots</p>
-                  <p className="text-lg font-semibold text-foreground">Modern web app outcomes</p>
+                  <p className="section-label">Mission telemetry</p>
+                  <p className="text-lg font-semibold text-foreground">Engineering signals</p>
                 </div>
               </div>
               <div className="chip-ghost text-xs">
-                <Globe2 className="h-4 w-4 text-primary" aria-hidden />
-                Multi-platform
+                Launch console
               </div>
             </div>
 
             <div className="grid gap-3">
-              {impactStack.map((item, index) => (
+              {missionStats.map((stat, index) => (
                 <motion.div
-                  key={item.title}
+                  key={stat.label}
                   className="ops-card"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.08 * index, duration: 0.5 }}
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.28em] text-muted-foreground">{item.status}</p>
-                      <p className="text-lg font-semibold text-foreground">{item.title}</p>
+                    <div className="flex items-center gap-3">
+                      <div className="icon-badge">
+                        <stat.icon className="h-5 w-5 text-primary" aria-hidden />
+                      </div>
+                      <div>
+                        <p className="text-sm uppercase tracking-[0.28em] text-muted-foreground">{stat.label}</p>
+                        <p className="text-lg font-semibold text-foreground">{stat.value}</p>
+                      </div>
                     </div>
-                    <Database className="h-5 w-5 text-primary" aria-hidden />
+                    <ArrowUpRight className="h-4 w-4 text-primary" aria-hidden />
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
-                  <div className="mt-3 flex items-center gap-3">
-                    <div className="ops-bar" aria-hidden>
-                      <div className="ops-bar-fill" style={{ width: `${item.load}%` }} />
-                    </div>
-                    <span className="text-xs font-semibold text-muted-foreground">{item.metric}</span>
+                  <p className="mt-3 text-sm text-muted-foreground">{stat.detail}</p>
+                  <div className="ops-bar mt-3" aria-hidden>
+                    <div className="ops-bar-fill" style={{ width: "92%" }} />
                   </div>
                 </motion.div>
               ))}
@@ -188,31 +173,31 @@ export default function Hero() {
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <div className="icon-badge">
-                    <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
+                    <Rocket className="h-4 w-4 text-primary" aria-hidden />
                   </div>
-                  <p className="text-sm font-semibold text-foreground">Secure delivery</p>
+                  <p className="text-sm font-semibold text-foreground">Launch approvals</p>
                 </div>
                 <div className="telemetry-chip">
                   <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
-                  Secret clearance
+                  Clearance active
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                   <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Core stack</p>
                   <p className="text-lg font-semibold text-foreground">Java · Spring · React</p>
-                  <p>Event-driven APIs, real-time dashboards, and resilient services.</p>
+                  <p>Event-driven APIs, telemetry-first dashboards, and design systems built to scale.</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Data focus</p>
-                  <p className="text-lg font-semibold text-foreground">Oracle SQL · Analytics</p>
-                  <p>Optimized queries, indexed search, and instrumentation baked in.</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Data & ops</p>
+                  <p className="text-lg font-semibold text-foreground">Oracle SQL · Observability</p>
+                  <p>Indexed queries, metrics pipelines, and runbooks that keep missions green.</p>
                 </div>
               </div>
               <div className="flex items-center justify-between text-sm text-muted-foreground">
-                <span>Mission load</span>
+                <span>Control room status</span>
                 <div className="flex items-center gap-2 text-foreground font-semibold">
-                  {totalLoad}% <Sparkles className="h-4 w-4 text-accent" aria-hidden />
+                  Nominal <Sparkles className="h-4 w-4 text-accent" aria-hidden />
                 </div>
               </div>
             </div>
@@ -221,13 +206,13 @@ export default function Hero() {
           <div className="absolute -top-10 -right-8 hidden lg:block">
             <div className="rounded-full border border-white/10 bg-white/5 px-5 py-3 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground shadow-[0_30px_120px_-70px_rgba(0,0,0,0.9)]">
               <Rocket className="h-4 w-4 text-primary" aria-hidden />
-              Modern web release ready
+              Ready for orbital launch
             </div>
           </div>
         </motion.div>
       </div>
 
-      <p className="hero-watermark absolute bottom-6 left-4">Modern Web</p>
+      <p className="hero-watermark absolute bottom-6 left-4">Launch</p>
     </section>
   );
 }

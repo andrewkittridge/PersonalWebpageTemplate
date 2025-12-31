@@ -5,20 +5,20 @@ describe("Hero Component", () => {
   it("renders the hero headline and subtitle", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("heading", { name: /Building modern web app experiences with secure, scalable engineering/i })
+      screen.getByRole("heading", { name: /Launch-ready software with a SpaceX-level control room vibe/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/I craft responsive, analytics-friendly platforms/i)
+      screen.getByText(/I build human, high-contrast interfaces/i)
     ).toBeInTheDocument();
   });
 
   it("highlights primary contact actions", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("link", { name: /contact/i })
+      screen.getByRole("link", { name: /book a launch/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /view experience/i })
+      screen.getByRole("link", { name: /mission log/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /linkedin/i })
@@ -27,8 +27,8 @@ describe("Hero Component", () => {
 
   it("lists modernization highlights", () => {
     render(<Hero />);
-    expect(screen.getByText(/Design systems & tokens/i)).toBeInTheDocument();
-    expect(screen.getByText(/Secure delivery with clearance/i)).toBeInTheDocument();
-    expect(screen.getByText(/LLM-infused product flows/i)).toBeInTheDocument();
+    expect(screen.getByText(/First-principles thinking/i)).toBeInTheDocument();
+    expect(screen.getByText(/Autonomy ready/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hardcore engineering/i)).toBeInTheDocument();
   });
 });

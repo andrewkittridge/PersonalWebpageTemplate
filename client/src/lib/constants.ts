@@ -1,6 +1,6 @@
-export const SITE_TITLE = "Andrew Kittridge | Full-Stack Web Developer";
+export const SITE_TITLE = "Andrew Kittridge | Systems Engineer for the Next Frontier";
 export const SITE_DESCRIPTION =
-  "Resume-style portfolio for Andrew Kittridge, a Full-Stack Web Developer specializing in Java, Spring, and secure enterprise solutions.";
+  "Portfolio for Andrew Kittridge — building launch-ready software with Java, Spring, and motion-rich React experiences tuned for security and performance.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -12,31 +12,36 @@ export const SOCIAL_LINKS = {
 export const SKILLS_CATEGORIES = {
   programming: [
     "Java (expert-level proficiency)",
-    "JavaScript (advanced)"
+    "TypeScript",
+    "JavaScript",
+    "Node.js"
   ],
   webTech: [
     "Spring Framework (Spring Boot, Spring MVC)",
-    "Struts",
-    "jQuery",
+    "React (motion-first UI)",
+    "Vite",
+    "Framer Motion",
+    "Tailwind CSS",
     "HTML5",
-    "CSS3",
-    "RESTful APIs",
-    "SOAP Web Services",
-    "Maven"
+    "CSS3"
   ],
   database: [
     "Oracle SQL (query optimization, stored procedures)",
-    "PL/SQL (triggers, functions)"
+    "PL/SQL (triggers, functions)",
+    "PostgreSQL",
+    "Caching strategies"
   ],
   tools: [
-    "Agile (Scrum, Kanban)",
+    "Observability (metrics, tracing)",
     "Git (branching strategies)",
+    "CI/CD automation",
     "STIG Compliance",
     "Secret Security Clearance (active)"
   ],
   personalProjects: [
-    "React (component-based architecture)",
-    "Large Language Model (LLM) APIs"
+    "LLM APIs",
+    "Edge functions",
+    "Design systems"
   ]
 };
 
