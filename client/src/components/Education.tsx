@@ -14,9 +14,9 @@ export default function Education() {
     >
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Education & Projects</p>
-          <h2 className="section-title">Foundations that power the modern app work.</h2>
-          <p className="section-description">Academic rigor and personal builds that keep my approach sharp, experimental, and production-ready.</p>
+          <p className="section-label">Foundations</p>
+          <h2 className="section-title">Training the engineer and the experimenter.</h2>
+          <p className="section-description">Academic rigor plus skunkworks projects that keep my approach sharp, curious, and production-ready.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">

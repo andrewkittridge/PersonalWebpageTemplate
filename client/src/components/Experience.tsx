@@ -16,16 +16,16 @@ export default function Experience() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(1100px at 72% 42%, rgba(41,189,255,0.16), transparent 52%)",
+            "radial-gradient(1100px at 72% 42%, rgba(124,249,255,0.16), transparent 52%)",
         }}
         aria-hidden
       />
 
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Experience</p>
-          <h2 className="section-title">Enterprise delivery, redesigned for a modern web app era.</h2>
-          <p className="section-description">Impact across modernization, secure delivery, and data-rich interfaces—shaping platforms that feel fast, polished, and trustworthy.</p>
+          <p className="section-label">Mission log</p>
+          <h2 className="section-title">Shipping with a launch crew mindset.</h2>
+          <p className="section-description">Modernization, secure delivery, and data-rich interfaces—mission patches from building systems that have to work on day one.</p>
         </div>
 
         <div className="grid gap-8">

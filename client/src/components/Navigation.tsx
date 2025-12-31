@@ -6,10 +6,11 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { id: "about", label: "Profile" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+  { id: "principles", label: "Operating System" },
+  { id: "experience", label: "Mission Log" },
+  { id: "skills", label: "Systems Stack" },
+  { id: "education", label: "Foundations" },
+  { id: "contact", label: "Launch" },
 ];
 
 export default function Navigation() {
@@ -64,7 +65,7 @@ export default function Navigation() {
             className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.5em]"
             aria-label="Navigate home"
           >
-            ak · studio
+            ak · launch
           </Link>
 
           <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1 backdrop-blur">

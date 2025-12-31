@@ -39,9 +39,9 @@ export default function Skills() {
 
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Technical Skills</p>
-          <h2 className="section-title">Skills tuned for modern product delivery.</h2>
-          <p className="section-description">Systems thinking, UI craft, and performance-minded engineering for secure, data-heavy web apps.</p>
+          <p className="section-label">Systems stack</p>
+          <h2 className="section-title">The kit for Musk-mode delivery.</h2>
+          <p className="section-description">Frontier-ready skills across UI, services, and observability—so launches are fast, measurable, and safe.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -79,9 +79,9 @@ export default function Skills() {
 
         <div className="glass-panel grid gap-4 md:grid-cols-3">
           {[
-            { title: "Front-end", items: ["Design tokens", "Animation systems", "Accessibility", "Performance budgets"] },
+            { title: "Front-end", items: ["Design tokens", "Framer Motion", "Accessibility", "Performance budgets"] },
             { title: "Back-end", items: ["Spring Boot", "REST & SOAP", "Oracle SQL tuning", "Observability"] },
-            { title: "Collaboration", items: ["Mentorship", "Agile delivery", "Docs & runbooks", "Analytics wiring"] },
+            { title: "Delivery", items: ["CI/CD automation", "Runbooks", "Analytics wiring", "Mentorship"] },
           ].map((group) => (
             <div key={group.title} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 space-y-3">
               <p className="text-sm uppercase tracking-[0.26em] text-muted-foreground">{group.title}</p>
