@@ -15,9 +15,9 @@ export default function Education() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Proof</p>
-          <h2 className="section-title">Creds and IP that inform our work.</h2>
+          <h2 className="section-title">Education and projects that shape my approach.</h2>
           <p className="section-description">
-            Formal training keeps us analytical; shipped products keep us honest about what real audiences respond to.
+            Formal training keeps me analytical; shipped products keep me honest about what real audiences respond to.
           </p>
         </div>
 

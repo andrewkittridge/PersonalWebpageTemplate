@@ -5,20 +5,20 @@ describe("Hero Component", () => {
   it("renders the hero headline and subtitle", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("heading", { name: /We design the story/i })
+      screen.getByRole("heading", { name: /connect positioning, product, and lifecycle/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/expert marketers/i)
+      screen.getByText(/Product and growth marketing leader/i)
     ).toBeInTheDocument();
   });
 
   it("highlights primary contact actions", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("link", { name: /book a discovery call/i })
+      screen.getByRole("link", { name: /contact/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /view playbooks/i })
+      screen.getByRole("link", { name: /view experience/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /linkedin/i })
@@ -27,8 +27,8 @@ describe("Hero Component", () => {
 
   it("lists modernization highlights", () => {
     render(<Hero />);
-    expect(screen.getByText(/Story-led growth/i)).toBeInTheDocument();
-    expect(screen.getByText(/Full-funnel campaigns/i)).toBeInTheDocument();
+    expect(screen.getByText(/Positioning \+ narrative design/i)).toBeInTheDocument();
+    expect(screen.getByText(/Lifecycle and retention/i)).toBeInTheDocument();
     expect(screen.getByText(/RevOps and analytics/i)).toBeInTheDocument();
   });
 });

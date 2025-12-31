@@ -13,10 +13,10 @@ export default function Footer() {
             href="/"
             className="text-lg font-semibold tracking-[0.6em] uppercase"
           >
-            COC
+            AK
           </Link>
           <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-            A collective of marketers who blend positioning, campaigns, content, and RevOps to keep revenue programs honest.
+            Product and growth marketing leader connecting positioning, lifecycle, and RevOps so teams can see impact faster.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
 
       <div className="page-shell mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
-        © {currentYear} Conversion Ops Collective. All rights reserved.
+        © {currentYear} Andrew Kittridge. All rights reserved.
       </div>
     </footer>
   );

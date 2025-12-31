@@ -23,10 +23,10 @@ export default function Experience() {
 
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Impact</p>
-          <h2 className="section-title">Plays we run to move revenue.</h2>
+          <p className="section-label">Experience</p>
+          <h2 className="section-title">Roles and wins worth knowing.</h2>
           <p className="section-description">
-            Strategy, copy, design, and ops shipped as one team. Below are recent missions and the repeatable systems behind them.
+            A blend of product marketing, lifecycle, and revenue operations work across consulting, founding, and in-house leadership roles.
           </p>
         </div>
 

@@ -14,25 +14,25 @@ import { SOCIAL_LINKS } from "@/lib/constants";
 
 const opsStack = [
   {
-    title: "Repositioning sprint",
-    status: "Complete",
-    metric: "38% lift in SQLs",
-    load: 86,
+    title: "Repositioning sprints",
+    status: "Positioning",
+    metric: "38% more SQLs",
+    load: 82,
     detail: "ICP clarity, offer packaging, conversion copy",
   },
   {
     title: "Lifecycle system",
-    status: "In-flight",
+    status: "Lifecycle",
     metric: "19% retention gain",
     load: 74,
     detail: "Welcome + ritual nudges, churn save plays",
   },
   {
-    title: "Demand engine QA",
-    status: "Steady",
-    metric: "98% UTM clean",
-    load: 62,
-    detail: "Attribution guardrails, routing, SLA alerts",
+    title: "Premium launch",
+    status: "Product + Growth",
+    metric: "11% premium month one",
+    load: 88,
+    detail: "Pricing, paywall, in-app messaging",
   },
 ];
 
@@ -68,37 +68,37 @@ export default function Hero() {
         >
           <div className="module-chrome">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            Fractional CMOs + builders · Conversion ops
+            Product & Growth Marketing · Resume Snapshot
           </div>
 
           <header className="space-y-5">
-            <p className="section-label">Revenue marketing collective</p>
+            <p className="section-label">Andrew Kittridge</p>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary/80">
                 <Activity className="h-4 w-4" aria-hidden />
-                Conversion Control Room
+                Product + Lifecycle + RevOps
               </div>
               <h1 id="hero-heading" className="section-title">
-                We design the story, wire the funnel, and run the plays.
+                I connect positioning, product, and lifecycle so teams can see revenue faster.
               </h1>
               <p className="section-description">
-                A small team of expert marketers who blend positioning, lifecycle, content,
-                and RevOps discipline. We help leadership teams ship launches, reach the right buyers,
-                and prove impact every week.
+                Product and growth marketing leader with a record of shipping launches, building lifecycle systems,
+                and keeping RevOps hygiene in check. Available for fractional leadership, focused sprints, or
+                embedded support alongside your team.
               </p>
             </div>
           </header>
 
           <div className="flex flex-wrap items-center gap-3">
             <a href="#contact" className="pill-solid">
-              Book a discovery call
+              Contact
               <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
               href="#experience"
               className="pill-ghost"
             >
-              View playbooks
+              View experience
               <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
@@ -112,7 +112,7 @@ export default function Hero() {
           </div>
 
           <div className="mission-rail relative overflow-hidden">
-            {["Story-led growth", "Full-funnel campaigns", "RevOps and analytics", "Founder-friendly", "Security-aware"].map(
+            {["Positioning + narrative design", "Lifecycle and retention", "RevOps and analytics", "Founder-friendly", "Security-aware"].map(
               (item) => (
                 <div key={item} className="mission-rail__item">
                   <span className="text-sm font-semibold text-foreground">{item}</span>
@@ -130,21 +130,21 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.1, ease: "easeOut" }}
           className="ops-stack relative"
         >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="icon-badge">
-                <Radar className="h-5 w-5 text-accent" aria-hidden />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="icon-badge">
+                  <Radar className="h-5 w-5 text-accent" aria-hidden />
+                </div>
+                <div>
+                  <p className="section-label">Career snapshot</p>
+                  <p className="text-lg font-semibold text-foreground">Recent outcomes</p>
+                </div>
               </div>
-              <div>
-                <p className="section-label">Operations stack</p>
-                <p className="text-lg font-semibold text-foreground">Live mission telemetry</p>
+              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-2 text-xs font-semibold tracking-[0.2em] text-muted-foreground">
+                <Sparkles className="h-4 w-4 text-primary" aria-hidden />
+                Measurable impact
               </div>
             </div>
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-2 text-xs font-semibold tracking-[0.2em] text-muted-foreground">
-              <Sparkles className="h-4 w-4 text-primary" aria-hidden />
-              Adaptive grid
-            </div>
-          </div>
 
           <div className="grid gap-3">
             {opsStack.map((item, index) => (
@@ -186,18 +186,18 @@ export default function Hero() {
                 Quality gates
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Pipeline health</p>
-                <p className="text-lg font-semibold text-foreground">SQLs ↑</p>
-                <p>Audience + offer clarity, better follow-up</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Pipeline health</p>
+                  <p className="text-lg font-semibold text-foreground">SQLs ↑</p>
+                  <p>Audience + offer clarity, better follow-up</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Activation</p>
+                  <p className="text-lg font-semibold text-foreground">Time-to-value ↓</p>
+                  <p>Lifecycle automation + product messaging</p>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Activation</p>
-                <p className="text-lg font-semibold text-foreground">Time-to-value ↓</p>
-                <p>Lifecycle automation + product messaging</p>
-              </div>
-            </div>
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <span>Mission load</span>
               <div className="flex items-center gap-2 text-foreground font-semibold">
