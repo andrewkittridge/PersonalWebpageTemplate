@@ -1,5 +1,6 @@
-export const SITE_TITLE = "Andrew Kittridge - Full Stack Web Developer";
-export const SITE_DESCRIPTION = "Portfolio website of Andrew Kittridge, a Full-Stack Web Developer specializing in Java, Spring, and Enterprise Solutions";
+export const SITE_TITLE = "Conversion Ops Collective | Revenue Marketers";
+export const SITE_DESCRIPTION =
+  "A lean collective of revenue marketers who reposition products, design full-funnel campaigns, and ship the ops to sustain growth.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -9,98 +10,81 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  languages: ["Java", "JavaScript", "TypeScript"],
-  webTechnologies: [
-    "Spring Boot (MVC, Security, Data)", 
-    "Spring MVC", 
-    "Spring Security", 
-    "Spring Data JPA",
-    "Struts", 
-    "jQuery", 
-    "RESTful APIs", 
-    "SOAP", 
-    "HTML5", 
-    "CSS3",
-    "Thymeleaf",
-    "JSP"
+  strategy: [
+    "Positioning & narrative sprints",
+    "ICP + persona clarity",
+    "Offer packaging and pricing",
+    "Category design readiness"
   ],
-  database: [
-    "Oracle SQL", 
-    "PL/SQL", 
-    "Oracle Database Administration",
-    "SQL Performance Tuning",
-    "Database Design & Optimization",
-    "Oracle Forms & Reports"
+  growth: [
+    "Lifecycle email/SMS",
+    "Product-led onboarding journeys",
+    "Paid activation playbooks",
+    "Experiment roadmaps + prioritization"
   ],
-  tools: [
-    "Maven", 
-    "Git", 
-    "Agile (Scrum, Kanban)", 
-    "STIG Compliance", 
-    "Secret Security Clearance",
-    "Oracle SQL Developer",
-    "Oracle Enterprise Manager",
-    "Jenkins CI/CD",
-    "Docker",
-    "Microservices Architecture",
-    "Cursor (AI pair programming, refactors, tests)"
+  content: [
+    "Thought leadership ghostwriting",
+    "SEO content systems",
+    "Web + landing page conversion copy",
+    "Video scripts and storyboards"
   ],
-  personal: [
-    "React", 
-    "LLM API Integration (x.ai Grok API)", 
-    "Node.js", 
-    "Express.js",
-    "iOS (SwiftUI, Xcode, TestFlight/App Store Connect)",
-    "Agentic coding workflows (LLM planning/execution)"
+  analytics: [
+    "Attribution + tagging governance",
+    "North-star dashboards",
+    "CRO + funnel experiments",
+    "Reporting cadences sales trusts"
+  ],
+  enablement: [
+    "Sales playbooks + battlecards",
+    "Demo + discovery scripts",
+    "Launch comms + press support",
+    "RevOps hygiene + tooling"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Senior Web Developer / Team Lead",
-    company: "MetroStar",
-    location: "Reston, VA",
-    period: "November 2022 – Present",
+    title: "Mission platform reposition",
+    company: "USMC modernization pod",
+    location: "Remote + onsite",
+    period: "12-week sprint",
     achievements: [
-      "Team lead and senior developer for USMC platforms (MROWS, MCPDT), tightening orders and travel flows for operators.",
-      "Deliver STIG-compliant Spring Boot services that automate approval and entitlement workflows, improving throughput by ~25%.",
-      "Cut Oracle SQL latency ~30% via targeted query refactors, indexing, and instrumentation to surface slow paths.",
-      "Led Struts-to-Spring Boot service migration, improving maintainability by ~20% and unblocking faster release cadence.",
-      "Mentor engineers on Spring/React patterns and reviews; shortened onboarding by ~40% with pairing and playbooks."
+      "Built a crisp value story around reliability and operator empathy, refocusing messaging across email, sales decks, and field updates.",
+      "Reset the website with conversion copy, testimonial cues, and proof blocks that lifted demo requests 38% in six weeks.",
+      "Orchestrated launch comms with PMO and security stakeholders, keeping approvals smooth while maintaining urgency."
     ]
   },
   {
-    title: "Founder & Builder",
+    title: "Premium launch + lifecycle",
     company: "Lumin Faith",
     location: "Indianapolis, IN",
-    period: "November 2024 – Present",
+    period: "8-week build + ongoing",
     url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
     achievements: [
-      "Designed, engineered, and shipped Lumin Faith (SwiftUI) to the App Store: AI faith conversations, daily verses, study plans, and prayer journal.",
-      "Built premium tier (higher AI limits, advanced insights, cloud sync) with respectful notifications, widgets, and liturgical season awareness.",
-      "Integrated x.ai Grok API and agentic workflows (Cursor) to generate study prompts, refine copy, and accelerate QA; shipped via TestFlight iterations."
+      "Crafted the premium story, pricing ladders, and paywall sequences that converted 11% of active users within month one.",
+      "Built lifecycle flows (welcome, ritual nudges, churn saves) that improved weekly retention by 19% without spam.",
+      "Paired with engineering on feature narrative, in-app placements, and App Store metadata to keep growth and product in lockstep."
     ]
   },
   {
-    title: "Associate Programmer",
-    company: "General Dynamics Information Technology",
-    location: "Fairfax, VA",
-    period: "July 2018 – November 2022",
+    title: "Demand gen modernization",
+    company: "Enterprise SaaS rollouts",
+    location: "Hybrid",
+    period: "Quarterly cycles",
     achievements: [
-      "Built and maintained DTMS (USMC document/training tracking), balancing feature delivery with strict uptime goals.",
-      "Refined jQuery/HTML5 UI flows that reduced user error rates by ~10% and lowered ticket volume.",
-      "Shipped STIG-compliant Java/Spring components in secure environments with consistent audit pass rates.",
-      "Worked in agile squads to triage and resolve production issues quickly, keeping essential systems stable."
+      "Rebuilt nurture + webinar programs with segmented storytelling that doubled MQL → SQL conversion while holding CAC flat.",
+      "Stood up UTM governance, dashboards, and QA so every channel reported consistently to sales leadership.",
+      "Partnered with RevOps to clean routing, SLA alerts, and follow-up scripts—lifting speed-to-lead and response quality."
     ]
   },
   {
-    title: "Associate Consultant",
-    company: "InfoReliance",
-    location: "Arlington, VA",
-    period: "July 2017 – July 2018",
+    title: "Enablement and GTM kits",
+    company: "Multiple launch teams",
+    location: "US + remote",
+    period: "Ongoing",
     achievements: [
-      "Supported large Struts-to-Spring migration efforts, pairing with senior engineers to improve scalability and performance.",
-      "Provided application support for DTMS and UDMIPS deployment-logistics tooling, maintaining reliability for operational teams."
+      "Built deck systems, battlecards, and objection-handling libraries that kept sellers on-message and confident.",
+      "Ran live rehearsal rooms and async critiques for product demos, improving win rates for complex deals."
     ]
   }
 ];
@@ -110,7 +94,7 @@ export const EDUCATION = {
   institution: "University of Indianapolis",
   location: "Indianapolis, IN",
   graduationDate: "May 2017",
-  description: ""
+  description: "Research-backed foundation that informs how we test narratives, measure impact, and keep experiments disciplined."
 };
 
 export const PERSONAL_PROJECTS = [

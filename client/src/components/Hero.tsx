@@ -14,25 +14,25 @@ import { SOCIAL_LINKS } from "@/lib/constants";
 
 const opsStack = [
   {
-    title: "Secure release train",
-    status: "Live",
-    metric: "99.97% uptime",
-    load: 88,
-    detail: "Spring Boot, STIG, automated gates",
+    title: "Repositioning sprint",
+    status: "Complete",
+    metric: "38% lift in SQLs",
+    load: 86,
+    detail: "ICP clarity, offer packaging, conversion copy",
   },
   {
-    title: "USMC modernization",
+    title: "Lifecycle system",
     status: "In-flight",
-    metric: "1.6s page med.",
-    load: 72,
-    detail: "React + Oracle tuning",
+    metric: "19% retention gain",
+    load: 74,
+    detail: "Welcome + ritual nudges, churn save plays",
   },
   {
-    title: "Pipeline clarity",
-    status: "Green",
-    metric: "12m mean deploy",
-    load: 64,
-    detail: "GitHub Actions, drift alerts",
+    title: "Demand engine QA",
+    status: "Steady",
+    metric: "98% UTM clean",
+    load: 62,
+    detail: "Attribution guardrails, routing, SLA alerts",
   },
 ];
 
@@ -68,36 +68,37 @@ export default function Hero() {
         >
           <div className="module-chrome">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            Secret cleared · Mission-ready
+            Fractional CMOs + builders · Conversion ops
           </div>
 
           <header className="space-y-5">
-            <p className="section-label">Full-stack engineer</p>
+            <p className="section-label">Revenue marketing collective</p>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary/80">
                 <Activity className="h-4 w-4" aria-hidden />
-                Mission Control OS
+                Conversion Control Room
               </div>
               <h1 id="hero-heading" className="section-title">
-                Build decisive systems for teams that can&apos;t miss.
+                We design the story, wire the funnel, and run the plays.
               </h1>
               <p className="section-description">
-                Andrew Kittridge architects secure software for the U.S. Marine Corps and enterprise leaders—pairing
-                Java/Spring rigor with React fluency and Oracle performance tuning.
+                A small team of expert marketers who blend positioning, lifecycle, content,
+                and RevOps discipline. We help leadership teams ship launches, reach the right buyers,
+                and prove impact every week.
               </p>
             </div>
           </header>
 
           <div className="flex flex-wrap items-center gap-3">
             <a href="#contact" className="pill-solid">
-              Engage Andrew
+              Book a discovery call
               <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
               href="#experience"
               className="pill-ghost"
             >
-              Track record
+              View playbooks
               <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
             <a
@@ -111,7 +112,7 @@ export default function Hero() {
           </div>
 
           <div className="mission-rail relative overflow-hidden">
-            {["8+ yrs enterprise delivery", "Active Secret clearance", "USMC platforms", "Operational modernization"].map(
+            {["Story-led growth", "Full-funnel campaigns", "RevOps and analytics", "Founder-friendly", "Security-aware"].map(
               (item) => (
                 <div key={item} className="mission-rail__item">
                   <span className="text-sm font-semibold text-foreground">{item}</span>
@@ -178,23 +179,23 @@ export default function Hero() {
                 <div className="icon-badge">
                   <Send className="h-4 w-4 text-primary" aria-hidden />
                 </div>
-                <p className="text-sm font-semibold text-foreground">Engagement ready</p>
+                <p className="text-sm font-semibold text-foreground">Campaign control</p>
               </div>
               <div className="telemetry-chip">
                 <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
-                Clearance
+                Quality gates
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
               <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Latency</p>
-                <p className="text-lg font-semibold text-foreground">1.2s P95</p>
-                <p>Oracle tuning + CDN edge</p>
+                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Pipeline health</p>
+                <p className="text-lg font-semibold text-foreground">SQLs ↑</p>
+                <p>Audience + offer clarity, better follow-up</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Release cadence</p>
-                <p className="text-lg font-semibold text-foreground">Weekly green</p>
-                <p>Automated gates · zero-drift</p>
+                <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">Activation</p>
+                <p className="text-lg font-semibold text-foreground">Time-to-value ↓</p>
+                <p>Lifecycle automation + product messaging</p>
               </div>
             </div>
             <div className="flex items-center justify-between text-sm text-muted-foreground">
@@ -208,7 +209,7 @@ export default function Hero() {
 
       </div>
 
-      <p className="hero-watermark absolute bottom-6 left-4">Kittridge</p>
+      <p className="hero-watermark absolute bottom-6 left-4">Growth Ops</p>
     </section>
   );
 }

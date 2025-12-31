@@ -5,10 +5,10 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const aboutData = {
   description: [
-    "I modernize mission-critical USMC tools like MROWS and MCPDT with Spring Boot, React, and Oracle tuning—removing friction instead of adding ceremony.",
-    "Security is built in: releases stay STIG compliant, test-covered, and stable for distributed teams. No trendy add-ons, just reliable delivery.",
-    "Based in Indianapolis, Indiana with active clearance, I partner with leads to ship on time: fewer tickets, faster pages, steady operators.",
-    "I also built and shipped Lumin Faith solo—designed, engineered, and released to the App Store as a guided study companion.",
+    "We are a small, senior marketing crew that thinks like strategists and ships like operators. You get positioning, campaigns, content, and RevOps alignment under one roof.",
+    "Our process starts with clarity—ICP, offer, message—then moves into the plays: website rewrites, lifecycle systems, sales enablement, and dashboards sales trusts.",
+    "We work well with security-conscious, regulated, or mission-driven teams that need their story sharpened without slowing compliance or procurement.",
+    "Indianapolis based with remote reach. Recent work spans public sector platforms, premium consumer launches, and enterprise SaaS rollouts.",
   ],
 };
 
@@ -40,13 +40,12 @@ export default function About() {
           className="space-y-10"
         >
           <div className="section-heading">
-            <p className="section-label">Profile</p>
+            <p className="section-label">Collective</p>
             <h2 id="about-heading" className="section-title">
-              Reliable enterprise delivery, without the drama.
+              The growth studio that runs on evidence.
             </h2>
             <p className="section-description">
-              I ship secure, pragmatic software, keep operators unblocked, and modernize
-              legacy stacks without adding hype.
+              Strategy, creative, and operations move together so leaders stop guessing and start scaling the right signals.
             </p>
           </div>
 

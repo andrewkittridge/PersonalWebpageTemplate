@@ -3,24 +3,24 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const principles = [
   {
-    title: "Calm execution",
+    title: "Story before spend",
     description:
-      "Plan tightly, ship quietly. Releases move on cadence without noisy surprises, even when timelines compress.",
+      "We nail the narrative, ICP, and offer before pouring budget into channels. The clearest story wins attention and trust.",
   },
   {
-    title: "Security as posture",
+    title: "Full-funnel ownership",
     description:
-      "Compliance is baked in early—STIG, access controls, and observability are part of the plan, not a late-phase add-on.",
+      "From website to lifecycle to sales enablement, one team owns the connective tissue so handoffs don&apos;t stall momentum.",
   },
   {
-    title: "Operator empathy",
+    title: "Proof fast, then scale",
     description:
-      "Every change reduces friction for the Marines, analysts, and support teams who depend on the workflow daily.",
+      "We ship small, measure quickly, and only scale what works. Leaders see signal every week, not once a quarter.",
   },
   {
-    title: "Measured modernity",
+    title: "Calm, secure delivery",
     description:
-      "Use proven patterns, tune performance, and adopt tech only when it keeps the mission online and maintainable.",
+      "Many clients are regulated or mission-driven. We respect that with compliant workflows, crisp comms, and predictable release cadence.",
   },
 ];
 
@@ -41,10 +41,10 @@ export default function Principles() {
           transition={{ duration: 1.05, ease: "easeOut" }}
           className="section-heading"
         >
-          <p className="section-label">Story</p>
-          <h2 className="section-title">Principles that keep delivery steady.</h2>
+          <p className="section-label">Approach</p>
+          <h2 className="section-title">How we keep growth honest.</h2>
           <p className="section-description max-w-4xl">
-            A few pillars guide how I lead projects from discovery through sustainment—quiet confidence, clear ownership, and respect for the operators depending on the software.
+            The framework we use to keep campaigns strategic, measurable, and respectful of the operators, stakeholders, and customers who rely on them.
           </p>
         </motion.div>
 

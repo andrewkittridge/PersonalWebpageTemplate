@@ -62,10 +62,9 @@ export default function Contact() {
       <div className="page-shell relative z-10">
         <div className="section-heading">
           <p className="section-label">Collaborate</p>
-          <h2 className="section-title">Let&apos;s build your next release.</h2>
+          <h2 className="section-title">Ready for a growth room session?</h2>
           <p className="section-description">
-            Remote-friendly, clearance-ready, and comfortable pairing with your leads,
-            designers, and operators to move from idea to shipped.
+            We&apos;ll align on ICP, offer, and the signals that matter most. Expect a calm, senior crew that can lead or plug into your team without slowing approvals.
           </p>
         </div>
 
@@ -83,11 +82,10 @@ export default function Contact() {
                   Response within 24h
                 </p>
                 <h3 className="text-2xl font-semibold text-foreground mt-2">
-                  Ready when your roadmap is.
+                  Let&apos;s make the next quarter clearer.
                 </h3>
                 <p className="text-muted-foreground mt-3">
-                  Reach out for enterprise modernizations, audits, or leadership support on
-                  Java, Spring Boot, and React deliveries.
+                  Reach out for repositioning, campaign orchestration, lifecycle systems, or revenue analytics that sales will actually use.
                 </p>
               </div>
 
@@ -131,8 +129,8 @@ export default function Contact() {
                 {[
                   { label: "Timezone", value: "EST (UTC-5)" },
                   { label: "Clearance", value: "Active Secret" },
-                  { label: "Focus", value: "Java · Spring · React" },
-                  { label: "Engagements", value: "Hybrid or Remote" },
+                  { label: "Focus", value: "Positioning · Lifecycle · RevOps" },
+                  { label: "Engagements", value: "Projects or fractional" },
                 ].map((item) => (
                   <div key={item.label} className="text-left rounded-[22px] border border-white/10 px-5 py-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
