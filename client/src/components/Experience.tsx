@@ -24,9 +24,9 @@ export default function Experience() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Impact</p>
-          <h2 className="section-title">Understand the mission. Deliver the release.</h2>
+          <h2 className="section-title">Plays we run to move revenue.</h2>
           <p className="section-description">
-            Federal-grade reliability with teams that stay calm under pressure. Here&apos;s how I operate.
+            Strategy, copy, design, and ops shipped as one team. Below are recent missions and the repeatable systems behind them.
           </p>
         </div>
 

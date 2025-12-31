@@ -5,10 +5,10 @@ import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { id: "about", label: "Profile" },
-  { id: "experience", label: "Impact" },
-  { id: "skills", label: "Capabilities" },
-  { id: "education", label: "Growth" },
+  { id: "about", label: "Collective" },
+  { id: "experience", label: "Plays" },
+  { id: "skills", label: "Toolkit" },
+  { id: "education", label: "Proof" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -86,13 +86,13 @@ export default function Navigation() {
               href="#contact"
               className="pill-ghost hidden md:inline-flex"
             >
-              Engage
+              Book time
             </a>
             <a
               href="#experience"
               className="pill-solid hidden md:inline-flex"
             >
-              Track record
+              View plays
             </a>
             <button
               className="pill-ghost md:hidden px-3 py-2"

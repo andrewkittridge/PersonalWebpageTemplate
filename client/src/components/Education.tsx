@@ -14,11 +14,10 @@ export default function Education() {
     >
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Growth</p>
-          <h2 className="section-title">Disciplined craft. Purposeful builds.</h2>
+          <p className="section-label">Proof</p>
+          <h2 className="section-title">Creds and IP that inform our work.</h2>
           <p className="section-description">
-            Formal computer science foundations paired with personal initiatives keep my
-            approach grounded and imaginative.
+            Formal training keeps us analytical; shipped products keep us honest about what real audiences respond to.
           </p>
         </div>
 
@@ -53,9 +52,9 @@ export default function Education() {
                 <p className="leading-relaxed">{EDUCATION.description}</p>
               )}
               <ul className="list-disc list-inside text-sm text-muted-foreground/90 space-y-1">
-                <li>Software engineering focus with security electives</li>
-                <li>Founded the campus dev mentorship guild</li>
-                <li>Graduated while delivering on-the-job IT support</li>
+                <li>Behavioral research + experimentation fundamentals</li>
+                <li>Cross-discipline collaboration with design and comms</li>
+                <li>Operations mindset applied to marketing and product</li>
               </ul>
             </div>
           </motion.article>
