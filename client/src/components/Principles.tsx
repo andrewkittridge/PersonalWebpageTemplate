@@ -5,22 +5,22 @@ const principles = [
   {
     title: "Story before spend",
     description:
-      "We nail the narrative, ICP, and offer before pouring budget into channels. The clearest story wins attention and trust.",
+      "Nail the ICP, offer, and narrative before scaling channels. The clearest story wins attention and keeps CAC honest.",
   },
   {
     title: "Full-funnel ownership",
     description:
-      "From website to lifecycle to sales enablement, one team owns the connective tissue so handoffs don&apos;t stall momentum.",
+      "Own the connective tissue between website, lifecycle, product, and sales enablement so handoffs don&apos;t stall momentum.",
   },
   {
     title: "Proof fast, then scale",
     description:
-      "We ship small, measure quickly, and only scale what works. Leaders see signal every week, not once a quarter.",
+      "Ship small, measure weekly, and scale what works. Leaders get a cadence of signal instead of quarterly surprises.",
   },
   {
     title: "Calm, secure delivery",
     description:
-      "Many clients are regulated or mission-driven. We respect that with compliant workflows, crisp comms, and predictable release cadence.",
+      "Respect regulated or mission-driven environments with compliant workflows, crisp comms, and predictable release cadence.",
   },
 ];
 
@@ -41,10 +41,10 @@ export default function Principles() {
           transition={{ duration: 1.05, ease: "easeOut" }}
           className="section-heading"
         >
-          <p className="section-label">Approach</p>
-          <h2 className="section-title">How we keep growth honest.</h2>
+          <p className="section-label">Principles</p>
+          <h2 className="section-title">How I keep work predictable and honest.</h2>
           <p className="section-description max-w-4xl">
-            The framework we use to keep campaigns strategic, measurable, and respectful of the operators, stakeholders, and customers who rely on them.
+            A framework for building programs that are strategic, measurable, and respectful of the operators, stakeholders, and customers who rely on them.
           </p>
         </motion.div>
 

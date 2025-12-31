@@ -61,10 +61,10 @@ export default function Contact() {
 
       <div className="page-shell relative z-10">
         <div className="section-heading">
-          <p className="section-label">Collaborate</p>
-          <h2 className="section-title">Ready for a growth room session?</h2>
+          <p className="section-label">Contact</p>
+          <h2 className="section-title">Let&apos;s talk about your next move.</h2>
           <p className="section-description">
-            We&apos;ll align on ICP, offer, and the signals that matter most. Expect a calm, senior crew that can lead or plug into your team without slowing approvals.
+            Whether you need a fractional lead, a launch partner, or a focused sprint, I can plug in quickly and leave durable systems behind.
           </p>
         </div>
 
@@ -82,10 +82,10 @@ export default function Contact() {
                   Response within 24h
                 </p>
                 <h3 className="text-2xl font-semibold text-foreground mt-2">
-                  Let&apos;s make the next quarter clearer.
+                  Clear direction, faster execution.
                 </h3>
                 <p className="text-muted-foreground mt-3">
-                  Reach out for repositioning, campaign orchestration, lifecycle systems, or revenue analytics that sales will actually use.
+                  Reach out for repositioning, launch support, lifecycle systems, or a steady marketing lead who can steward RevOps decisions.
                 </p>
               </div>
 
@@ -128,9 +128,9 @@ export default function Contact() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   { label: "Timezone", value: "EST (UTC-5)" },
-                  { label: "Clearance", value: "Active Secret" },
+                  { label: "Availability", value: "Fractional or project-based" },
                   { label: "Focus", value: "Positioning · Lifecycle · RevOps" },
-                  { label: "Engagements", value: "Projects or fractional" },
+                  { label: "Collaboration", value: "Embedded with product, sales, RevOps" },
                 ].map((item) => (
                   <div key={item.label} className="text-left rounded-[22px] border border-white/10 px-5 py-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">

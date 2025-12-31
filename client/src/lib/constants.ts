@@ -1,6 +1,6 @@
-export const SITE_TITLE = "Conversion Ops Collective | Revenue Marketers";
+export const SITE_TITLE = "Andrew Kittridge | Product & Growth Marketing Leader";
 export const SITE_DESCRIPTION =
-  "A lean collective of revenue marketers who reposition products, design full-funnel campaigns, and ship the ops to sustain growth.";
+  "Resume-style portfolio for Andrew Kittridge, a product and growth marketing leader who connects positioning, lifecycle, and RevOps to deliver measurable outcomes.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -10,81 +10,72 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  strategy: [
-    "Positioning & narrative sprints",
-    "ICP + persona clarity",
+  leadership: [
+    "Fractional CMO / Head of Marketing engagements",
+    "Cross-functional leadership with product, sales, and RevOps",
+    "Roadmapping, prioritization, and measurement cadences",
+    "Calm stakeholder communication and executive reporting"
+  ],
+  productMarketing: [
+    "Positioning and narrative design",
+    "ICP and persona clarity",
     "Offer packaging and pricing",
-    "Category design readiness"
+    "Web + landing page conversion copy",
+    "Sales playbooks, battlecards, and demo scripts"
   ],
-  growth: [
-    "Lifecycle email/SMS",
-    "Product-led onboarding journeys",
-    "Paid activation playbooks",
-    "Experiment roadmaps + prioritization"
+  growthLifecycle: [
+    "Lifecycle email/SMS and in-product journeys",
+    "Product-led onboarding",
+    "Paid activation and retargeting playbooks",
+    "Experiment roadmaps and CRO"
   ],
-  content: [
+  contentStory: [
     "Thought leadership ghostwriting",
     "SEO content systems",
-    "Web + landing page conversion copy",
-    "Video scripts and storyboards"
+    "Video scripts and storyboards",
+    "Launch comms and PR alignment"
   ],
-  analytics: [
-    "Attribution + tagging governance",
+  analyticsOps: [
+    "Attribution and tagging governance",
     "North-star dashboards",
-    "CRO + funnel experiments",
+    "RevOps hygiene + routing and SLA alerts",
     "Reporting cadences sales trusts"
-  ],
-  enablement: [
-    "Sales playbooks + battlecards",
-    "Demo + discovery scripts",
-    "Launch comms + press support",
-    "RevOps hygiene + tooling"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Mission platform reposition",
-    company: "USMC modernization pod",
-    location: "Remote + onsite",
-    period: "12-week sprint",
+    title: "Fractional Marketing Lead",
+    company: "Independent Consulting",
+    location: "Remote",
+    period: "2022 — Present",
     achievements: [
-      "Built a crisp value story around reliability and operator empathy, refocusing messaging across email, sales decks, and field updates.",
-      "Reset the website with conversion copy, testimonial cues, and proof blocks that lifted demo requests 38% in six weeks.",
-      "Orchestrated launch comms with PMO and security stakeholders, keeping approvals smooth while maintaining urgency."
+      "Run positioning, lifecycle, and demand programs for leadership teams that need revenue clarity without extra headcount.",
+      "Reset websites, landing experiences, and nurture programs to improve demo quality and speed up approvals.",
+      "Partner with sales, product, and RevOps to keep routing clean, follow-up consistent, and attribution trustworthy."
     ]
   },
   {
-    title: "Premium launch + lifecycle",
-    company: "Lumin Faith",
+    title: "Founder & Product Lead",
+    company: "Lumin Faith (iOS)",
     location: "Indianapolis, IN",
-    period: "8-week build + ongoing",
+    period: "2024 — Present",
     url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
     achievements: [
-      "Crafted the premium story, pricing ladders, and paywall sequences that converted 11% of active users within month one.",
+      "Designed the product narrative, pricing ladders, and paywall experience that converted 11% of active users in month one.",
       "Built lifecycle flows (welcome, ritual nudges, churn saves) that improved weekly retention by 19% without spam.",
-      "Paired with engineering on feature narrative, in-app placements, and App Store metadata to keep growth and product in lockstep."
+      "Shipped App Store metadata, in-app placements, and product messaging to keep growth and feature velocity aligned."
     ]
   },
   {
-    title: "Demand gen modernization",
-    company: "Enterprise SaaS rollouts",
+    title: "Product Marketing & RevOps Lead",
+    company: "Mission platform and enterprise SaaS teams",
     location: "Hybrid",
-    period: "Quarterly cycles",
+    period: "2018 — 2023",
     achievements: [
-      "Rebuilt nurture + webinar programs with segmented storytelling that doubled MQL → SQL conversion while holding CAC flat.",
-      "Stood up UTM governance, dashboards, and QA so every channel reported consistently to sales leadership.",
-      "Partnered with RevOps to clean routing, SLA alerts, and follow-up scripts—lifting speed-to-lead and response quality."
-    ]
-  },
-  {
-    title: "Enablement and GTM kits",
-    company: "Multiple launch teams",
-    location: "US + remote",
-    period: "Ongoing",
-    achievements: [
-      "Built deck systems, battlecards, and objection-handling libraries that kept sellers on-message and confident.",
-      "Ran live rehearsal rooms and async critiques for product demos, improving win rates for complex deals."
+      "Built value stories and enablement kits (decks, battlecards, demo scripts) that kept sales confident in complex deals.",
+      "Rebuilt nurture, webinar, and paid programs with segmented messaging that doubled MQL → SQL conversion while holding CAC flat.",
+      "Implemented UTM governance, dashboards, routing hygiene, and SLA alerts to improve attribution and speed-to-lead."
     ]
   }
 ];

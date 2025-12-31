@@ -4,19 +4,19 @@ import { SKILLS_CATEGORIES } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const categoryIcons: Record<string, JSX.Element> = {
-  strategy: <Compass className="w-5 h-5" />,
-  growth: <Rocket className="w-5 h-5" />,
-  content: <PenTool className="w-5 h-5" />,
-  analytics: <BarChart3 className="w-5 h-5" />,
-  enablement: <Handshake className="w-5 h-5" />,
+  leadership: <Handshake className="w-5 h-5" />,
+  productMarketing: <Compass className="w-5 h-5" />,
+  growthLifecycle: <Rocket className="w-5 h-5" />,
+  contentStory: <PenTool className="w-5 h-5" />,
+  analyticsOps: <BarChart3 className="w-5 h-5" />,
 };
 
 const categoryTitles: Record<string, string> = {
-  strategy: "Positioning + Offer",
-  growth: "Lifecycle + Demand",
-  content: "Narrative + Creative",
-  analytics: "Attribution + Insight",
-  enablement: "Sales Enablement",
+  leadership: "Leadership + Direction",
+  productMarketing: "Product Marketing",
+  growthLifecycle: "Growth + Lifecycle",
+  contentStory: "Content + Story",
+  analyticsOps: "Analytics + Ops",
 };
 
 export default function Skills() {
@@ -40,9 +40,9 @@ export default function Skills() {
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
           <p className="section-label">Capabilities</p>
-          <h2 className="section-title">Everything needed to win a market.</h2>
+          <h2 className="section-title">Strengths I bring to each engagement.</h2>
           <p className="section-description">
-            Positioning, campaigns, creative, and RevOps hygiene—delivered by one crew so decisions get made faster and impact shows up in the numbers.
+            A hands-on mix of positioning, product messaging, lifecycle, and revenue operations to connect strategy with measurable outcomes.
           </p>
         </div>
 
