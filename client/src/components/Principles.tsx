@@ -3,24 +3,24 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const principles = [
   {
-    title: "Story before spend",
+    title: "Modernize legacy systems",
     description:
-      "Nail the ICP, offer, and narrative before scaling channels. The clearest story wins attention and keeps CAC honest.",
+      "Transition Struts-based applications to Spring to strengthen scalability and maintainability for enterprise environments.",
   },
   {
-    title: "Full-funnel ownership",
+    title: "Optimize for performance",
     description:
-      "Own the connective tissue between website, lifecycle, product, and sales enablement so handoffs don&apos;t stall momentum.",
+      "Refactor Oracle SQL and indexing strategies to reduce execution times and keep mission-critical applications responsive.",
   },
   {
-    title: "Proof fast, then scale",
+    title: "Deliver securely",
     description:
-      "Ship small, measure weekly, and scale what works. Leaders get a cadence of signal instead of quarterly surprises.",
+      "Build STIG-compliant solutions with an active Secret Security Clearance to safeguard operations and reduce vulnerabilities.",
   },
   {
-    title: "Calm, secure delivery",
+    title: "Elevate teams",
     description:
-      "Respect regulated or mission-driven environments with compliant workflows, crisp comms, and predictable release cadence.",
+      "Mentor developers in Spring and Agile practices to accelerate onboarding and sustain collaborative, high-performing teams.",
   },
 ];
 
@@ -41,10 +41,10 @@ export default function Principles() {
           transition={{ duration: 1.05, ease: "easeOut" }}
           className="section-heading"
         >
-          <p className="section-label">Principles</p>
-          <h2 className="section-title">How I keep work predictable and honest.</h2>
+          <p className="section-label">Focus</p>
+          <h2 className="section-title">Principles shaped by enterprise delivery.</h2>
           <p className="section-description max-w-4xl">
-            A framework for building programs that are strategic, measurable, and respectful of the operators, stakeholders, and customers who rely on them.
+            Methods drawn directly from resume projects: modernization, performance tuning, security, and mentorship.
           </p>
         </motion.div>
 

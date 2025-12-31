@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
-import { BarChart3, Compass, Handshake, PenTool, Rocket } from "lucide-react";
+import { BarChart3, Cpu, Layers, ShieldCheck, Workflow } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const categoryIcons: Record<string, JSX.Element> = {
-  leadership: <Handshake className="w-5 h-5" />,
-  productMarketing: <Compass className="w-5 h-5" />,
-  growthLifecycle: <Rocket className="w-5 h-5" />,
-  contentStory: <PenTool className="w-5 h-5" />,
-  analyticsOps: <BarChart3 className="w-5 h-5" />,
+  programming: <Cpu className="w-5 h-5" />,
+  webTech: <Layers className="w-5 h-5" />,
+  database: <BarChart3 className="w-5 h-5" />,
+  tools: <ShieldCheck className="w-5 h-5" />,
+  personalProjects: <Workflow className="w-5 h-5" />,
 };
 
 const categoryTitles: Record<string, string> = {
-  leadership: "Leadership + Direction",
-  productMarketing: "Product Marketing",
-  growthLifecycle: "Growth + Lifecycle",
-  contentStory: "Content + Story",
-  analyticsOps: "Analytics + Ops",
+  programming: "Programming Languages",
+  webTech: "Web Technologies",
+  database: "Database Technologies",
+  tools: "Tools & Methodologies",
+  personalProjects: "Personal Project Technologies",
 };
 
 export default function Skills() {
@@ -39,11 +39,9 @@ export default function Skills() {
 
       <div className="page-shell relative z-10 space-y-12">
         <div className="section-heading">
-          <p className="section-label">Capabilities</p>
-          <h2 className="section-title">Strengths I bring to each engagement.</h2>
-          <p className="section-description">
-            A hands-on mix of positioning, product messaging, lifecycle, and revenue operations to connect strategy with measurable outcomes.
-          </p>
+          <p className="section-label">Technical Skills</p>
+          <h2 className="section-title">Stack depth built in enterprise delivery.</h2>
+          <p className="section-description">Technologies and methods used across Java, Spring, secure enterprise environments, and AI-driven personal projects.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -59,7 +57,7 @@ export default function Skills() {
               <div className="flex items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3">
                   <span className="icon-badge">
-                    {categoryIcons[category] ?? <Compass className="w-5 h-5" />}
+                    {categoryIcons[category] ?? <Cpu className="w-5 h-5" />}
                   </span>
                   <h3 className="text-lg font-semibold text-foreground">
                     {categoryTitles[category] || category}
