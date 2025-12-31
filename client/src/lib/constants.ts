@@ -1,6 +1,6 @@
-export const SITE_TITLE = "Andrew Kittridge | Systems Engineer for the Next Frontier";
+export const SITE_TITLE = "Andrew Kittridge | Mission-Grade Software";
 export const SITE_DESCRIPTION =
-  "Portfolio for Andrew Kittridge — building launch-ready software with Java, Spring, and motion-rich React experiences tuned for security and performance.";
+  "A SpaceX-inspired mission page for Andrew Kittridge — building orbital-grade systems with Spring, React, and telemetry-first delivery.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -11,52 +11,50 @@ export const SOCIAL_LINKS = {
 
 export const SKILLS_CATEGORIES = {
   programming: [
-    "Java (expert-level proficiency)",
+    "Java (mission-critical)",
     "TypeScript",
-    "JavaScript",
-    "Node.js"
+    "Node.js",
+    "Go"
   ],
   webTech: [
-    "Spring Framework (Spring Boot, Spring MVC)",
-    "React (motion-first UI)",
-    "Vite",
+    "Spring Boot",
+    "React + Vite",
     "Framer Motion",
     "Tailwind CSS",
-    "HTML5",
-    "CSS3"
+    "Progressive Web Apps",
+    "Design systems"
   ],
   database: [
-    "Oracle SQL (query optimization, stored procedures)",
-    "PL/SQL (triggers, functions)",
+    "Oracle SQL tuning",
     "PostgreSQL",
-    "Caching strategies"
+    "PL/SQL automation",
+    "Caching + CDN strategy"
   ],
   tools: [
-    "Observability (metrics, tracing)",
-    "Git (branching strategies)",
-    "CI/CD automation",
-    "STIG Compliance",
-    "Secret Security Clearance (active)"
+    "Observability (metrics + tracing)",
+    "CI/CD flight checklists",
+    "Security hardening (STIG)",
+    "Secret Clearance"
   ],
   personalProjects: [
-    "LLM APIs",
-    "Edge functions",
-    "Design systems"
+    "AI copilots",
+    "Edge orchestration",
+    "Telemetry dashboards"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Web Developer",
+    title: "Lead Full-Stack Engineer",
     company: "MetroStar",
     location: "Reston, VA",
     period: "November 2022 – Present",
     achievements: [
-      "Spearheaded the migration of legacy Struts-based applications to the Spring Framework, increasing maintainability by 20% and modernizing infrastructure for scalability.",
-      "Optimized complex Oracle SQL queries and indexing strategies, reducing execution times by 30% and improving responsiveness.",
-      "Revamped UI/UX for a mission-critical enterprise application with JavaScript and CSS3, leading to a 15% improvement in user satisfaction scores.",
-      "Developed secure, STIG-compliant solutions with Java and Spring, achieving 25% gains in operational efficiency by streamlining workflows.",
-      "Mentored new developers in Spring Framework best practices and Agile, shortening onboarding time by 40% and strengthening team performance."
+      "Rebuilt legacy Struts stacks into Spring Boot services with feature flags, staging envs, and observability—cutting release friction by 40%.",
+      "Implemented performance budgets across React + Vite front ends, keeping mission-critical UI responses under 180ms on real data.",
+      "Optimized Oracle SQL with tuned indexes and query plans, reducing heavy reports from minutes to seconds for field operators.",
+      "Delivered STIG-compliant pipelines and access controls; paired code reviews with automated security gates for regulated deployments.",
+      "Coached teams on telemetry-first delivery using runbooks, dashboards, and chaos drills to keep uptime in the green."
     ]
   },
   {
@@ -65,8 +63,8 @@ export const EXPERIENCE = [
     location: "Fairfax, VA",
     period: "July 2018 – November 2022",
     achievements: [
-      "Improved front-end functionality and UI/UX using jQuery and HTML5, reducing user error rates by 10% and enhancing workflows.",
-      "Designed and implemented STIG-compliant Java and Spring applications for cleared environments, maintaining compliance with federal security standards."
+      "Upgraded defense apps with modern JavaScript and accessibility improvements, trimming user friction on mission workflows.",
+      "Built secure Spring services for cleared environments with detailed logging, audit trails, and repeatable deployment scripts."
     ]
   },
   {
@@ -75,8 +73,8 @@ export const EXPERIENCE = [
     location: "Arlington, VA",
     period: "July 2017 – July 2018",
     achievements: [
-      "Supported Struts-to-Spring migrations alongside senior developers to enhance system scalability and performance for enterprise clients.",
-      "Provided technical support for secure enterprise applications, troubleshooting compatibility issues to maintain consistent performance."
+      "Supported Struts-to-Spring migrations, helping enterprise teams modernize critical flows without downtime.",
+      "Troubleshot secure enterprise applications and stabilized deployments with better monitoring and release playbooks."
     ]
   }
 ];
@@ -87,20 +85,20 @@ export const EDUCATION = {
   location: "Indianapolis, IN",
   graduationDate: "May 2017",
   description:
-    "Completed a rigorous curriculum focused on software development, database systems, and web technologies, building a strong foundation in Java, algorithms, and system design. Participated in team-based capstone projects developing full-stack applications under Agile conditions."
+    "Studied algorithms, databases, and networked systems with a focus on Java. Led team capstones simulating production delivery, code reviews, and Agile ceremonies."
 };
 
 export const PERSONAL_PROJECTS = [
   {
-    title: "AI-Enhanced Web Application",
-    status: "Independent Development · Ongoing",
+    title: "Orbit Ops Copilot",
+    status: "Independent · Ongoing",
     description:
-      "Designed and developed a dynamic, AI-driven web application using React for a responsive frontend and Large Language Model (LLM) APIs for real-time content generation and user interaction.",
+      "An AI-assisted control panel that pairs LLM prompts with live metrics, guiding incident response and deployment playbooks.",
     highlights: [
-      "Modular, component-based architecture with React for scalability and maintainability.",
-      "LLM API integration enabling automated text generation and conversational interfaces.",
-      "Responsive design with CSS3 and JavaScript for seamless desktop and mobile experiences.",
-      "Emphasis on usability and accessibility across real-time interactive features."
+      "Composable React components styled with Tailwind and motion primitives for cockpit feel.",
+      "LLM integrations for runbook suggestions, with guardrails and human-in-loop confirmations.",
+      "Data visualization hooks that read from mock telemetry streams for demos.",
+      "Offline-ready PWA shell for field operations."
     ]
   }
 ];

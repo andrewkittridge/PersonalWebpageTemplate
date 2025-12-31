@@ -5,7 +5,7 @@ import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
 const signalGrid = [
   { title: "Systems over pages", description: "Design tokens, motion libraries, and reusable flows—built once, scaled everywhere.", icon: <Sparkles className="h-4 w-4 text-primary" /> },
-  { title: "Speed as a feature", description: "Performance budgets, async pipelines, and careful data loading keep UIs below the 200ms line.", icon: <Zap className="h-4 w-4 text-primary" /> },
+  { title: "Speed as a feature", description: "Performance budgets, async pipelines, and careful data loading keep UIs below the 180ms line.", icon: <Zap className="h-4 w-4 text-primary" /> },
   { title: "Secure by default", description: "STIG-ready delivery, observability, and least-privilege access across services.", icon: <Rocket className="h-4 w-4 text-primary" /> },
 ];
 

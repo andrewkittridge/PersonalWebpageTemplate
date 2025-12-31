@@ -6,48 +6,26 @@
 
 @layer base {
   :root {
-    --background: 221 34% 6%;
-    --foreground: 210 18% 96%;
-    --card: 220 26% 9%;
-    --card-foreground: 210 18% 96%;
-    --popover: 220 26% 10%;
-    --popover-foreground: 210 18% 96%;
-    --primary: 191 97% 66%;
-    --primary-foreground: 221 34% 6%;
-    --secondary: 240 16% 14%;
-    --secondary-foreground: 210 18% 96%;
-    --muted: 230 16% 18%;
-    --muted-foreground: 215 14% 72%;
-    --accent: 320 80% 68%;
-    --accent-foreground: 221 34% 6%;
+    --background: 222 51% 6%;
+    --foreground: 210 20% 96%;
+    --card: 222 34% 10%;
+    --card-foreground: 210 20% 96%;
+    --popover: 222 34% 12%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 200 98% 62%;
+    --primary-foreground: 221 51% 5%;
+    --secondary: 225 22% 18%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 222 24% 20%;
+    --muted-foreground: 214 18% 72%;
+    --accent: 270 93% 72%;
+    --accent-foreground: 222 51% 6%;
     --destructive: 0 84% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 224 18% 24%;
-    --input: 224 18% 22%;
-    --ring: 191 97% 66%;
+    --border: 226 22% 24%;
+    --input: 226 22% 22%;
+    --ring: 200 98% 62%;
     --radius: 1.2rem;
-  }
-
-  .dark {
-    --background: 222 40% 4%;
-    --foreground: 210 18% 96%;
-    --card: 220 26% 9%;
-    --card-foreground: 210 18% 96%;
-    --popover: 220 26% 10%;
-    --popover-foreground: 210 18% 96%;
-    --primary: 191 97% 66%;
-    --primary-foreground: 222 40% 4%;
-    --secondary: 240 20% 12%;
-    --secondary-foreground: 210 18% 96%;
-    --muted: 236 18% 16%;
-    --muted-foreground: 214 16% 72%;
-    --accent: 320 80% 68%;
-    --accent-foreground: 222 40% 4%;
-    --destructive: 0 84% 63%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 228 18% 20%;
-    --input: 228 18% 20%;
-    --ring: 191 97% 66%;
   }
 
   html {
@@ -62,12 +40,13 @@
       "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #02050b;
+    background-color: #040610;
     background-image:
-      radial-gradient(900px at 8% 16%, rgba(124, 249, 255, 0.16), transparent 52%),
-      radial-gradient(820px at 82% 10%, rgba(255, 111, 207, 0.12), transparent 52%),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 32%),
-      linear-gradient(115deg, #05070d 15%, #05060b 45%, #020305 80%);
+      radial-gradient(1200px at 50% 12%, rgba(45, 112, 255, 0.2), transparent 60%),
+      radial-gradient(900px at 18% 38%, rgba(100, 255, 235, 0.16), transparent 55%),
+      radial-gradient(900px at 84% 46%, rgba(199, 131, 255, 0.12), transparent 50%),
+      linear-gradient(130deg, rgba(255, 255, 255, 0.04) 0%, transparent 28%),
+      linear-gradient(110deg, #050a14 15%, #040611 45%, #03040a 80%);
     background-attachment: fixed;
     color: hsl(var(--foreground));
   }
@@ -78,11 +57,11 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.07), transparent 36%),
-      radial-gradient(circle at 78% 46%, rgba(255, 255, 255, 0.08), transparent 42%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23a0aec0' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M0 100h200M100 0v200'/%3E%3Cpath d='M100 0 200 100 100 200 0 100Z'/%3E%3C/g%3E%3C/svg%3E");
+      radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.08), transparent 34%),
+      radial-gradient(circle at 78% 38%, rgba(255, 255, 255, 0.06), transparent 38%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%238ca0c0' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M0 110h220M110 0v220'/%3E%3Cpath d='M0 0h220v220H0z'/%3E%3Ccircle cx='110' cy='110' r='108'/%3E%3C/g%3E%3C/svg%3E");
     mix-blend-mode: screen;
-    opacity: 0.4;
+    opacity: 0.35;
     z-index: -1;
   }
 
@@ -91,14 +70,14 @@
   }
 
   ::selection {
-    background: rgba(224, 180, 120, 0.22);
-    color: #fefefe;
+    background: rgba(59, 130, 246, 0.25);
+    color: #f9fafb;
   }
 }
 
 @layer components {
   .page-shell {
-    @apply relative mx-auto w-full max-w-6xl px-5 md:px-10;
+    @apply relative mx-auto w-full max-w-6xl px-6 md:px-10;
   }
 
   .section-shell {
@@ -110,7 +89,7 @@
   }
 
   .section-label {
-    @apply text-[11px] uppercase tracking-[0.45em] text-muted-foreground/80;
+    @apply text-[11px] uppercase tracking-[0.35em] text-muted-foreground/80;
   }
 
   .section-title {
@@ -122,7 +101,7 @@
   }
 
   .nav-link {
-    @apply rounded-full px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground transition hover:text-foreground hover:bg-white/10 hover:border-white/10 border border-transparent;
+    @apply rounded-full px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-muted-foreground transition border border-transparent hover:border-white/10 hover:text-foreground hover:bg-white/5;
   }
 
   .pill {
@@ -137,16 +116,40 @@
     @apply pill border border-white/10 bg-white/5 text-foreground hover:border-primary/40 hover:text-primary;
   }
 
+  .tag {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.26em] text-muted-foreground;
+  }
+
+  .tag-ghost {
+    @apply tag hover:border-primary/40 hover:text-foreground;
+  }
+
+  .panel {
+    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-7 py-7 backdrop-blur-2xl shadow-[0_30px_110px_-80px_rgba(0,0,0,0.9)];
+  }
+
+  .glass-grid {
+    @apply grid gap-4 rounded-[30px] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-6 backdrop-blur-2xl shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)];
+  }
+
+  .signal-card {
+    @apply rounded-2xl border border-white/10 bg-black/60 px-5 py-5 shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)];
+  }
+
+  .stat-tile {
+    @apply rounded-2xl border border-white/10 bg-white/5 px-5 py-4;
+  }
+
   .glass-panel {
-    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-6 py-6 backdrop-blur-2xl shadow-[0_30px_100px_-70px_rgba(0,0,0,0.9)];
+    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-6 py-6 backdrop-blur-2xl shadow-[0_30px_110px_-80px_rgba(0,0,0,0.9)];
   }
 
   .surface-card {
-    @apply rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/0 px-7 py-6 backdrop-blur-xl shadow-[0_40px_140px_-80px_rgba(0,0,0,0.95)];
+    @apply rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/0 px-7 py-6 backdrop-blur-xl shadow-[0_36px_120px_-90px_rgba(0,0,0,0.9)];
   }
 
   .stat-card {
-    @apply rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-5 py-5 shadow-[0_20px_70px_-52px_rgba(0,0,0,0.9)];
+    @apply rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-5 py-5 shadow-[0_24px_80px_-60px_rgba(0,0,0,0.85)];
   }
 
   .icon-badge {
@@ -158,81 +161,34 @@
   }
 
   .chip-ghost {
-    @apply chip hover:border-primary/30 hover:text-foreground hover:shadow-[0_12px_30px_-20px_rgba(124,249,255,0.4)];
+    @apply chip hover:border-primary/30 hover:text-foreground hover:shadow-[0_12px_30px_-20px_rgba(64,176,255,0.35)];
   }
 
-  .hero-watermark {
-    @apply pointer-events-none select-none font-semibold uppercase text-white/5;
-    font-size: clamp(110px, 18vw, 230px);
-    letter-spacing: -0.05em;
-    line-height: 0.9;
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
   }
 
-  .console-pane {
-    @apply rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 px-8 py-10 backdrop-blur-2xl shadow-[0_38px_140px_-90px_rgba(0,0,0,0.95)];
-    box-shadow:
-      0 36px 120px -90px rgba(0, 0, 0, 0.95),
-      0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
-      0 0 0 1px rgba(255, 255, 255, 0.02);
-  }
-
-  .ops-stack {
-    @apply grid gap-4 rounded-[32px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-white/0 p-6 backdrop-blur-xl shadow-[0_32px_120px_-80px_rgba(0,0,0,0.9)];
-  }
-
-  .ops-card {
-    @apply rounded-2xl border border-white/10 bg-black/50 px-5 py-4 shadow-[0_26px_80px_-50px_rgba(0,0,0,0.85)];
-  }
-
-  .ops-bar {
-    @apply h-1.5 w-full overflow-hidden rounded-full bg-white/10;
-  }
-
-  .ops-bar-fill {
-    @apply h-full rounded-full bg-gradient-to-r from-primary via-white to-accent;
-  }
-
-  .module-chrome {
-    @apply flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground;
-  }
-
-  .telemetry-grid {
-    @apply grid gap-4 rounded-[28px] border border-white/10 bg-black/60 p-6 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.85)] backdrop-blur-2xl;
-  }
-
-  .telemetry-chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.24em] text-muted-foreground;
-  }
-
-  .mission-rail {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-5 shadow-[0_24px_90px_-70px_rgba(0,0,0,0.9)] backdrop-blur-xl;
-  }
-
-  .mission-rail__item {
-    @apply flex items-start justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/10 via-white/0 to-white/0 px-4 py-4;
-  }
-
-  .mission-grid {
+  .halo {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(58% 72% at 62% 18%, rgba(124, 249, 255, 0.18), transparent),
-      radial-gradient(46% 58% at 22% 72%, rgba(255, 111, 207, 0.16), transparent),
-      linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 48%, transparent 70%),
-      linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 140px 140px, 140px 140px;
-    mask-image: radial-gradient(circle at center, black 70%, transparent 98%);
+    background: radial-gradient(820px at 68% 36%, rgba(64, 176, 255, 0.14), transparent 55%),
+      radial-gradient(900px at 26% 64%, rgba(255, 255, 255, 0.06), transparent 60%);
+    filter: blur(18px);
+    opacity: 0.8;
     pointer-events: none;
     z-index: 0;
   }
 
-  .prompt-shell {
-    @apply relative overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0b0c] px-5 py-4 shadow-[0_25px_60px_-40px_rgba(0,0,0,0.9)];
-  }
-
-  .prompt-input {
-    @apply w-full bg-transparent text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none;
+  .orbital-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 140px 140px;
+    mask-image: radial-gradient(circle at center, black 70%, transparent 96%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .form-input {
@@ -247,10 +203,10 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 160px 160px;
-    mask-image: radial-gradient(circle at center, black 62%, transparent 90%);
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 140px 140px;
+    mask-image: radial-gradient(circle at center, black 62%, transparent 92%);
     pointer-events: none;
     z-index: 0;
   }
@@ -258,21 +214,13 @@
   .beam {
     position: absolute;
     inset: 0;
-    background: radial-gradient(780px at 68% 38%, rgba(124, 249, 255, 0.24), transparent 52%);
-    filter: blur(48px);
+    background: radial-gradient(780px at 68% 38%, rgba(64, 176, 255, 0.18), transparent 54%);
+    filter: blur(42px);
     opacity: 0.8;
     pointer-events: none;
   }
 
   .beam--cool {
-    background: radial-gradient(780px at 22% 55%, rgba(255, 111, 207, 0.2), transparent 50%);
-  }
-
-  .beam--tight {
-    background: radial-gradient(620px at 64% 38%, rgba(255, 255, 255, 0.18), transparent 52%);
-  }
-
-  .divider {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
+    background: radial-gradient(780px at 22% 55%, rgba(199, 131, 255, 0.18), transparent 52%);
   }
 }

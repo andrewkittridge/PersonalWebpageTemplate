@@ -5,10 +5,10 @@ describe("Hero Component", () => {
   it("renders the hero headline and subtitle", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("heading", { name: /Launch-ready software with a SpaceX-level control room vibe/i })
+      screen.getByRole("heading", { name: /SpaceX-inspired mission software with cockpit-grade calm/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/I build human, high-contrast interfaces/i)
+      screen.getByText(/I design launch systems for the web/i)
     ).toBeInTheDocument();
   });
 
@@ -28,7 +28,7 @@ describe("Hero Component", () => {
   it("lists modernization highlights", () => {
     render(<Hero />);
     expect(screen.getByText(/First-principles thinking/i)).toBeInTheDocument();
-    expect(screen.getByText(/Autonomy ready/i)).toBeInTheDocument();
+    expect(screen.getByText(/Autonomy with humans-in-loop/i)).toBeInTheDocument();
     expect(screen.getByText(/Hardcore engineering/i)).toBeInTheDocument();
   });
 });
