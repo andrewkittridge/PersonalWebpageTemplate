@@ -5,10 +5,10 @@ import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { id: "about", label: "Profile" },
-  { id: "experience", label: "Impact" },
-  { id: "skills", label: "Capabilities" },
-  { id: "education", label: "Growth" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -41,8 +41,9 @@ export default function Navigation() {
 
   return (
     <>
+      {/* Progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/40 via-primary to-primary/30 z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-primary z-50 origin-left"
         style={{ scaleX }}
         aria-hidden="true"
       />
@@ -50,24 +51,25 @@ export default function Navigation() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? "border-b border-white/5 bg-black/60 backdrop-blur-xl"
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${scrolled
+            ? "border-b border-white/5 bg-black/80 backdrop-blur-xl"
             : "bg-transparent"
-        }`}
+          }`}
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="page-shell flex items-center justify-between h-16 gap-4">
+          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.5em]"
+            className="text-lg font-bold tracking-tight text-foreground"
             aria-label="Navigate home"
           >
-            ak.
+            AK
           </Link>
 
-          <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1 backdrop-blur">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.id}
@@ -80,19 +82,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* Actions */}
+          <div className="flex items-center gap-3">
             <ThemeToggle />
             <a
               href="#contact"
-              className="pill-ghost hidden md:inline-flex"
-            >
-              Engage
-            </a>
-            <a
-              href="#experience"
               className="pill-solid hidden md:inline-flex"
             >
-              Track record
+              Contact
             </a>
             <button
               className="pill-ghost md:hidden px-3 py-2"
@@ -106,6 +103,7 @@ export default function Navigation() {
         </div>
       </motion.nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -113,14 +111,14 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-30 bg-black/90 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-30 bg-black/95 backdrop-blur-xl md:hidden"
           >
-            <nav className="flex flex-col items-center justify-center h-full space-y-6">
+            <nav className="flex flex-col items-center justify-center h-full space-y-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="text-2xl font-semibold text-foreground/80 hover:text-foreground transition-colors"
+                  className="text-2xl font-medium text-foreground/80 hover:text-foreground transition-colors"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
@@ -133,10 +131,10 @@ export default function Navigation() {
               ))}
               <a
                 href="#contact"
-                className="pill-solid px-6 py-3"
+                className="pill-solid px-8 py-3 mt-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Start a project
+                Contact
               </a>
             </nav>
           </motion.div>

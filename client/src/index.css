@@ -6,48 +6,49 @@
 
 @layer base {
   :root {
-    --background: 225 16% 5%;
-    --foreground: 215 8% 92%;
-    --card: 223 14% 8%;
-    --card-foreground: 215 8% 92%;
-    --popover: 223 14% 8%;
-    --popover-foreground: 215 8% 92%;
-    --primary: 36 92% 72%;
-    --primary-foreground: 228 21% 8%;
-    --secondary: 225 12% 16%;
-    --secondary-foreground: 215 8% 92%;
-    --muted: 225 10% 18%;
-    --muted-foreground: 215 10% 68%;
-    --accent: 220 12% 12%;
-    --accent-foreground: 215 8% 92%;
-    --destructive: 0 84% 63%;
+    /* SpaceX-inspired dark theme - pure black with white and blue accents */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 200 100% 27%; /* SpaceX Blue #005288 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 10% 22%;
-    --input: 225 10% 22%;
-    --ring: 36 92% 72%;
-    --radius: 1.6rem;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 200 100% 27%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 225 16% 4%;
-    --foreground: 210 7% 94%;
-    --card: 223 12% 6%;
-    --card-foreground: 210 7% 94%;
-    --popover: 223 12% 6%;
-    --popover-foreground: 210 7% 94%;
-    --primary: 36 92% 74%;
-    --primary-foreground: 225 16% 6%;
-    --secondary: 223 10% 14%;
-    --secondary-foreground: 210 7% 94%;
-    --muted: 223 10% 16%;
-    --muted-foreground: 215 10% 68%;
-    --accent: 222 11% 12%;
-    --accent-foreground: 210 7% 94%;
-    --destructive: 0 84% 63%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 200 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 6%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 9% 18%;
-    --input: 225 9% 18%;
-    --ring: 36 92% 74%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 200 100% 35%;
   }
 
   html {
@@ -58,30 +59,21 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #050505;
-    background-image:
-      radial-gradient(1100px at 78% 18%, rgba(224, 180, 120, 0.2), transparent 58%),
-      radial-gradient(900px at 18% 62%, rgba(90, 121, 255, 0.16), transparent 52%),
-      linear-gradient(140deg, #050505 0%, #050505 55%, #0a0806 100%);
-    background-attachment: fixed;
+    background-color: #000000;
     color: hsl(var(--foreground));
   }
 
+  /* Subtle noise texture overlay */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cpath fill='%23ffffff' fill-opacity='0.018' d='M0 0h70v70H0zM70 70h70v70H70z'/%3E%3C/svg%3E"),
-      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.025), transparent 40%),
-      radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.02), transparent 50%);
-    mix-blend-mode: soft-light;
-    opacity: 0.6;
+    background-image: 
+      radial-gradient(ellipse at 50% 0%, rgba(0, 82, 136, 0.08), transparent 50%);
     z-index: -1;
   }
 
@@ -90,129 +82,110 @@
   }
 
   ::selection {
-    background: rgba(224, 180, 120, 0.22);
-    color: #fefefe;
+    background: rgba(0, 82, 136, 0.3);
+    color: #ffffff;
   }
 }
 
 @layer components {
   .page-shell {
-    @apply relative mx-auto w-full max-w-6xl px-4 md:px-8;
+    @apply relative mx-auto w-full max-w-6xl px-6 md:px-8;
   }
 
   .section-shell {
-    @apply relative isolate overflow-hidden py-20 md:py-28;
+    @apply relative isolate overflow-hidden py-24 md:py-32;
   }
 
   .section-heading {
-    @apply mb-12 space-y-4;
+    @apply mb-16 space-y-4;
   }
 
   .section-label {
-    @apply text-[11px] uppercase tracking-[0.4em] text-muted-foreground;
+    @apply text-xs uppercase tracking-[0.3em] text-primary font-medium;
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-semibold leading-tight text-foreground;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground tracking-tight;
   }
 
   .section-description {
-    @apply text-lg text-muted-foreground max-w-3xl;
+    @apply text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed;
   }
 
   .nav-link {
-    @apply rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground transition hover:text-foreground hover:bg-white/5;
+    @apply rounded px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground;
   }
 
   .pill {
-    @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition;
+    @apply inline-flex items-center justify-center rounded px-5 py-2.5 text-sm font-medium transition-all duration-200;
   }
 
   .pill-solid {
-    @apply pill bg-foreground text-background shadow-[0_10px_40px_-24px_rgba(0,0,0,0.7)];
+    @apply pill bg-white text-black hover:bg-white/90;
   }
 
   .pill-ghost {
-    @apply pill border border-white/10 bg-white/5 text-foreground hover:border-white/20;
+    @apply pill border border-white/20 text-foreground hover:bg-white/5 hover:border-white/40;
+  }
+
+  .pill-primary {
+    @apply pill bg-primary text-primary-foreground hover:bg-primary/90;
   }
 
   .glass-panel {
-    @apply rounded-[28px] border border-white/10 bg-white/5 px-6 py-6 backdrop-blur-xl shadow-[0_24px_80px_-48px_rgba(0,0,0,0.9)];
+    @apply rounded-lg border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-sm;
   }
 
   .surface-card {
-    @apply rounded-[28px] border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-white/0 px-6 py-6 backdrop-blur-md shadow-[0_30px_120px_-80px_rgba(0,0,0,0.95)];
+    @apply rounded-lg border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm transition-colors hover:border-white/20;
   }
 
   .stat-card {
-    @apply rounded-[22px] border border-white/10 bg-white/5 px-5 py-5;
+    @apply rounded-lg border border-white/10 bg-white/[0.02] p-4;
   }
 
   .icon-badge {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground;
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-foreground;
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground;
+    @apply inline-flex items-center rounded border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-muted-foreground;
   }
 
   .chip-ghost {
-    @apply chip hover:border-white/20 hover:text-foreground;
+    @apply chip hover:border-white/20 hover:text-foreground transition-colors;
   }
 
   .hero-watermark {
-    @apply pointer-events-none select-none font-semibold uppercase text-white/5;
-    font-size: clamp(96px, 18vw, 220px);
-    letter-spacing: -0.05em;
+    @apply pointer-events-none select-none font-bold uppercase text-white/[0.02];
+    font-size: clamp(80px, 15vw, 180px);
+    letter-spacing: -0.02em;
     line-height: 0.9;
   }
 
-  .prompt-shell {
-    @apply relative overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0b0c] px-5 py-4 shadow-[0_25px_60px_-40px_rgba(0,0,0,0.9)];
-  }
-
-  .prompt-input {
-    @apply w-full bg-transparent text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none;
-  }
-
   .form-input {
-    @apply w-full rounded-[18px] border border-white/10 bg-transparent px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/30;
+    @apply w-full rounded-lg border border-white/10 bg-transparent px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:ring-1 focus:ring-primary transition-colors;
   }
 
   .contact-link {
-    @apply flex items-center gap-3 text-base text-muted-foreground transition hover:text-foreground;
+    @apply flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground;
   }
 
-  .grid-line {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 120px 120px;
-    mask-image: radial-gradient(circle at center, black 60%, transparent 90%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .beam {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(900px at 80% 45%, rgba(224, 180, 120, 0.26), transparent 55%);
-    filter: blur(48px);
-    opacity: 0.9;
-    pointer-events: none;
-  }
-
-  .beam--cool {
-    background: radial-gradient(780px at 20% 55%, rgba(95, 122, 255, 0.22), transparent 50%);
-  }
-
-  .beam--tight {
-    background: radial-gradient(620px at 70% 48%, rgba(255, 255, 255, 0.2), transparent 52%);
-  }
-
+  /* Subtle horizontal line accent */
   .divider {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    @apply h-px w-full bg-white/10;
+  }
+
+  .divider-gradient {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  }
+
+  /* Timeline styling for experience */
+  .timeline-dot {
+    @apply h-2 w-2 rounded-full bg-primary;
+  }
+
+  .timeline-line {
+    @apply absolute left-[3px] top-4 bottom-0 w-px bg-white/10;
   }
 }

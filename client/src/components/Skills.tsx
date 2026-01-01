@@ -1,22 +1,16 @@
 import { motion } from "framer-motion";
-import { Code, Globe, Database, Wrench, User } from "lucide-react";
+import { Code, Server, Layout, Database, Wrench, Shield, Cpu } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
-const categoryIcons: Record<string, JSX.Element> = {
-  languages: <Code className="w-5 h-5" />,
-  webTechnologies: <Globe className="w-5 h-5" />,
-  database: <Database className="w-5 h-5" />,
-  tools: <Wrench className="w-5 h-5" />,
-  personal: <User className="w-5 h-5" />,
-};
-
-const categoryTitles: Record<string, string> = {
-  languages: "Languages",
-  webTechnologies: "Web Technologies",
-  database: "Data & Storage",
-  tools: "Tooling & Delivery",
-  personal: "Emerging Tech",
+const categoryConfig: Record<string, { icon: JSX.Element; title: string }> = {
+  languages: { icon: <Code className="w-5 h-5" />, title: "Programming Languages" },
+  backend: { icon: <Server className="w-5 h-5" />, title: "Backend Frameworks & Technologies" },
+  frontend: { icon: <Layout className="w-5 h-5" />, title: "Frontend Technologies" },
+  database: { icon: <Database className="w-5 h-5" />, title: "Database & Data Management" },
+  devops: { icon: <Wrench className="w-5 h-5" />, title: "DevOps & Tools" },
+  security: { icon: <Shield className="w-5 h-5" />, title: "Security & Compliance" },
+  emerging: { icon: <Cpu className="w-5 h-5" />, title: "Emerging Technologies" },
 };
 
 export default function Skills() {
@@ -28,56 +22,51 @@ export default function Skills() {
       id="skills"
       className="section-shell scroll-mt-24"
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(900px at 50% 8%, rgba(224,180,120,0.24), transparent 55%)",
-        }}
-        aria-hidden
-      />
-
-      <div className="page-shell relative z-10 space-y-12">
+      <div className="page-shell relative z-10 space-y-16">
         <div className="section-heading">
-          <p className="section-label">Capabilities</p>
-          <h2 className="section-title">Build systems that stay online.</h2>
+          <p className="section-label">Skills</p>
+          <h2 className="section-title">Technical Skills</h2>
           <p className="section-description">
-            JVM performance tuning, secure Spring services, and resilient front-ends combine
-            with pragmatic delivery so teams keep shipping without drama.
+            Core competencies across the full stack, from backend services to database optimization
+            and security compliance.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => (
-            <motion.article
-              key={category}
-              className="surface-card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05, ease: "easeOut" }}
-            >
-              <div className="flex items-center justify-between gap-3 mb-5">
-                <div className="flex items-center gap-3">
+          {Object.entries(SKILLS_CATEGORIES).map(([category, skills], index) => {
+            const config = categoryConfig[category] || {
+              icon: <Code className="w-5 h-5" />,
+              title: category
+            };
+
+            return (
+              <motion.article
+                key={category}
+                className="surface-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
+              >
+                <div className="flex items-center gap-3 mb-5">
                   <span className="icon-badge">
-                    {categoryIcons[category] ?? <Code className="w-5 h-5" />}
+                    {config.icon}
                   </span>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {categoryTitles[category] || category}
+                  <h3 className="text-base font-semibold text-foreground">
+                    {config.title}
                   </h3>
                 </div>
-                <span className="chip-ghost">{skills.length} items</span>
-              </div>
 
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span key={skill} className="pill-ghost px-3 py-2">
-                    {skill.replace(" (expert-level)", "").replace(" (advanced)", "")}
-                  </span>
-                ))}
-              </div>
-            </motion.article>
-          ))}
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span key={skill} className="chip-ghost">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,84 +1,73 @@
-export const SITE_TITLE = "Andrew Kittridge - Full Stack Web Developer";
-export const SITE_DESCRIPTION = "Portfolio website of Andrew Kittridge, a Full-Stack Web Developer specializing in Java, Spring, and Enterprise Solutions";
+export const SITE_TITLE = "Andrew Kittridge | Full-Stack Java Developer";
+export const SITE_DESCRIPTION = "Full-Stack Java Developer specializing in Enterprise Application Modernization, Secure Systems, and AI Integrations. 8+ years experience with U.S. Marine Corps and federal agencies.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
   github: "https://github.com/andrewkittridge",
   email: "andrewkittridge@icloud.com",
-  phone: "219-707-7775"
+  phone: "219-707-7775",
+  website: "andrewkittridge.com"
 };
 
 export const SKILLS_CATEGORIES = {
   languages: ["Java", "JavaScript", "TypeScript"],
-  webTechnologies: [
-    "Spring Boot (MVC, Security, Data)", 
-    "Spring MVC", 
-    "Spring Security", 
-    "Spring Data JPA",
-    "Struts", 
-    "jQuery", 
-    "RESTful APIs", 
-    "SOAP", 
-    "HTML5", 
+  backend: [
+    "Spring Boot (MVC, Security, Data JPA)",
+    "Spring MVC",
+    "Spring Security",
+    "RESTful APIs",
+    "SOAP Web Services",
+    "Struts",
+    "Microservices Architecture"
+  ],
+  frontend: [
+    "React",
+    "jQuery",
+    "HTML5",
     "CSS3",
     "Thymeleaf",
     "JSP"
   ],
   database: [
-    "Oracle SQL", 
-    "PL/SQL", 
+    "Oracle SQL",
+    "PL/SQL",
     "Oracle Database Administration",
     "SQL Performance Tuning",
     "Database Design & Optimization",
     "Oracle Forms & Reports"
   ],
-  tools: [
-    "Maven", 
-    "Git", 
-    "Agile (Scrum, Kanban)", 
-    "STIG Compliance", 
-    "Secret Security Clearance",
-    "Oracle SQL Developer",
-    "Oracle Enterprise Manager",
+  devops: [
+    "Maven",
+    "Git",
     "Jenkins CI/CD",
     "Docker",
-    "Microservices Architecture",
-    "Cursor (AI pair programming, refactors, tests)"
+    "Agile (Scrum, Kanban)",
+    "Oracle SQL Developer",
+    "Oracle Enterprise Manager"
   ],
-  personal: [
-    "React", 
-    "LLM API Integration (x.ai Grok API)", 
-    "Node.js", 
+  security: [
+    "STIG Compliance",
+    "Secret Security Clearance"
+  ],
+  emerging: [
+    "Node.js",
     "Express.js",
-    "iOS (SwiftUI, Xcode, TestFlight/App Store Connect)",
-    "Agentic coding workflows (LLM planning/execution)"
+    "LLM API Integration"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Senior Web Developer / Team Lead",
+    title: "Full-Stack Web Developer",
     company: "MetroStar",
     location: "Reston, VA",
     period: "November 2022 – Present",
     achievements: [
-      "Team lead and senior developer for USMC platforms (MROWS, MCPDT), tightening orders and travel flows for operators.",
-      "Deliver STIG-compliant Spring Boot services that automate approval and entitlement workflows, improving throughput by ~25%.",
-      "Cut Oracle SQL latency ~30% via targeted query refactors, indexing, and instrumentation to surface slow paths.",
-      "Led Struts-to-Spring Boot service migration, improving maintainability by ~20% and unblocking faster release cadence.",
-      "Mentor engineers on Spring/React patterns and reviews; shortened onboarding by ~40% with pairing and playbooks."
-    ]
-  },
-  {
-    title: "Founder & Builder",
-    company: "Lumin Faith",
-    location: "Indianapolis, IN",
-    period: "November 2024 – Present",
-    url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
-    achievements: [
-      "Designed, engineered, and shipped Lumin Faith (SwiftUI) to the App Store: AI faith conversations, daily verses, study plans, and prayer journal.",
-      "Built premium tier (higher AI limits, advanced insights, cloud sync) with respectful notifications, widgets, and liturgical season awareness.",
-      "Integrated x.ai Grok API and agentic workflows (Cursor) to generate study prompts, refine copy, and accelerate QA; shipped via TestFlight iterations."
+      "Lead full-stack development for U.S. Marine Corps enterprise platforms, including the Marine Resource Orders Writing Service (MROWS)—a comprehensive system for automating personnel deployment orders, reservations, and resource allocation using Java/Spring Boot backend services integrated with Oracle databases.",
+      "Engineer secure, scalable solutions for the Marine Corps Permanent Duty Travel (MCPDT) system, handling travel entitlements, reimbursements, and compliance tracking through RESTful APIs, Spring Security for authentication/authorization, and PL/SQL procedures for data validation and auditing.",
+      "Optimize database interactions in high-volume environments by designing efficient Oracle SQL queries, implementing indexing strategies, and utilizing Spring Data JPA for ORM, resulting in enhanced system responsiveness and data integrity.",
+      "Direct the full lifecycle migration of legacy Struts-based applications to modern Spring Boot microservices, incorporating Docker for containerization, Jenkins for CI/CD automation, and Maven for dependency management.",
+      "Collaborate in cross-functional Agile teams to mentor developers on best practices in Spring MVC, REST/SOAP web services, and frontend enhancements, while ensuring adherence to STIG security standards."
     ]
   },
   {
@@ -87,10 +76,10 @@ export const EXPERIENCE = [
     location: "Fairfax, VA",
     period: "July 2018 – November 2022",
     achievements: [
-      "Built and maintained DTMS (USMC document/training tracking), balancing feature delivery with strict uptime goals.",
-      "Refined jQuery/HTML5 UI flows that reduced user error rates by ~10% and lowered ticket volume.",
-      "Shipped STIG-compliant Java/Spring components in secure environments with consistent audit pass rates.",
-      "Worked in agile squads to triage and resolve production issues quickly, keeping essential systems stable."
+      "Developed and maintained the Document Tracking and Management System (DTMS), a full-stack Java application for secure storage, retrieval, and auditing of official USMC documents and training records, leveraging Spring Boot for backend logic and Oracle PL/SQL for complex stored procedures.",
+      "Enhanced user interfaces with responsive frontend technologies including JavaScript, jQuery, Thymeleaf templates, and HTML5/CSS3, integrated with backend RESTful endpoints to provide seamless, role-based access controls.",
+      "Implemented STIG-compliant security features using Spring Security for OAuth/JWT authentication, encryption of sensitive data, and vulnerability scanning, ensuring 100% alignment with DoD cybersecurity mandates.",
+      "Participated in Agile sprints utilizing Git for version control, Scrum ceremonies for planning, and Kanban for workflow management to resolve defects and maintain uninterrupted availability of core USMC systems."
     ]
   },
   {
@@ -99,14 +88,14 @@ export const EXPERIENCE = [
     location: "Arlington, VA",
     period: "July 2017 – July 2018",
     achievements: [
-      "Supported large Struts-to-Spring migration efforts, pairing with senior engineers to improve scalability and performance.",
-      "Provided application support for DTMS and UDMIPS deployment-logistics tooling, maintaining reliability for operational teams."
+      "Supported large-scale application modernization efforts, including refactoring Struts/JSP monoliths into Spring Boot frameworks with MVC patterns, Spring Data JPA for database abstraction, and optimized Oracle SQL schemas.",
+      "Provided backend and database expertise for the Unit Deployment Management Information Processing System (UDMIPS), developing Java-based modules for deployment planning, logistics tracking, and reporting, integrated with PL/SQL for data aggregation."
     ]
   }
 ];
 
 export const EDUCATION = {
-  degree: "B.S. in Computer Science",
+  degree: "Bachelor of Science in Computer Science",
   institution: "University of Indianapolis",
   location: "Indianapolis, IN",
   graduationDate: "May 2017",
@@ -116,16 +105,16 @@ export const EDUCATION = {
 export const PERSONAL_PROJECTS = [
   {
     title: "Lumin Faith",
-    status: "Solo build · App Store",
+    status: "iOS App · App Store",
     url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
-    description: "AI-guided, Christ-centered Bible companion built end-to-end: Scripture study, prayer journaling, and reflective prompts designed, engineered, and shipped solo.",
+    description: "An AI-enhanced Progressive Web Application that reimagines Bible study as an interactive spiritual journey, empowering believers to explore scripture and deepen their faith through modern technology.",
     highlights: [
-      "AI Faith Conversations: warm, Christ-centered responses across devotional, historical, applicational, Christ-centered, contemplative modes.",
-      "Personalized daily verses and guided study plans (book-by-book and theme-based) with quizzes and progress tracking.",
-      "Prayer journal with AI prompts and reflective analysis for insights and gratitude capture.",
-      "Liturgical season awareness (Advent, Lent, Easter) plus gentle habits like streaks, respectful notifications, and serene widgets.",
-      "LuminFaith Premium: unlocks higher AI limits, advanced insights, and ad-free experience with cloud sync and priority updates.",
-      "SwiftUI + Xcode pipeline from prototype through TestFlight to App Store with agentic workflows (Cursor + x.ai Grok API)."
+      "Full-stack React 19 + TypeScript with Firebase (Firestore, Auth, Cloud Functions) and Material-UI",
+      "AI/LLM API integration for scripture analysis, prayer reflections, and theological discussions",
+      "Prayer journal system with AI-generated reflections, intelligent tagging, and cross-device sync",
+      "Community collaboration platform with small group management and real-time updates",
+      "90+ Lighthouse scores through code-splitting, lazy loading, and PWA optimization",
+      "Comprehensive DevOps pipeline with CI/CD via Vercel, Vitest testing, and ESLint standards"
     ]
   }
 ];

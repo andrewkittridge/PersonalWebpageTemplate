@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, FolderGit2, Link } from "lucide-react";
+import { GraduationCap, ExternalLink } from "lucide-react";
 import { EDUCATION, PERSONAL_PROJECTS } from "@/lib/constants";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 
@@ -12,17 +12,14 @@ export default function Education() {
       id="education"
       className="section-shell scroll-mt-24"
     >
-      <div className="page-shell relative z-10 space-y-12">
+      <div className="page-shell relative z-10 space-y-16">
         <div className="section-heading">
-          <p className="section-label">Growth</p>
-          <h2 className="section-title">Disciplined craft. Purposeful builds.</h2>
-          <p className="section-description">
-            Formal computer science foundations paired with personal initiatives keep my
-            approach grounded and imaginative.
-          </p>
+          <p className="section-label">Background</p>
+          <h2 className="section-title">Education & Projects</h2>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Education Card */}
           <motion.article
             className="surface-card"
             initial={{ opacity: 0, y: 24 }}
@@ -37,76 +34,64 @@ export default function Education() {
               <h3 className="text-lg font-semibold text-foreground">Education</h3>
             </div>
 
-            <div className="space-y-4 text-muted-foreground">
-              <div>
-                <p className="text-xl font-semibold text-foreground">
-                  {EDUCATION.degree}
-                </p>
-                <p>
-                  {EDUCATION.institution} · {EDUCATION.location}
-                </p>
-                <p className="text-sm text-muted-foreground/80">
-                  {EDUCATION.graduationDate}
-                </p>
-              </div>
-              {EDUCATION.description && (
-                <p className="leading-relaxed">{EDUCATION.description}</p>
-              )}
-              <ul className="list-disc list-inside text-sm text-muted-foreground/90 space-y-1">
-                <li>Software engineering focus with security electives</li>
-                <li>Founded the campus dev mentorship guild</li>
-                <li>Graduated while delivering on-the-job IT support</li>
-              </ul>
+            <div className="space-y-2">
+              <p className="text-xl font-semibold text-foreground">
+                {EDUCATION.degree}
+              </p>
+              <p className="text-muted-foreground">
+                {EDUCATION.institution}
+              </p>
+              <p className="text-sm text-muted-foreground/70">
+                {EDUCATION.location} · {EDUCATION.graduationDate}
+              </p>
             </div>
           </motion.article>
 
-          <motion.article
-            className="surface-card"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <span className="icon-badge">
-                <FolderGit2 className="w-5 h-5" />
-              </span>
-              <h3 className="text-lg font-semibold text-foreground">
-                Personal projects
-              </h3>
-            </div>
-
-            <div className="space-y-6">
-              {PERSONAL_PROJECTS.map((project) => (
-                <div key={project.title} className="space-y-4">
-                  <div>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
-                    >
-                      {project.title}
-                      <Link className="w-4 h-4" />
-                    </a>
-                    <p className="text-sm text-muted-foreground/80 mt-1">
-                      {project.status}
-                    </p>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
+          {/* Personal Projects */}
+          {PERSONAL_PROJECTS.map((project, index) => (
+            <motion.article
+              key={project.title}
+              className="surface-card"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-primary mt-1">
+                    {project.status}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.highlights.map((highlight) => (
-                      <span key={highlight} className="pill-ghost px-3 py-2">
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-              ))}
-            </div>
-          </motion.article>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pill-ghost px-3 py-2 text-xs flex items-center gap-1.5"
+                  >
+                    View
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.highlights.slice(0, 4).map((highlight) => (
+                  <span key={highlight} className="chip-ghost text-xs">
+                    {highlight.length > 50 ? highlight.substring(0, 47) + "..." : highlight}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
