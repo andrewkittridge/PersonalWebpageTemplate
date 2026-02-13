@@ -25,7 +25,7 @@ export default function Hero() {
           <header className="space-y-6">
             <TextReveal
               as="h1"
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text-animated font-display"
+              className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight gradient-text-animated font-body"
               delay={0.2}
             >
               Andrew Kittridge
