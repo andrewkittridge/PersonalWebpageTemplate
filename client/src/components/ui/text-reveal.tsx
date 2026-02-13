@@ -84,7 +84,7 @@ export function TextReveal({
           key={`${word}-${i}`}
           variants={wordVariants}
           className={`inline-block ${wordClass}`}
-          style={{ transformStyle: "preserve-3d", lineHeight: 1.2 }}
+          style={{ transformStyle: "preserve-3d", lineHeight: 1.3, paddingBottom: "0.15em" }}
         >
           {word}
         </motion.span>
