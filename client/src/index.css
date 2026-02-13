@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* SpaceX-inspired dark theme - pure black with white and blue accents */
-    --background: 0 0% 0%;
+    /* Violet-to-cyan accent system on rich dark background */
+    --background: 0 0% 2%;
     --foreground: 0 0% 95%;
     --card: 0 0% 4%;
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 95%;
-    --primary: 200 100% 27%; /* SpaceX Blue #005288 */
+    --primary: 263 70% 66%; /* Violet #8B5CF6 */
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 95%;
     --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 240 5% 65%; /* zinc-400 */
     --accent: 0 0% 8%;
     --accent-foreground: 0 0% 95%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 200 100% 27%;
+    --ring: 263 70% 66%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 0 0% 2%;
     --foreground: 0 0% 96%;
     --card: 0 0% 3%;
     --card-foreground: 0 0% 96%;
     --popover: 0 0% 3%;
     --popover-foreground: 0 0% 96%;
-    --primary: 200 100% 35%;
+    --primary: 263 70% 66%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 55%;
+    --muted-foreground: 240 5% 65%;
     --accent: 0 0% 6%;
     --accent-foreground: 0 0% 96%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 12%;
     --input: 0 0% 12%;
-    --ring: 200 100% 35%;
+    --ring: 263 70% 66%;
   }
 
   html {
@@ -62,27 +62,28 @@
     font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     min-height: 100vh;
     line-height: 1.6;
-    background-color: #000000;
+    background-color: #050505;
     color: hsl(var(--foreground));
   }
 
-  /* Subtle noise texture overlay */
+  /* Ambient glow — violet/cyan */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: 
-      radial-gradient(ellipse at 50% 0%, rgba(0, 82, 136, 0.08), transparent 50%);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, rgba(139, 92, 246, 0.07), transparent 50%),
+      radial-gradient(ellipse at 70% 0%, rgba(34, 211, 238, 0.05), transparent 50%);
     z-index: -1;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-violet-500 ring-offset-2 ring-offset-background;
   }
 
   ::selection {
-    background: rgba(0, 82, 136, 0.3);
+    background: rgba(139, 92, 246, 0.3);
     color: #ffffff;
   }
 }
@@ -101,7 +102,7 @@
   }
 
   .section-label {
-    @apply text-xs uppercase tracking-[0.3em] text-primary font-medium;
+    @apply text-xs uppercase tracking-[0.3em] font-medium bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .section-title {
@@ -121,11 +122,11 @@
   }
 
   .pill-solid {
-    @apply pill bg-white text-black hover:bg-white/90;
+    @apply pill bg-gradient-to-r from-violet-500 to-cyan-400 text-white hover:opacity-90;
   }
 
   .pill-ghost {
-    @apply pill border border-white/20 text-foreground hover:bg-white/5 hover:border-white/40;
+    @apply pill border border-white/20 text-foreground hover:bg-white/5 hover:border-violet-500/40;
   }
 
   .pill-primary {
@@ -145,7 +146,7 @@
   }
 
   .icon-badge {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-foreground;
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] text-foreground;
   }
 
   .chip {
@@ -153,31 +154,39 @@
   }
 
   .chip-ghost {
-    @apply chip hover:border-white/20 hover:text-foreground transition-colors;
+    @apply chip hover:border-violet-500/30 hover:text-foreground hover:shadow-[0_0_12px_rgba(139,92,246,0.15)] transition-all duration-200 hover:scale-105;
   }
 
   .hero-watermark {
-    @apply pointer-events-none select-none font-bold uppercase text-white/[0.02];
+    @apply pointer-events-none select-none font-bold uppercase;
     font-size: clamp(80px, 15vw, 180px);
     letter-spacing: -0.02em;
     line-height: 0.9;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(34, 211, 238, 0.03));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .form-input {
-    @apply w-full rounded-lg border border-white/10 bg-transparent px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:ring-1 focus:ring-primary transition-colors;
+    @apply w-full rounded-lg border border-white/10 bg-transparent px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors;
   }
 
   .contact-link {
     @apply flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground;
   }
 
-  /* Subtle horizontal line accent */
+  /* Dividers */
   .divider {
     @apply h-px w-full bg-white/10;
   }
 
   .divider-gradient {
     @apply h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  }
+
+  .divider-gradient-accent {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-violet-500/40 to-transparent;
   }
 
   /* Timeline styling for experience */
@@ -188,4 +197,81 @@
   .timeline-line {
     @apply absolute left-[3px] top-4 bottom-0 w-px bg-white/10;
   }
+
+  /* --- New utility classes --- */
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-animated {
+    background: linear-gradient(90deg, #8B5CF6, #22D3EE, #8B5CF6);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
+  }
+
+  .gradient-dot {
+    @apply h-1.5 w-1.5 rounded-full flex-shrink-0;
+    background: linear-gradient(135deg, #8B5CF6, #22D3EE);
+  }
+
+  .bob-animation {
+    animation: bob 3s ease-in-out infinite;
+  }
+
+  /* GlowCard — card with animated gradient border on hover */
+  .glow-card {
+    @apply relative rounded-xl bg-white/[0.02] backdrop-blur-sm overflow-hidden transition-shadow duration-300;
+  }
+
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.4s ease;
+  }
+
+  .glow-card:hover::before {
+    background: linear-gradient(135deg, #8B5CF6, #22D3EE);
+  }
+
+  .glow-card:hover {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.08), 0 0 80px rgba(34, 211, 238, 0.04);
+  }
+
+  .glow-card-active::before {
+    background: linear-gradient(135deg, #8B5CF6, #22D3EE) !important;
+  }
+
+  .glow-card-active {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.1), 0 0 80px rgba(34, 211, 238, 0.05);
+  }
+}
+
+/* --- Keyframes --- */
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

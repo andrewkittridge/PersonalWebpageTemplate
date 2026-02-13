@@ -14,6 +14,7 @@ const navItems = [
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -26,6 +27,27 @@ export default function Navigation() {
     const handleScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // IntersectionObserver for active section tracking
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -50% 0px" }
+    );
+
+    navItems.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleKeyPress = (
@@ -41,9 +63,9 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Progress bar */}
+      {/* Gradient progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-primary z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 z-50 origin-left"
         style={{ scaleX }}
         aria-hidden="true"
       />
@@ -62,22 +84,29 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-foreground"
+            className="group text-lg font-bold tracking-tight text-foreground"
             aria-label="Navigate home"
           >
-            AK
+            <span className="transition-all duration-300 group-hover:gradient-text-animated">AK</span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 relative">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="nav-link"
+                className="nav-link relative"
                 onKeyDown={(e) => handleKeyPress(e, item.id)}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="active-nav"
+                    className="absolute -bottom-1 left-3 right-3 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             ))}
           </div>

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -13,10 +13,12 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { GlowCard } from "@/components/ui/glow-card";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
 import { trackInteraction } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/constants";
-import { Mail, Phone, Linkedin, Github, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, MapPin } from "lucide-react";
+import { useRef } from "react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -32,6 +34,25 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
+
+  // Magnetic button effect
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const btnX = useMotionValue(0);
+  const btnY = useMotionValue(0);
+  const springX = useTransform(btnX, (v) => v * 0.15);
+  const springY = useTransform(btnY, (v) => v * 0.15);
+
+  const handleBtnMouseMove = (e: React.MouseEvent) => {
+    if (!btnRef.current) return;
+    const rect = btnRef.current.getBoundingClientRect();
+    btnX.set(e.clientX - rect.left - rect.width / 2);
+    btnY.set(e.clientY - rect.top - rect.height / 2);
+  };
+
+  const handleBtnMouseLeave = () => {
+    btnX.set(0);
+    btnY.set(0);
+  };
 
   const onSubmit = (data: ContactForm) => {
     trackInteraction("ContactForm", "submit", "Email Contact");
@@ -61,164 +82,173 @@ export default function Contact() {
 
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl">
           {/* Contact Info */}
-          <motion.aside
-            className="glass-panel"
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Contact Information
-                </h3>
-                <p className="text-muted-foreground mt-2">
-                  Remote-friendly with active security clearance. Response within 24 hours.
-                </p>
-              </div>
-
-              <address className="not-italic space-y-4 text-muted-foreground">
-                <a
-                  href={`mailto:${SOCIAL_LINKS.email}`}
-                  className="contact-link"
-                >
-                  <Mail className="h-5 w-5 text-primary" />
-                  {SOCIAL_LINKS.email}
-                </a>
-                <a href={`tel:${SOCIAL_LINKS.phone}`} className="contact-link">
-                  <Phone className="h-5 w-5 text-primary" />
-                  {SOCIAL_LINKS.phone}
-                </a>
-                <div className="contact-link">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  Greenwood, IN 46142
-                </div>
-              </address>
-
-              <div className="divider" />
-
-              <div className="flex gap-3">
-                <a
-                  href={SOCIAL_LINKS.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pill-ghost px-4 py-2.5"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href={SOCIAL_LINKS.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pill-ghost px-4 py-2.5"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="stat-card">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
-                    Timezone
-                  </p>
-                  <p className="text-sm font-medium text-foreground mt-1">
-                    EST (UTC-5)
+            <GlowCard className="p-6 md:p-8 h-full">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Contact Information
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    Remote-friendly with active security clearance. Response within 24 hours.
                   </p>
                 </div>
-                <div className="stat-card">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
-                    Availability
-                  </p>
-                  <p className="text-sm font-medium text-foreground mt-1">
-                    Remote / Hybrid
-                  </p>
+
+                <address className="not-italic space-y-4 text-muted-foreground">
+                  <a
+                    href={`mailto:${SOCIAL_LINKS.email}`}
+                    className="contact-link"
+                  >
+                    <Mail className="h-5 w-5 text-violet-400" />
+                    {SOCIAL_LINKS.email}
+                  </a>
+                  <a href={`tel:${SOCIAL_LINKS.phone}`} className="contact-link">
+                    <Phone className="h-5 w-5 text-violet-400" />
+                    {SOCIAL_LINKS.phone}
+                  </a>
+                  <div className="contact-link">
+                    <MapPin className="h-5 w-5 text-cyan-400" />
+                    Greenwood, IN 46142
+                  </div>
+                </address>
+
+                <div className="divider-gradient-accent" />
+
+                <div className="flex gap-3">
+                  <a
+                    href={SOCIAL_LINKS.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pill-ghost px-4 py-2.5 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pill-ghost px-4 py-2.5 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="stat-card">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
+                      Timezone
+                    </p>
+                    <p className="text-sm font-medium text-foreground mt-1">
+                      EST (UTC-5)
+                    </p>
+                  </div>
+                  <div className="stat-card">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
+                      Availability
+                    </p>
+                    <p className="text-sm font-medium text-foreground mt-1">
+                      Remote / Hybrid
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.aside>
+            </GlowCard>
+          </motion.div>
 
           {/* Contact Form */}
-          <motion.article
-            className="surface-card"
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           >
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-foreground">
-                Send a Message
-              </h3>
+            <GlowCard alwaysGlow className="p-6 md:p-8 h-full">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Send a Message
+                </h3>
 
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Your name"
-                            className="form-input"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="you@company.com"
-                            className="form-input"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            rows={4}
-                            className="form-input resize-none"
-                            placeholder="Tell me about your project..."
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full pill-solid justify-center"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
-            </div>
-          </motion.article>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your name"
+                              className="form-input"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="you@company.com"
+                              className="form-input"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Message</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              rows={4}
+                              className="form-input resize-none"
+                              placeholder="Tell me about your project..."
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <motion.div
+                      style={{ x: springX, y: springY }}
+                      onMouseMove={handleBtnMouseMove}
+                      onMouseLeave={handleBtnMouseLeave}
+                    >
+                      <Button
+                        ref={btnRef}
+                        type="submit"
+                        size="lg"
+                        className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white hover:opacity-90 justify-center"
+                      >
+                        Send Message
+                      </Button>
+                    </motion.div>
+                  </form>
+                </Form>
+              </div>
+            </GlowCard>
+          </motion.div>
         </div>
       </div>
     </section>

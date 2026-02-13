@@ -1,5 +1,5 @@
-export const SITE_TITLE = "Andrew Kittridge | Full-Stack Java Developer";
-export const SITE_DESCRIPTION = "Full-Stack Java Developer specializing in Enterprise Application Modernization, Secure Systems, and AI Integrations. 8+ years experience with U.S. Marine Corps and federal agencies.";
+export const SITE_TITLE = "Andrew Kittridge | Web Developer";
+export const SITE_DESCRIPTION = "Web Developer with 8+ years of experience building and modernizing mission-critical enterprise systems for the U.S. Marine Corps. Currently supporting USMC Technology Services Organization (TSO) platforms that serve 205,000+ Marines and process $590M+ in annual PCS spending.";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/andrew-kittridge-162779a7/",
@@ -10,64 +10,57 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_CATEGORIES = {
-  languages: ["Java", "JavaScript", "TypeScript"],
+  languages: ["Java", "JavaScript", "PL/SQL"],
   backend: [
     "Spring Boot (MVC, Security, Data JPA)",
-    "Spring MVC",
-    "Spring Security",
     "RESTful APIs",
     "SOAP Web Services",
     "Struts",
-    "Microservices Architecture"
+    "Microservices"
   ],
   frontend: [
-    "React",
     "jQuery",
     "HTML5",
     "CSS3",
-    "Thymeleaf",
     "JSP"
   ],
   database: [
     "Oracle SQL",
     "PL/SQL",
-    "Oracle Database Administration",
+    "Oracle DBA",
     "SQL Performance Tuning",
-    "Database Design & Optimization",
+    "Database Design",
     "Oracle Forms & Reports"
   ],
   devops: [
     "Maven",
     "Git",
     "Jenkins CI/CD",
-    "Docker",
     "Agile (Scrum, Kanban)",
     "Oracle SQL Developer",
     "Oracle Enterprise Manager"
   ],
   security: [
     "STIG Compliance",
-    "Secret Security Clearance"
-  ],
-  emerging: [
-    "Node.js",
-    "Express.js",
-    "LLM API Integration"
+    "Secret Security Clearance",
+    "AWS Certified Developer – Associate (in progress)"
   ]
 };
 
 export const EXPERIENCE = [
   {
-    title: "Full-Stack Web Developer",
+    title: "Web Developer",
     company: "MetroStar",
-    location: "Reston, VA",
+    location: "Indianapolis, IN",
     period: "November 2022 – Present",
     achievements: [
-      "Lead full-stack development for U.S. Marine Corps enterprise platforms, including the Marine Resource Orders Writing Service (MROWS)—a comprehensive system for automating personnel deployment orders, reservations, and resource allocation using Java/Spring Boot backend services integrated with Oracle databases.",
-      "Engineer secure, scalable solutions for the Marine Corps Permanent Duty Travel (MCPDT) system, handling travel entitlements, reimbursements, and compliance tracking through RESTful APIs, Spring Security for authentication/authorization, and PL/SQL procedures for data validation and auditing.",
-      "Optimize database interactions in high-volume environments by designing efficient Oracle SQL queries, implementing indexing strategies, and utilizing Spring Data JPA for ORM, resulting in enhanced system responsiveness and data integrity.",
-      "Direct the full lifecycle migration of legacy Struts-based applications to modern Spring Boot microservices, incorporating Docker for containerization, Jenkins for CI/CD automation, and Maven for dependency management.",
-      "Collaborate in cross-functional Agile teams to mentor developers on best practices in Spring MVC, REST/SOAP web services, and frontend enhancements, while ensuring adherence to STIG security standards."
+      "Develop and maintain the Marine Resource Orders Writing Service (MROWS), a mission-critical platform serving 205,000+ Marines that automates personnel deployment orders, reservations, and resource allocation through Java/Spring Boot services integrated with Oracle databases.",
+      "Led ICAM (Identity, Credential, and Access Management) integration for MROWS, modernizing authentication and authorization to satisfy DoD identity mandates and harden the platform's security posture.",
+      "Drove the migration of core MROWS modules from legacy Struts to Spring Boot, eliminating technical debt and significantly improving code quality, maintainability, and long-term supportability of the codebase.",
+      "Architected the SLOA (Sub-Line of Accounting) implementation with MCTFS, enabling accurate financial tracking and audit compliance for personnel deployment operations across the Marine Corps.",
+      "Deliver ongoing enhancements to the Marine Corps Permanent Duty Travel (MCPDT) system, which processes 95,000+ orders and ~$590M in PCS spending annually.",
+      "Tune high-volume Oracle SQL queries, implement indexing strategies, and leverage Spring Data JPA to improve system responsiveness and data integrity across mission-critical workflows.",
+      "Mentor 2 new developers on Spring MVC, REST/SOAP web services, jQuery/HTML5/CSS3, and STIG compliance standards in classified environments."
     ]
   },
   {
@@ -76,10 +69,10 @@ export const EXPERIENCE = [
     location: "Fairfax, VA",
     period: "July 2018 – November 2022",
     achievements: [
-      "Developed and maintained the Document Tracking and Management System (DTMS), a full-stack Java application for secure storage, retrieval, and auditing of official USMC documents and training records, leveraging Spring Boot for backend logic and Oracle PL/SQL for complex stored procedures.",
-      "Enhanced user interfaces with responsive frontend technologies including JavaScript, jQuery, Thymeleaf templates, and HTML5/CSS3, integrated with backend RESTful endpoints to provide seamless, role-based access controls.",
-      "Implemented STIG-compliant security features using Spring Security for OAuth/JWT authentication, encryption of sensitive data, and vulnerability scanning, ensuring 100% alignment with DoD cybersecurity mandates.",
-      "Participated in Agile sprints utilizing Git for version control, Scrum ceremonies for planning, and Kanban for workflow management to resolve defects and maintain uninterrupted availability of core USMC systems."
+      "Built and maintained the Document Tracking and Management System (DTMS), a full-stack Java application integrated into Marine Online that enables IPAC and disbursing offices Corps-wide to track travel claims, PCS/PPM reimbursements, and pay documents in real time.",
+      "Delivered responsive frontends with JavaScript, jQuery, and HTML5/CSS3, wired to Spring Boot RESTful endpoints with role-based access controls and real-time data synchronization.",
+      "Hardened applications to 100% STIG compliance using Spring Security (OAuth/JWT), data encryption, and automated vulnerability scanning — meeting all DoD cybersecurity mandates.",
+      "Operated in Agile sprints (Scrum/Kanban) to resolve defects, integrate third-party APIs, and maintain uninterrupted availability of core USMC operational systems."
     ]
   },
   {
@@ -88,8 +81,8 @@ export const EXPERIENCE = [
     location: "Arlington, VA",
     period: "July 2017 – July 2018",
     achievements: [
-      "Supported large-scale application modernization efforts, including refactoring Struts/JSP monoliths into Spring Boot frameworks with MVC patterns, Spring Data JPA for database abstraction, and optimized Oracle SQL schemas.",
-      "Provided backend and database expertise for the Unit Deployment Management Information Processing System (UDMIPS), developing Java-based modules for deployment planning, logistics tracking, and reporting, integrated with PL/SQL for data aggregation."
+      "Refactored Struts/JSP monoliths into Spring Boot with MVC patterns, Spring Data JPA, and optimized Oracle SQL schemas — establishing the modernization playbook later applied at GDIT and MetroStar.",
+      "Developed Java modules and PL/SQL reporting for the Unit Diary/Manpower Integrated Personnel System (UD/MIPS), the Marine Corps' core personnel administration tool that feeds MCTFS and manages records for 205,000+ Marines."
     ]
   }
 ];
@@ -105,16 +98,14 @@ export const EDUCATION = {
 export const PERSONAL_PROJECTS = [
   {
     title: "Lumin Faith",
-    status: "iOS App · App Store",
+    status: "iOS/iPadOS App · App Store",
     url: "https://apps.apple.com/us/app/lumin-faith-bible-ai/id6754889412",
-    description: "An AI-enhanced Progressive Web Application that reimagines Bible study as an interactive spiritual journey, empowering believers to explore scripture and deepen their faith through modern technology.",
+    description: "Independently designed, built, and shipped a production SwiftUI app from concept to App Store release — a Bible study companion for iPhone and iPad with AI-powered features and a premium subscription model.",
     highlights: [
-      "Full-stack React 19 + TypeScript with Firebase (Firestore, Auth, Cloud Functions) and Material-UI",
-      "AI/LLM API integration for scripture analysis, prayer reflections, and theological discussions",
-      "Prayer journal system with AI-generated reflections, intelligent tagging, and cross-device sync",
-      "Community collaboration platform with small group management and real-time updates",
-      "90+ Lighthouse scores through code-splitting, lazy loading, and PWA optimization",
-      "Comprehensive DevOps pipeline with CI/CD via Vercel, Vitest testing, and ESLint standards"
+      "Built with SwiftUI, Firebase (Auth, Firestore, Cloud Functions), and a StoreKit 2 premium subscription model",
+      "Integrated LLM-powered features including contextual multi-mode AI conversations, verse-by-verse scripture study, guided prayer experiences, and sermon reflection journeys",
+      "Architected secure cloud workflows with TypeScript Firebase Cloud Functions, secret-managed API keys, authentication, and user-scoped data storage/sync",
+      "Implemented engagement and UX systems including streaks/milestones, home screen widgets, Live Activities, dark/light theme settings, on-device speech transcription, and accessibility support (VoiceOver, Dynamic Type, reduced motion)"
     ]
   }
 ];

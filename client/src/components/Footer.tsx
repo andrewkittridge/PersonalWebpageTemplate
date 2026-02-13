@@ -6,8 +6,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/5 bg-black py-12">
-      <div className="page-shell">
+    <footer className="relative bg-black py-12">
+      {/* Gradient top border */}
+      <div className="divider-gradient-accent" />
+
+      <div className="page-shell pt-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
             <Link
@@ -27,7 +30,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="pill-ghost px-4 py-3"
+              className="pill-ghost px-4 py-3 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
               aria-label="GitHub"
             >
               <FaGithub className="h-5 w-5" />
@@ -36,7 +39,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="pill-ghost px-4 py-3"
+              className="pill-ghost px-4 py-3 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="h-5 w-5" />
@@ -44,11 +47,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="divider my-8" />
+        <div className="divider-gradient-accent my-8" />
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-muted-foreground">
-          <p>© {currentYear} Andrew Kittridge. All rights reserved.</p>
-          <p>Greenwood, IN · Remote Available</p>
+          <p>&copy; {currentYear} Andrew Kittridge. All rights reserved.</p>
+          <p>Greenwood, IN &middot; Remote Available</p>
         </div>
       </div>
     </footer>

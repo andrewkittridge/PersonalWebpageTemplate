@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SkeletonCard from "@/components/SkeletonCard";
+import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
 import { trackPageView } from "@/lib/analytics";
 
 // Lazy load components
@@ -29,6 +30,7 @@ export default function Home() {
       role="main"
     >
       <Navigation />
+      <CursorSpotlight />
 
       <main className="relative isolate overflow-hidden">
         <motion.div style={{ opacity: heroOpacity }}>

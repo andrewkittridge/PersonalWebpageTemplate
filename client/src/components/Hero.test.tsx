@@ -2,33 +2,31 @@ import { render, screen } from "@testing-library/react";
 import Hero from "./Hero";
 
 describe("Hero Component", () => {
-  it("renders the hero headline and subtitle", () => {
+  it("renders the hero name and subtitle", () => {
     render(<Hero />);
-    expect(
-      screen.getByRole("heading", { name: /Build decisive systems/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/secure software/i)
-    ).toBeInTheDocument();
+    // The name is split into words by TextReveal, check individual words exist
+    expect(screen.getByText("Andrew")).toBeInTheDocument();
+    expect(screen.getByText("Kittridge")).toBeInTheDocument();
+    expect(screen.getByText(/Web Developer/i)).toBeInTheDocument();
   });
 
   it("highlights primary contact actions", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("link", { name: /engage andrew/i })
+      screen.getByRole("link", { name: /view experience/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /track record/i })
+      screen.getByRole("link", { name: /contact/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /linkedin/i })
     ).toBeInTheDocument();
   });
 
-  it("lists modernization highlights", () => {
+  it("displays key stats", () => {
     render(<Hero />);
-    expect(screen.getByText(/8\+ yrs enterprise delivery/i)).toBeInTheDocument();
-    expect(screen.getByText(/Active Secret clearance/i)).toBeInTheDocument();
-    expect(screen.getByText(/USMC platforms/i)).toBeInTheDocument();
+    expect(screen.getByText(/8\+ Years Experience/i)).toBeInTheDocument();
+    expect(screen.getByText(/Active Secret Clearance/i)).toBeInTheDocument();
+    expect(screen.getByText(/Greenwood, IN/i)).toBeInTheDocument();
   });
 });

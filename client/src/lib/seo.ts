@@ -47,13 +47,13 @@ export function generateStructuredData(props: SEOProps = {}) {
       '@type': 'Person',
       givenName: 'Andrew',
       familyName: 'Kittridge',
-      jobTitle: 'Full-Stack Web Developer',
+      jobTitle: 'Web Developer',
       email: SOCIAL_LINKS.email,
       telephone: SOCIAL_LINKS.phone,
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Reston',
-        addressRegion: 'VA',
+        addressLocality: 'Greenwood',
+        addressRegion: 'IN',
         addressCountry: 'US'
       },
       knowsAbout: [
@@ -63,17 +63,16 @@ export function generateStructuredData(props: SEOProps = {}) {
         'Enterprise Software',
         'Web Development',
         'JavaScript',
-        'TypeScript',
-        'React',
+        'PL/SQL',
         'Oracle Database'
       ],
       hasOccupation: {
         '@type': 'Occupation',
-        name: 'Full-Stack Web Developer',
+        name: 'Web Developer',
         occupationLocation: {
           '@type': 'City',
-          name: 'Reston',
-          addressRegion: 'VA',
+          name: 'Greenwood',
+          addressRegion: 'IN',
           addressCountry: 'US'
         }
       }
