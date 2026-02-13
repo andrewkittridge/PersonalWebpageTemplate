@@ -83,10 +83,10 @@ export function TextReveal({
         <motion.span
           key={`${word}-${i}`}
           variants={wordVariants}
-          className={`inline-block ${wordClass}`}
+          className="inline-block"
           style={{ transformStyle: "preserve-3d", paddingBottom: "0.3em" }}
         >
-          {word}
+          <span className={wordClass || undefined}>{word}</span>
         </motion.span>
       ))}
     </MotionTag>
