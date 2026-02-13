@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SkeletonCard from "@/components/SkeletonCard";
 import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
+import { SceneBackground } from "@/components/three/SceneBackground";
 import { trackPageView } from "@/lib/analytics";
 
 // Lazy load components
@@ -29,10 +30,16 @@ export default function Home() {
       className="relative min-h-screen bg-background text-foreground"
       role="main"
     >
+      {/* Persistent Three.js scene behind all content */}
+      <SceneBackground />
+
       <Navigation />
       <CursorSpotlight />
 
-      <main className="relative isolate overflow-hidden">
+      <main
+        className="relative isolate"
+        style={{ perspective: "1200px" }}
+      >
         <motion.div style={{ opacity: heroOpacity }}>
           <Suspense fallback={<LoadingSpinner />}>
             <Hero />

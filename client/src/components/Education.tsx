@@ -3,6 +3,7 @@ import { GraduationCap, ExternalLink } from "lucide-react";
 import { EDUCATION, PERSONAL_PROJECTS } from "@/lib/constants";
 import { GlowCard } from "@/components/ui/glow-card";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
+import { depthCardVariants, staggerContainer } from "@/lib/motion-variants";
 
 export default function Education() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>("Education");
@@ -19,49 +20,48 @@ export default function Education() {
           <h2 className="section-title">Education & Projects</h2>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <motion.div
+          className="grid gap-8 lg:grid-cols-2"
+          style={{ perspective: "1000px" }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {/* Education Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <motion.div variants={depthCardVariants}>
             <GlowCard className="p-6 md:p-8 h-full">
               <div className="flex items-center gap-3 mb-6">
                 <span className="icon-badge">
                   <GraduationCap className="w-5 h-5" />
                 </span>
-                <h3 className="text-lg font-semibold text-foreground">Education</h3>
+                <h3 className="text-lg font-semibold text-foreground font-display">Education</h3>
               </div>
 
               <div className="space-y-2">
-                <p className="text-xl font-semibold text-foreground">
+                <p className="text-xl font-semibold text-foreground font-display">
                   {EDUCATION.degree}
                 </p>
-                <p className="text-muted-foreground">
+                <p style={{ color: "hsl(var(--muted-foreground))" }}>
                   {EDUCATION.institution}
                 </p>
-                <p className="text-sm text-muted-foreground/70">
+                <p className="text-sm" style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>
                   {EDUCATION.location} &middot; {EDUCATION.graduationDate}
                 </p>
               </div>
             </GlowCard>
           </motion.div>
 
-          {/* Personal Projects — featured (always glow) */}
+          {/* Personal Projects — featured at higher z */}
           {PERSONAL_PROJECTS.map((project) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              variants={depthCardVariants}
             >
               <GlowCard alwaysGlow className="p-6 md:p-8 h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <h3 className="text-xl font-semibold text-foreground font-display">
                       {project.title}
                     </h3>
                     <p className="text-sm gradient-text font-medium mt-1">
@@ -81,7 +81,7 @@ export default function Education() {
                   )}
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="leading-relaxed mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
                   {project.description}
                 </p>
 
@@ -95,7 +95,7 @@ export default function Education() {
               </GlowCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

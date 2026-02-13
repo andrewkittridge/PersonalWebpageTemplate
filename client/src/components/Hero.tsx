@@ -1,31 +1,31 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, MapPin, Shield, Clock } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 import { TextReveal } from "@/components/ui/text-reveal";
+import { useMouseParallax } from "@/hooks/use-mouse-parallax";
+import { heroTextVariants } from "@/lib/motion-variants";
 
 export default function Hero() {
+  const { x: parallaxX, y: parallaxY } = useMouseParallax(0.5);
+  const { scrollYProgress } = useScroll();
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
   return (
     <section
       aria-labelledby="hero-heading"
       className="relative isolate min-h-[90vh] pt-32 pb-20 lg:pb-28 flex items-center"
+      style={{ perspective: "1200px" }}
     >
-      {/* Background glow — violet/cyan */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.12), transparent), radial-gradient(ellipse 60% 40% at 70% -10%, rgba(34, 211, 238, 0.06), transparent)",
-        }}
-        aria-hidden
-      />
-
       <div className="page-shell relative z-10">
-        <div className="max-w-4xl">
-          {/* Name — animated gradient text reveal */}
+        <motion.div
+          className="max-w-4xl"
+          style={{ x: parallaxX, y: parallaxY }}
+        >
+          {/* Name — animated gradient text reveal with 3D depth */}
           <header className="space-y-6">
             <TextReveal
               as="h1"
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text-animated"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text-animated font-display"
               delay={0.2}
             >
               Andrew Kittridge
@@ -33,10 +33,11 @@ export default function Hero() {
 
             {/* Subtitle — staggered fade */}
             <motion.p
-              className="text-xl md:text-2xl lg:text-3xl font-medium gradient-text"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              className="text-xl md:text-2xl lg:text-3xl font-medium gradient-text font-display"
+              variants={heroTextVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.6 }}
               id="hero-heading"
               role="heading"
               aria-level={2}
@@ -45,16 +46,18 @@ export default function Hero() {
             </motion.p>
 
             <motion.p
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+              className="text-lg md:text-xl max-w-2xl leading-relaxed"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+              variants={heroTextVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.8 }}
             >
               Enterprise Application Modernization &bull; USMC / DoD
             </motion.p>
           </header>
 
-          {/* Floating stat pills */}
+          {/* Floating stat pills with 3D bob */}
           <motion.div
             className="mt-12 flex flex-wrap gap-4 text-sm"
             initial={{ opacity: 0 }}
@@ -62,18 +65,23 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1.0 }}
           >
             {[
-              { icon: <Clock className="h-4 w-4 text-violet-400" />, text: "8+ Years Experience" },
-              { icon: <Shield className="h-4 w-4 text-violet-400" />, text: "Active Secret Clearance" },
-              { icon: <MapPin className="h-4 w-4 text-cyan-400" />, text: "Greenwood, IN" },
+              { icon: <Clock className="h-4 w-4 text-amber-400" />, text: "8+ Years Experience" },
+              { icon: <Shield className="h-4 w-4 text-amber-400" />, text: "Active Secret Clearance" },
+              { icon: <MapPin className="h-4 w-4 text-teal-400" />, text: "Greenwood, IN" },
             ].map((stat, i) => (
-              <div
+              <motion.div
                 key={stat.text}
-                className="bob-animation flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-muted-foreground backdrop-blur-sm"
-                style={{ animationDelay: `${i * 0.4}s` }}
+                className="bob-animation flex items-center gap-2 rounded-full border px-4 py-2 backdrop-blur-sm"
+                style={{
+                  animationDelay: `${i * 0.4}s`,
+                  borderColor: "rgba(255,255,255,0.1)",
+                  background: "rgba(255,255,255,0.03)",
+                  color: "hsl(var(--muted-foreground))",
+                }}
               >
                 {stat.icon}
                 <span>{stat.text}</span>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
@@ -108,11 +116,16 @@ export default function Hero() {
               GitHub
             </a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Watermark */}
-      <p className="hero-watermark absolute bottom-8 right-8 hidden lg:block">AK</p>
+      {/* Watermark at negative z */}
+      <motion.p
+        className="hero-watermark absolute bottom-8 right-8 hidden lg:block"
+        style={{ opacity: heroOpacity }}
+      >
+        AK
+      </motion.p>
     </section>
   );
 }

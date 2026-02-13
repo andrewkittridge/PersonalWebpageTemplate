@@ -19,6 +19,7 @@ import { trackInteraction } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/constants";
 import { Mail, Phone, Linkedin, Github, MapPin } from "lucide-react";
 import { useRef } from "react";
+import { depthCardVariants, staggerContainer } from "@/lib/motion-variants";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -80,39 +81,41 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2 max-w-5xl">
+        <motion.div
+          className="grid gap-8 lg:grid-cols-2 max-w-5xl"
+          style={{ perspective: "1000px" }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <motion.div variants={depthCardVariants}>
             <GlowCard className="p-6 md:p-8 h-full">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground">
+                  <h3 className="text-xl font-semibold text-foreground font-display">
                     Contact Information
                   </h3>
-                  <p className="text-muted-foreground mt-2">
+                  <p className="mt-2" style={{ color: "hsl(var(--muted-foreground))" }}>
                     Remote-friendly with active security clearance. Response within 24 hours.
                   </p>
                 </div>
 
-                <address className="not-italic space-y-4 text-muted-foreground">
+                <address className="not-italic space-y-4" style={{ color: "hsl(var(--muted-foreground))" }}>
                   <a
                     href={`mailto:${SOCIAL_LINKS.email}`}
                     className="contact-link"
                   >
-                    <Mail className="h-5 w-5 text-violet-400" />
+                    <Mail className="h-5 w-5 text-amber-400" />
                     {SOCIAL_LINKS.email}
                   </a>
                   <a href={`tel:${SOCIAL_LINKS.phone}`} className="contact-link">
-                    <Phone className="h-5 w-5 text-violet-400" />
+                    <Phone className="h-5 w-5 text-amber-400" />
                     {SOCIAL_LINKS.phone}
                   </a>
                   <div className="contact-link">
-                    <MapPin className="h-5 w-5 text-cyan-400" />
+                    <MapPin className="h-5 w-5 text-teal-400" />
                     Greenwood, IN 46142
                   </div>
                 </address>
@@ -124,7 +127,7 @@ export default function Contact() {
                     href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pill-ghost px-4 py-2.5 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
+                    className="pill-ghost px-4 py-2.5"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-5 w-5" />
@@ -133,7 +136,7 @@ export default function Contact() {
                     href={SOCIAL_LINKS.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pill-ghost px-4 py-2.5 hover:shadow-[0_0_16px_rgba(139,92,246,0.2)]"
+                    className="pill-ghost px-4 py-2.5"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5" />
@@ -142,7 +145,7 @@ export default function Contact() {
 
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="stat-card">
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
+                    <p className="text-xs uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>
                       Timezone
                     </p>
                     <p className="text-sm font-medium text-foreground mt-1">
@@ -150,7 +153,7 @@ export default function Contact() {
                     </p>
                   </div>
                   <div className="stat-card">
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground/70">
+                    <p className="text-xs uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>
                       Availability
                     </p>
                     <p className="text-sm font-medium text-foreground mt-1">
@@ -162,16 +165,11 @@ export default function Contact() {
             </GlowCard>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          >
+          {/* Contact Form — depth layered */}
+          <motion.div variants={depthCardVariants}>
             <GlowCard alwaysGlow className="p-6 md:p-8 h-full">
               <div className="space-y-6">
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-semibold text-foreground font-display">
                   Send a Message
                 </h3>
 
@@ -239,7 +237,12 @@ export default function Contact() {
                         ref={btnRef}
                         type="submit"
                         size="lg"
-                        className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white hover:opacity-90 justify-center"
+                        className="w-full text-white justify-center"
+                        style={{
+                          background: "linear-gradient(135deg, #f0a830, #e09520)",
+                          color: "#0a0e1a",
+                          fontWeight: 600,
+                        }}
                       >
                         Send Message
                       </Button>
@@ -249,7 +252,7 @@ export default function Contact() {
               </div>
             </GlowCard>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

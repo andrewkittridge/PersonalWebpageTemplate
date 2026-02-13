@@ -3,6 +3,7 @@ import { Briefcase } from "lucide-react";
 import { EXPERIENCE } from "@/lib/constants";
 import { GlowCard } from "@/components/ui/glow-card";
 import { useSectionAnalytics } from "@/hooks/use-section-analytics";
+import { depthCardVariants, staggerContainer } from "@/lib/motion-variants";
 
 export default function Experience() {
   const sectionRef = useSectionAnalytics<HTMLDivElement>("Experience");
@@ -23,16 +24,29 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="space-y-8">
+        {/* Depth timeline: recent roles near viewer, older recede */}
+        <motion.div
+          className="space-y-8"
+          style={{ perspective: "1200px" }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {EXPERIENCE.map((exp, index) => (
             <motion.div
               key={exp.title + exp.company}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              variants={depthCardVariants}
+              style={{
+                transformStyle: "preserve-3d",
+                // Recent roles closer, older ones recede
+                transform: `translateZ(${Math.max(-index * 10, -30)}px)`,
+              }}
             >
-              <GlowCard className="p-6 md:p-8 border-l-2 border-l-transparent" style={{ borderImage: "linear-gradient(to bottom, #8B5CF6, #22D3EE) 1" }}>
+              <GlowCard
+                className="p-6 md:p-8 border-l-2 border-l-transparent"
+                style={{ borderImage: "linear-gradient(to bottom, #f0a830, #38bdd2) 1" }}
+              >
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div className="flex items-start gap-4">
@@ -40,7 +54,7 @@ export default function Experience() {
                       <Briefcase className="w-5 h-5" />
                     </span>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground">
+                      <h3 className="text-xl font-semibold text-foreground font-display">
                         {exp.title}
                       </h3>
                       <p className="gradient-text font-medium mt-1">
@@ -48,9 +62,9 @@ export default function Experience() {
                       </p>
                     </div>
                   </div>
-                  <div className="text-sm text-muted-foreground sm:text-right">
+                  <div className="text-sm sm:text-right" style={{ color: "hsl(var(--muted-foreground))" }}>
                     <p>{exp.location}</p>
-                    <p className="text-muted-foreground/70">{exp.period}</p>
+                    <p style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>{exp.period}</p>
                   </div>
                 </div>
 
@@ -59,7 +73,7 @@ export default function Experience() {
                 {/* Achievements */}
                 <ul className="space-y-4">
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex gap-4 text-muted-foreground leading-relaxed">
+                    <li key={i} className="flex gap-4 leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
                       <span className="gradient-dot mt-2" />
                       <span>{achievement}</span>
                     </li>
@@ -68,7 +82,7 @@ export default function Experience() {
               </GlowCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

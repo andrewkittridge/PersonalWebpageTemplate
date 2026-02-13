@@ -5,6 +5,10 @@ export default {
     content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
   	extend: {
+  		fontFamily: {
+  			display: ['"Syne"', 'sans-serif'],
+  			body: ['"Inter"', 'sans-serif'],
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -44,6 +48,19 @@ export default {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
+  			amber: {
+  				400: '#f0a830',
+  				500: '#e09520',
+  			},
+  			teal: {
+  				400: '#38bdd2',
+  				500: '#2da8bc',
+  			},
+  			midnight: {
+  				900: '#0a0e1a',
+  				800: '#0f1424',
+  				700: '#161d33',
+  			},
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
@@ -83,6 +100,19 @@ export default {
   			'spin-slow': {
   				from: { transform: 'rotate(0deg)' },
   				to: { transform: 'rotate(360deg)' }
+  			},
+  			'float': {
+  				'0%, 100%': { transform: 'translateY(0) translateZ(0)' },
+  				'50%': { transform: 'translateY(-10px) translateZ(10px)' }
+  			},
+  			'float-slow': {
+  				'0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+  				'33%': { transform: 'translateY(-8px) rotate(1deg)' },
+  				'66%': { transform: 'translateY(-4px) rotate(-0.5deg)' }
+  			},
+  			'depth-pulse': {
+  				'0%, 100%': { transform: 'translateZ(0)', boxShadow: '0 0 20px rgba(240, 168, 48, 0.05)' },
+  				'50%': { transform: 'translateZ(10px)', boxShadow: '0 0 40px rgba(240, 168, 48, 0.1)' }
   			}
   		},
   		animation: {
@@ -90,7 +120,10 @@ export default {
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'gradient-shift': 'gradient-shift 6s ease infinite',
   			'bob': 'bob 3s ease-in-out infinite',
-  			'spin-slow': 'spin-slow 8s linear infinite'
+  			'spin-slow': 'spin-slow 8s linear infinite',
+  			'float': 'float 6s ease-in-out infinite',
+  			'float-slow': 'float-slow 8s ease-in-out infinite',
+  			'depth-pulse': 'depth-pulse 4s ease-in-out infinite'
   		},
   		gridTemplateColumns: {
   			'bento': 'repeat(4, 1fr)',

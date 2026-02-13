@@ -1,5 +1,4 @@
 import { motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
 
 interface TextRevealProps {
   children: string;
@@ -21,16 +20,20 @@ const containerVariants: Variants = {
 const wordVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 12,
+    rotateX: 45,
+    translateZ: -40,
+    y: 16,
     filter: "blur(4px)",
   },
   visible: {
     opacity: 1,
+    rotateX: 0,
+    translateZ: 0,
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
 };
@@ -61,12 +64,18 @@ export function TextReveal({
   return (
     <MotionTag
       className={`flex flex-wrap gap-x-[0.3em] ${className}`}
+      style={{ perspective: "600px" }}
       variants={containerVariants}
       transition={{ delayChildren: delay }}
       {...animationProps}
     >
       {words.map((word: string, i: number) => (
-        <motion.span key={`${word}-${i}`} variants={wordVariants} className="inline-block">
+        <motion.span
+          key={`${word}-${i}`}
+          variants={wordVariants}
+          className="inline-block"
+          style={{ transformStyle: "preserve-3d" }}
+        >
           {word}
         </motion.span>
       ))}

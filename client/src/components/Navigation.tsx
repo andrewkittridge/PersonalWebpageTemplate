@@ -63,10 +63,13 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Gradient progress bar */}
+      {/* Amber gradient progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 z-50 origin-left"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-0.5 z-50 origin-left"
+        style={{
+          scaleX,
+          background: "linear-gradient(90deg, #f0a830, #38bdd2)",
+        }}
         aria-hidden="true"
       />
 
@@ -74,9 +77,13 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${scrolled
-            ? "border-b border-white/5 bg-black/80 backdrop-blur-xl"
+            ? "border-b backdrop-blur-2xl"
             : "bg-transparent"
           }`}
+        style={scrolled ? {
+          borderColor: "rgba(255,255,255,0.05)",
+          background: "rgba(10, 14, 26, 0.85)",
+        } : undefined}
         role="navigation"
         aria-label="Main navigation"
       >
@@ -84,7 +91,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="group text-lg font-bold tracking-tight text-foreground"
+            className="group text-lg font-bold tracking-tight text-foreground font-display"
             aria-label="Navigate home"
           >
             <span className="transition-all duration-300 group-hover:gradient-text-animated">AK</span>
@@ -103,7 +110,8 @@ export default function Navigation() {
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="active-nav"
-                    className="absolute -bottom-1 left-3 right-3 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full"
+                    className="absolute -bottom-1 left-3 right-3 h-0.5 rounded-full"
+                    style={{ background: "linear-gradient(90deg, #f0a830, #38bdd2)" }}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -140,14 +148,16 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-30 bg-black/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-30 backdrop-blur-xl md:hidden"
+            style={{ background: "rgba(10, 14, 26, 0.95)" }}
           >
             <nav className="flex flex-col items-center justify-center h-full space-y-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="text-2xl font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  className="text-2xl font-medium transition-colors font-display"
+                  style={{ color: "hsl(var(--foreground) / 0.8)" }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
