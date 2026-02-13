@@ -61,9 +61,19 @@ export function TextReveal({
           animate: "visible",
         };
 
+  // Extract gradient-text classes so they apply per-word (background-clip: text
+  // only clips to direct text content, not text inside child elements)
+  const isGradientText = className.includes("gradient-text");
+  const containerClass = isGradientText
+    ? className.replace(/gradient-text-animated|gradient-text/g, "").trim()
+    : className;
+  const wordClass = isGradientText
+    ? className.match(/gradient-text-animated|gradient-text/)?.[0] ?? ""
+    : "";
+
   return (
     <MotionTag
-      className={`flex flex-wrap gap-x-[0.3em] ${className}`}
+      className={`flex flex-wrap gap-x-[0.3em] ${containerClass}`}
       style={{ perspective: "600px" }}
       variants={containerVariants}
       transition={{ delayChildren: delay }}
@@ -73,8 +83,8 @@ export function TextReveal({
         <motion.span
           key={`${word}-${i}`}
           variants={wordVariants}
-          className="inline-block"
-          style={{ transformStyle: "preserve-3d" }}
+          className={`inline-block ${wordClass}`}
+          style={{ transformStyle: "preserve-3d", paddingBottom: "0.15em" }}
         >
           {word}
         </motion.span>

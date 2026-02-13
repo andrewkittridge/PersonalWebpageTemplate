@@ -39,36 +39,25 @@ export function HeroScene({ scrollProgress, mouseX, mouseY }: HeroSceneProps) {
 
   return (
     <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
-      <group ref={groupRef} position={[0, 0, 0]}>
+      <group ref={groupRef} position={[3, 0.5, -1]}>
         {/* Wireframe icosahedron — amber glow */}
         <mesh>
-          <icosahedronGeometry args={[1.8, 1]} />
+          <icosahedronGeometry args={[1.6, 1]} />
           <meshBasicMaterial
             color="#f0a830"
             wireframe
             transparent
-            opacity={0.4}
+            opacity={0.25}
             toneMapped={false}
           />
         </mesh>
 
         {/* Inner icosahedron — teal, slower rotation offset */}
         <mesh rotation={[0.4, 0.2, 0]}>
-          <icosahedronGeometry args={[1.2, 0]} />
+          <icosahedronGeometry args={[1.0, 0]} />
           <meshBasicMaterial
             color="#38bdd2"
             wireframe
-            transparent
-            opacity={0.2}
-            toneMapped={false}
-          />
-        </mesh>
-
-        {/* Outer ring */}
-        <mesh rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[2.5, 0.01, 16, 64]} />
-          <meshBasicMaterial
-            color="#f0a830"
             transparent
             opacity={0.15}
             toneMapped={false}

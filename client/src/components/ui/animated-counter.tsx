@@ -11,7 +11,7 @@ interface AnimatedCounterProps {
 export function AnimatedCounter({
   target,
   suffix = "",
-  duration = 1.5,
+  duration = 0.8,
   className = "",
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
