@@ -73,7 +73,7 @@ export function TextReveal({
 
   return (
     <MotionTag
-      className={`flex flex-wrap gap-x-[0.3em] ${containerClass}`}
+      className={`flex flex-wrap gap-x-[0.3em] pb-[0.12em] leading-[1.15] ${containerClass}`}
       style={{ perspective: "600px" }}
       variants={containerVariants}
       transition={{ delayChildren: delay }}
@@ -84,7 +84,7 @@ export function TextReveal({
           key={`${word}-${i}`}
           variants={wordVariants}
           className={`inline-block ${wordClass}`}
-          style={{ transformStyle: "preserve-3d", lineHeight: 1.3, paddingBottom: "0.15em" }}
+          style={{ transformStyle: "preserve-3d", lineHeight: 1.25, paddingBottom: "0.2em" }}
         >
           {word}
         </motion.span>
